@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     private MovementScript movementScript;
     [SerializeField] float moveSpeed = 10f;
+    Camera cam;
 
     Vector2 playerInput;
 
