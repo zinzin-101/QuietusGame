@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private MovementScript movementScript;
-    [SerializeField] float moveSpeed = 10f;
-    Camera cam;
+    private PickupScript pickupScript;
 
     Vector2 playerInput;
 
@@ -15,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     void Start()
     {
         TryGetComponent(out movementScript);
+        TryGetComponent(out pickupScript);
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class PlayerInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        movementScript.Move(playerInput, moveSpeed);
+        movementScript.Move(playerInput.normalized);
 
         //animController.SetFloat("Speed", Mathf.Abs(horizontalInput));
     }

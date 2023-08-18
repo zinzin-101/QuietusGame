@@ -12,6 +12,8 @@ public class MovementScript : MonoBehaviour
 
     private bool canMove;
 
+    [SerializeField] float moveSpeed = 5f;
+
     void Awake()
     {
         TryGetComponent(out rb);
@@ -37,16 +39,14 @@ public class MovementScript : MonoBehaviour
 
     }
 
-    public void Move(Vector2 input, float speed)
+    public void Move(Vector2 input)
     {
         if (!canMove)
         {
             return;
         }
 
-        Vector3 velocity = input;
-
-        rb.velocity = Vector3.ClampMagnitude(velocity, 1f) * speed;
+        rb.velocity = input * moveSpeed;
 
         if ((input.x > 0 && !facingRight) || (input.x < 0 && facingRight))
         {
