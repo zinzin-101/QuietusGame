@@ -22,6 +22,12 @@ public class PlayerInteractScript : MonoBehaviour
                 StartCoroutine(InteractCooldown());
                 textInteract.ToggleActiveText();
             }
+
+            if (collision.gameObject.TryGetComponent(out DialogueScript dialogueScript))
+            {
+                StartCoroutine(InteractCooldown());
+                dialogueScript.TriggerDialogue();
+            }
         }      
     }
 
