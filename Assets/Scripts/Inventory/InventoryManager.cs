@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour
     public List<Item> Items = new List<Item>();
 
     public Transform ItemContent;
-    public GameObject InventoryItem;
+    public GameObject InventoryItem, SpecialItem;
     private void Awake()
     {
         Instance = this;
@@ -37,7 +37,15 @@ public class InventoryManager : MonoBehaviour
         // Create a slot for each item in the inventory.
         foreach (var item in Items)
         {
-            GameObject obj = Instantiate(InventoryItem, ItemContent);
+            GameObject obj;
+            if (item.itemType == ItemType.Special)
+            {
+                obj = Instantiate(SpecialItem, ItemContent);
+            }
+            else
+            {
+                obj = Instantiate(InventoryItem, ItemContent);
+            }
 
             // Find UI elements in the slot prefab.
             var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();

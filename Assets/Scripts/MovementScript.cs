@@ -50,7 +50,7 @@ public class MovementScript : MonoBehaviour
 
         if ((input.x > 0 && !facingRight) || (input.x < 0 && facingRight))
         {
-            Flip();
+            //Flip();
         }
     }
 

@@ -963,6 +963,10 @@ PrefabInstance:
       propertyPath: ItemContent
       value: 
       objectReference: {fileID: 4657231396220270886}
+    - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
+      propertyPath: SpecialItem
+      value: 
+      objectReference: {fileID: 2597960902067598292, guid: a5913f8feb1ff4446bad8c7e7b94074e, type: 3}
     - target: {fileID: 1806720406082808529, guid: a8c90830604a69942aa843809c9def73, type: 3}
       propertyPath: m_Name
       value: InventoryManager
@@ -1158,6 +1162,10 @@ PrefabInstance:
     - target: {fileID: 1066514239579170744, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
       propertyPath: m_Name
       value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066514239579170744, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5541270034018089175, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
       propertyPath: m_Pivot.x

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private MovementScript movementScript;
-    private PickupScript pickupScript;
+    [SerializeField] PlayerAnimation playerAnimation;
 
     Vector2 playerInput;
 
@@ -14,13 +14,14 @@ public class PlayerInput : MonoBehaviour
     void Start()
     {
         TryGetComponent(out movementScript);
-        TryGetComponent(out pickupScript);
     }
 
     void Update()
     {
         playerInput.y = Input.GetAxisRaw("Vertical");
         playerInput.x = Input.GetAxisRaw("Horizontal");
+
+        playerAnimation.SetDirection(playerInput);
     }
 
     private void FixedUpdate()

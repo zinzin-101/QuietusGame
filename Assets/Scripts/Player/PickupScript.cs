@@ -11,13 +11,13 @@ public class PickupScript : MonoBehaviour
     private bool pickedUp;
     private string pickUpName;
 
-    private MovementScript movementScript;
+    private SpriteRenderer spriteRenderer;
 
     private bool canInteract;
 
     private void Start()
     {
-        TryGetComponent(out movementScript);
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         canInteract = true;
     }
 
@@ -32,6 +32,8 @@ public class PickupScript : MonoBehaviour
                 collision.gameObject.transform.localPosition = new Vector3(0f, pickupDistance, 0f);
                 pickUpName = collision.gameObject.name;
 
+                collision.gameObject.GetComponent<SpriteRenderer>().sortingOrder = spriteRenderer.sortingOrder + 1;
+
                 StartCoroutine(InteractCooldown());
             }
         }
@@ -41,24 +43,16 @@ public class PickupScript : MonoBehaviour
     {
         if (pickedUp && Input.GetKey(pickUpKey) && canInteract)
         {
-            Transform _pickupObject = transform.Find(pickUpName);
-            if (_pickupObject != null)
+            Transform _pickupTransform = transform.Find(pickUpName);
+
+            if (_pickupTransform != null)
             {
                 Vector3 _dropPosition = new Vector3();
-                /*
-                switch (movementScript.FacingRight)
-                {
-                    case true:
-                        _dropPosition.x = pickupDistance;
-                        break;
-                    case false:
-                        _dropPosition.x = -pickupDistance;
-                        break;
-                }
-                */
-                _pickupObject.transform.localPosition = _dropPosition;
+                _pickupTransform.transform.localPosition = _dropPosition;
 
-                _pickupObject.transform.parent = null;
+                _pickupTransform.GetComponent<SpriteRenderer>().sortingOrder = spriteRenderer.sortingOrder - 1;
+
+                _pickupTransform.transform.parent = null;
                 pickedUp = false;   
             }
 
