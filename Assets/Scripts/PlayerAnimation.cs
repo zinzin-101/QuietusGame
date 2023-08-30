@@ -16,7 +16,6 @@ public class PlayerAnimation : MonoBehaviour
         anim = GetComponent<Animator>();
 
         float result1 = Vector2.SignedAngle(Vector2.up, Vector2.right);
-        Debug.Log("R1 " + result1);
     }
     public void SetDirection(Vector2 _direction)
     {
