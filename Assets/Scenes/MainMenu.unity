@@ -206,10 +206,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1791967147}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: FadeToBlackLoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1418549463}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1283,17 +1283,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752155742}
   m_CullTransparentMesh: 1
---- !u!114 &1791967147 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4483935203464660632, guid: dd548f0338f8c204485679d25b51d063, type: 3}
-  m_PrefabInstance: {fileID: 1712728537}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d445245414d38a4d8bd8298ceacd5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2130367119
 GameObject:
   m_ObjectHideFlags: 0

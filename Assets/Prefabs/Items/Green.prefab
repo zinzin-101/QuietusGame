@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4304351380267933717}
   - component: {fileID: 284159626789904945}
   - component: {fileID: 1491062206898150950}
-  - component: {fileID: -879792343493447436}
   - component: {fileID: 479681241189355126}
   m_Layer: 0
   m_Name: Green
@@ -132,19 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-879792343493447436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3303922422056103653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482ebb3e9d7eeec409f39df1f6acd392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 7f340f07579204140a3e950055198f11, type: 2}
 --- !u!114 &479681241189355126
 MonoBehaviour:
   m_ObjectHideFlags: 0

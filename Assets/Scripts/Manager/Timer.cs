@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
         if (timeValue <= 0 && !timeUp)
         {
             timeUp = true;
-            timerText.text = "Time up!";
+            timerText.text = "Time's up!";
         }
     }
 }

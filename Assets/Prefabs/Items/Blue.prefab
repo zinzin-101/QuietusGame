@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9026121587579851063}
   - component: {fileID: 8902312001665477740}
   - component: {fileID: 4476019312966142468}
-  - component: {fileID: 258533700253837648}
   - component: {fileID: 7112043424216625686}
   m_Layer: 0
   m_Name: Blue
@@ -132,19 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &258533700253837648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3599705046847363879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482ebb3e9d7eeec409f39df1f6acd392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 717a1768aad46fa448431031c2466107, type: 2}
 --- !u!114 &7112043424216625686
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class PickupScript : MonoBehaviour
 {
@@ -38,7 +40,6 @@ public class PickupScript : MonoBehaviour
             }
         }
     }
-
     private void Update()
     {
         if (pickedUp && Input.GetKey(pickUpKey) && canInteract)

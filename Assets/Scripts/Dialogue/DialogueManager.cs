@@ -12,10 +12,10 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] GameObject dialogueObject;
-    [SerializeField] GameObject dialogueNameObject;
+    [SerializeField] float dialogueDelay = 3f;
 
     private TMP_Text dialogueText;
-    private TMP_Text nameText;
+    private string dialogueName;
 
     private bool isRunning;
     public bool IsRunning => isRunning;
@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialogueObject.TryGetComponent(out dialogueText);
-        dialogueNameObject.TryGetComponent(out nameText);
 
         animator = GetComponentInChildren<Animator>();
     }
@@ -63,7 +62,7 @@ public class DialogueManager : MonoBehaviour
             animator.SetBool("IsRunning", true);
         }
 
-        nameText.text = dialogue.name;
+        dialogueName = dialogue.name;
 
         sentences.Clear();
 
@@ -102,11 +101,14 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator PrintSentence(string sentence)
     {
-        dialogueText.text = "";
+        dialogueText.text = dialogueName + ": ";
         foreach (char letter in sentence)
         {
             dialogueText.text += letter;
-            yield return new WaitForSecondsRealtime(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
+
+        yield return new WaitForSeconds(dialogueDelay);
+        DisplayNextSentence();
     }
 }

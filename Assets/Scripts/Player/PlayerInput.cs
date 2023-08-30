@@ -9,6 +9,8 @@ public class PlayerInput : MonoBehaviour
 
     Vector2 playerInput;
 
+    [SerializeField] KeyCode inventoryKey = KeyCode.Tab;
+
     //[SerializeField] AnimController animController;
 
     void Start()
@@ -22,6 +24,11 @@ public class PlayerInput : MonoBehaviour
         playerInput.x = Input.GetAxisRaw("Horizontal");
 
         playerAnimation.SetDirection(playerInput);
+
+        if (Input.GetKeyDown(inventoryKey))
+        {
+            InventoryManager.Instance.ToggleInventory();
+        }
     }
 
     private void FixedUpdate()
