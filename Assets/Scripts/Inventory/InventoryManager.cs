@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] Transform itemContent, selectedItemContent;
     public GameObject InventoryItem, SpecialItem;
     [SerializeField] GameObject inventoryPanel;
+    [SerializeField] TMP_Text descriptionText;
 
     private void Awake()
     {
@@ -46,6 +47,8 @@ public class InventoryManager : MonoBehaviour
         GameObject obj = Instantiate(item, selectedItemContent);
         obj.TryGetComponent(out Button button);
         Destroy(button);
+
+        descriptionText.text = obj.GetComponent<InventoryItem>().ItemDescription;
     }
 
     public void ListItems()
@@ -68,6 +71,9 @@ public class InventoryManager : MonoBehaviour
             {
                 obj = Instantiate(InventoryItem, itemContent);
             }
+
+            obj.TryGetComponent(out InventoryItem inventoryItem);
+            inventoryItem.SetItemDescription(item.itemDescription);
 
             // Find UI elements in the slot prefab.
             var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();

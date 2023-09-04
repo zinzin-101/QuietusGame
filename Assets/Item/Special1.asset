@@ -17,3 +17,4 @@ MonoBehaviour:
   value: 0
   icon: {fileID: 21300000, guid: 43113058e7837c5469dc9876b466e81f, type: 3}
   itemType: 1
+  itemDescription: Special Item

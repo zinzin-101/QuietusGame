@@ -16,3 +16,5 @@ MonoBehaviour:
   itemName: Green
   value: 0
   icon: {fileID: 21300000, guid: 7e2812887aa4d28499a6f66db688899d, type: 3}
+  itemType: 0
+  itemDescription: Green Item
