@@ -9,7 +9,7 @@ public class InventoryItem : MonoBehaviour
 
     public void SelectItem()
     {
-        InventoryManager.Instance.SetCurrentItem(gameObject);
+        InventoryManager.Instance.SetCurrentItem(gameObject, itemDescription);
     }
 
     public void SetItemDescription(string description)

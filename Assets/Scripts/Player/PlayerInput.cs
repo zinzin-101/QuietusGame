@@ -20,6 +20,11 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         playerInput.y = Input.GetAxisRaw("Vertical");
         playerInput.x = Input.GetAxisRaw("Horizontal");
 

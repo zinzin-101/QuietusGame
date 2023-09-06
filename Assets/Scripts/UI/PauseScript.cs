@@ -14,10 +14,20 @@ public class PauseScript : MonoBehaviour
     public void TogglePause()
     {
         pausePanel.SetActive(!pausePanel.activeSelf);
+
+        if (pausePanel.activeSelf)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     public void MainMenuButton()
     {
+        Time.timeScale = 1f;
         LevelManager.Instance.FadeToBlackLoadScene("MainMenu");
     }
 

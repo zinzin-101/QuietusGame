@@ -180,11 +180,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4308347570526105673}
+  m_Father: {fileID: 5111006306966233057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.9700012}
+  m_AnchoredPosition: {x: 0, y: -135.04}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7874685017046967281
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
+  m_CellSize: {x: 500, y: 500}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1709,7 +1709,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6672656948858584073}
-  - {fileID: 1844924875260289415}
   m_Father: {fileID: 5111006306966233057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2062,7 +2061,7 @@ PrefabInstance:
     - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
       propertyPath: SpecialItem
       value: 
-      objectReference: {fileID: 2597960902067598292, guid: a5913f8feb1ff4446bad8c7e7b94074e, type: 3}
+      objectReference: {fileID: 3151557450040262928, guid: bff3191be80c37c4da94b4ee32d09238, type: 3}
     - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
       propertyPath: itemContent
       value: 
@@ -2276,6 +2275,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5541270034018089175, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4308347570526105673}
+    - targetCorrespondingSourceObject: {fileID: 5541270034018089175, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1844924875260289415}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
 --- !u!224 &5111006306966233057 stripped
@@ -2564,6 +2566,14 @@ PrefabInstance:
     - target: {fileID: 5541270034018089175, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850449460112254797, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
+      propertyPath: m_CellSize.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850449460112254797, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
+      propertyPath: m_CellSize.y
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6008828804543391597, guid: b1420f41042dda9459c1d2f1cf83fdda, type: 3}
       propertyPath: m_Name

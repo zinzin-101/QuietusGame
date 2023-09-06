@@ -15,4 +15,15 @@ public class ItemPickUp : MonoBehaviour
     {
         Pickup();
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerInteractScript playerInteractScript))
+        {
+            if (playerInteractScript.PickupKeyPressed)
+            {
+                Pickup();
+            }
+        }
+    }
 }

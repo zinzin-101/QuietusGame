@@ -37,7 +37,7 @@ public class InventoryManager : MonoBehaviour
         inventoryPanel.SetActive(!inventoryPanel.activeSelf);
     }
 
-    public void SetCurrentItem(GameObject item)
+    public void SetCurrentItem(GameObject item, string itemDescription)
     {
         foreach (Transform child in selectedItemContent)
         {
@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
         obj.TryGetComponent(out Button button);
         Destroy(button);
 
-        descriptionText.text = obj.GetComponent<InventoryItem>().ItemDescription;
+        descriptionText.text = itemDescription;
     }
 
     public void ListItems()
