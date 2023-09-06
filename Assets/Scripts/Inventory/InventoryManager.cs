@@ -59,6 +59,11 @@ public class InventoryManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        foreach (Transform child in selectedItemContent)
+        {
+            Destroy(child.gameObject);
+        }
+
         // Create a slot for each item in the inventory.
         foreach (var item in Items)
         {
