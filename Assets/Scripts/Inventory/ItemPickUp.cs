@@ -5,6 +5,23 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     public Item Item;
+    [SerializeField] Animator animator;
+    [SerializeField] bool playAnimation;
+
+    private void Start()
+    {
+        if (animator != null)
+        {
+            if (playAnimation)
+            {
+                animator.enabled = true;
+            }
+            else
+            {
+                animator.enabled = false;
+            }
+        }     
+    }
 
     void Pickup()
     {

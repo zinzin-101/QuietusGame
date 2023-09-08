@@ -11,9 +11,14 @@ public class Timer : MonoBehaviour
     private float timeValue;
     private bool timeUp = false;
 
+    private bool canSwitchScene = true;
+    [SerializeField] string targetSceneName;
+    [SerializeField] float timeDelayBeforeLoadScene = 2f;
+
     void Awake()
     {
         timeValue = timeLimit;
+        canSwitchScene = true;
     }
 
     void Update()
@@ -28,6 +33,17 @@ public class Timer : MonoBehaviour
         {
             timeUp = true;
             timerText.text = "Time's up!";
+
+            if (canSwitchScene)
+            {
+                canSwitchScene = false;
+                ChangeScene(targetSceneName);
+            }
         }
+    }
+
+    void ChangeScene(string sceneName)
+    {
+        LevelManager.Instance.FadeLoadSceneNoBar(sceneName, timeDelayBeforeLoadScene);
     }
 }

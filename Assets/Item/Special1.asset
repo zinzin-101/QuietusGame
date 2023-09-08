@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Special1
   m_EditorClassIdentifier: 
   id: 1
-  itemName: Red
+  itemName: special
   value: 0
-  icon: {fileID: 21300000, guid: 43113058e7837c5469dc9876b466e81f, type: 3}
+  icon: {fileID: 1227701816, guid: 901f9ff62c6f45e4bab63c4586b1c882, type: 3}
   itemType: 1
   itemDescription: Special Item

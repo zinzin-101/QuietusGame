@@ -109,6 +109,60 @@ public class LevelManager : MonoBehaviour
         LoadScene(sceneName);
     }
 
+    public async void FadeLoadSceneNoBar(string sceneName)
+    {
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        scene.allowSceneActivation = false;
+
+        FadeToBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 1f);
+
+        scene.allowSceneActivation = true;
+
+        FadeFromBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 0f);
+
+        fadeCanvas.SetActive(false);
+    }
+
+    public async void FadeLoadSceneNoBar(string sceneName, float delay)
+    {
+        var scene = SceneManager.LoadSceneAsync(sceneName);
+        scene.allowSceneActivation = false;
+
+        await Task.Delay((int)(delay * 1000));
+
+        FadeToBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 1f);
+
+        scene.allowSceneActivation = true;
+
+        FadeFromBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 0f);
+
+        fadeCanvas.SetActive(false);
+    }
+
     private void Update()
     {
         progressBar.fillAmount = Mathf.MoveTowards(progressBar.fillAmount, target, 3 * Time.deltaTime);

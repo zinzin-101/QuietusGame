@@ -342,7 +342,6 @@ GameObject:
   - component: {fileID: 5947155761497664226}
   - component: {fileID: 7381920019254758642}
   - component: {fileID: 7659827365658157238}
-  - component: {fileID: 5864035088939141820}
   - component: {fileID: 8527001593121795948}
   m_Layer: 5
   m_Name: Timer
@@ -467,20 +466,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &5864035088939141820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546169126547786877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0563bbf6951d3340be0e4ff0351ba66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 7659827365658157238}
-  timeLimit: 60
 --- !u!114 &8527001593121795948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,6 +1766,7 @@ GameObject:
   - component: {fileID: 8987769666766542813}
   - component: {fileID: 4525994868172024553}
   - component: {fileID: 4008681498490685272}
+  - component: {fileID: 4114211931375880592}
   m_Layer: 5
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -1903,6 +1889,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2341352579553003267}
+--- !u!114 &4114211931375880592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619997881797866236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0563bbf6951d3340be0e4ff0351ba66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 7659827365658157238}
+  timeLimit: 60
+  targetSceneName: 
 --- !u!1 &9129717103789480453
 GameObject:
   m_ObjectHideFlags: 0

@@ -82,13 +82,15 @@ public class LockedWardrobeScript : MonoBehaviour
                         case true:
                             open = false;
                             spriteRenderer.sprite = unlockedSprite;
-                            item.SetActive(false);
+                            //item.SetActive(false);
+                            ShowItem(item, false);
                             break;
 
                         case false:
                             open = true;
                             spriteRenderer.sprite = openSprite;
-                            item.SetActive(true);
+                            //item.SetActive(true);
+                            ShowItem(item, true);
                             prompt.SetActive(false);
                             break;
                     }
@@ -98,6 +100,14 @@ public class LockedWardrobeScript : MonoBehaviour
                     UnlockWardrobe();
                 }
             }
+        }
+    }
+
+    void ShowItem(GameObject obj, bool value)
+    {
+        if (obj != null)
+        {
+            obj.SetActive(value);
         }
     }
 }
