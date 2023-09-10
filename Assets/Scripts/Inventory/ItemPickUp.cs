@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class ItemPickUp : MonoBehaviour
 {
     public Item Item;
     [SerializeField] Animator animator;
     [SerializeField] bool playAnimation;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     private void Start()
     {
@@ -42,5 +44,28 @@ public class ItemPickUp : MonoBehaviour
                 Pickup();
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
+        {
+            SetColor(Color.white);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
+        {
+            SetColor(Color.white);
+        }
+    }
+
+    void SetColor(Color color)
+    {
+        if (spriteRenderer == null) return;
+
+        spriteRenderer.color = color;
     }
 }

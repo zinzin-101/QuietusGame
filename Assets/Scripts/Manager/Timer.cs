@@ -15,14 +15,20 @@ public class Timer : MonoBehaviour
     [SerializeField] string targetSceneName;
     [SerializeField] float timeDelayBeforeLoadScene = 2f;
 
+    [SerializeField] bool timerActivate; // change later to private
+
     void Awake()
     {
         timeValue = timeLimit;
         canSwitchScene = true;
+         
+        timerActivate = true;
     }
 
     void Update()
     {
+        if (!timerActivate) return;
+
         if (timeValue > 0 && !timeUp)
         {
             timeValue -= Time.deltaTime;

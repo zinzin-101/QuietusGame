@@ -38,26 +38,59 @@ public class PickupScript : MonoBehaviour
 
                 StartCoroutine(InteractCooldown());
             }
+
+            if (collision.gameObject.TryGetComponent(out ChairScript chairScript))
+            {
+                chairScript.ChangeChairState(ChairScript.ChairState.Upfront);
+                chairScript.ToggleCollision(false);
+            }
         }
     }
     private void Update()
     {
         if (pickedUp && Input.GetKey(pickUpKey) && canInteract)
         {
-            Transform _pickupTransform = transform.Find(pickUpName);
+            DropObject();
+            StartCoroutine(InteractCooldown());
+        }
+    }
 
-            if (_pickupTransform != null)
+    public void DropObject()
+    {
+        Transform _pickupTransform = transform.Find(pickUpName);
+
+        if (_pickupTransform != null)
+        {
+            Vector3 _dropPosition = new Vector3();
+            _pickupTransform.transform.localPosition = _dropPosition;
+
+            _pickupTransform.GetComponent<SpriteRenderer>().sortingOrder = spriteRenderer.sortingOrder - 1;
+
+            if (_pickupTransform.TryGetComponent(out ChairScript chairScript))
             {
-                Vector3 _dropPosition = new Vector3();
-                _pickupTransform.transform.localPosition = _dropPosition;
-
-                _pickupTransform.GetComponent<SpriteRenderer>().sortingOrder = spriteRenderer.sortingOrder - 1;
-
-                _pickupTransform.transform.parent = null;
-                pickedUp = false;   
+                chairScript.ToggleCollision(true);
             }
 
-            StartCoroutine(InteractCooldown());
+            _pickupTransform.transform.parent = null;
+            pickedUp = false;
+        }
+    }
+
+    public void DropChair()
+    {
+        Transform _pickupTransform = transform.Find(pickUpName);
+
+        if (_pickupTransform != null)
+        {
+            Vector3 _dropPosition = new Vector3();
+            _pickupTransform.transform.localPosition = _dropPosition;
+
+            _pickupTransform.GetComponent<SpriteRenderer>().sortingOrder = spriteRenderer.sortingOrder - 1;
+            TryGetComponent(out ChairScript chairScript);
+            chairScript.ChangeChairState(ChairScript.ChairState.Upside);
+
+            _pickupTransform.transform.parent = null;
+            pickedUp = false;
         }
     }
 

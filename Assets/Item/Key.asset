@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 0
   itemName: Key
   value: 0
-  icon: {fileID: 21300000, guid: 8d5137e1b3838c543adde9a968894149, type: 3}
+  icon: {fileID: 21300000, guid: f417cbd101851cd47830dbdf8757b3e2, type: 3}
   itemType: 0
   itemDescription: A key

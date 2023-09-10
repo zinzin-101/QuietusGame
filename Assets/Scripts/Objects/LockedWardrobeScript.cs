@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Profiling.LowLevel;
 using UnityEngine;
 
 public class LockedWardrobeScript : MonoBehaviour
@@ -21,7 +20,8 @@ public class LockedWardrobeScript : MonoBehaviour
         open = false;
         canUnlock = true;
 
-        item.SetActive(false);
+        if (item != null) item.SetActive(false);
+
         spriteRenderer.sprite = lockedSprite;
 
         prompt.SetActive(false);
