@@ -163,6 +163,55 @@ public class LevelManager : MonoBehaviour
         fadeCanvas.SetActive(false);
     }
 
+    public async void NormalFadeInOut(float delay)
+    {
+        await Task.Delay((int)(delay * 1000));
+
+        FadeToBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 1f);
+
+        FadeFromBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 0f);
+
+        fadeCanvas.SetActive(false);
+    }
+
+    public async Task NormalFadeIn(float delay)
+    {
+        await Task.Delay((int)(delay * 1000));
+
+        FadeToBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 1f);
+    }
+
+    public async Task NormalFadeOut()
+    {
+        FadeFromBlack();
+
+        do
+        {
+            await Task.Delay(1);
+        }
+        while (fade.color.a != 0f);
+
+        fadeCanvas.SetActive(false);
+    }
+
     private void Update()
     {
         progressBar.fillAmount = Mathf.MoveTowards(progressBar.fillAmount, target, 3 * Time.deltaTime);

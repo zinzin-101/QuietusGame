@@ -86,7 +86,7 @@ public class ComputerTableScript : MonoBehaviour
 
         for (int i = 0; i < numOfDrawer; i++)
         {
-            if (i <= (numOfOpenedDrawer - 1))
+            if (i == (numOfOpenedDrawer - 1))
             {
                 drawers[i].SetActive(true);
             }

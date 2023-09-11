@@ -11,8 +11,9 @@ public class Timer : MonoBehaviour
     private float timeValue;
     private bool timeUp = false;
 
-    private bool canSwitchScene = true;
-    [SerializeField] string targetSceneName;
+    private bool canFinishTimer = true;
+    //private bool timerFinished;
+
     [SerializeField] float timeDelayBeforeLoadScene = 2f;
 
     [SerializeField] bool timerActivate; // change later to private
@@ -20,8 +21,7 @@ public class Timer : MonoBehaviour
     void Awake()
     {
         timeValue = timeLimit;
-        canSwitchScene = true;
-         
+        canFinishTimer = true;
         timerActivate = true;
     }
 
@@ -40,12 +40,28 @@ public class Timer : MonoBehaviour
             timeUp = true;
             timerText.text = "Time's up!";
 
-            if (canSwitchScene)
+            if (canFinishTimer)
             {
-                canSwitchScene = false;
-                ChangeScene(targetSceneName);
+                canFinishTimer = false;
+                //timerFinished = true;
+
+                StartCoroutine(GameManager.Instance.ChangeRoom());
+                //ChangeScene(targetSceneName);
             }
         }
+    }
+
+    public void ResetTimer()
+    {
+        timeValue = timeLimit;
+        timerActivate = true;
+        timeUp = false;
+        canFinishTimer = true;
+    }
+
+    public void SetActiveTimer(bool value)
+    {
+        timerActivate = value;
     }
 
     void ChangeScene(string sceneName)
