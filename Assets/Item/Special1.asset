@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 1
   itemName: special
   value: 0
-  icon: {fileID: 1227701816, guid: 901f9ff62c6f45e4bab63c4586b1c882, type: 3}
+  icon: {fileID: 117533782, guid: c2a4378181f2b5044877828dc13e05f5, type: 3}
   itemType: 1
   itemDescription: Special Item
