@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class LockedWardrobeScript : MonoBehaviour
 {
-    [SerializeField] Sprite lockedSprite, unlockedSprite, openSprite;
+    [SerializeField] Sprite[] lockedSprites, unlockedSprites, openSprites;
+    private Sprite[] currentSpriteArray;
+    private Sprite currentSprite;
     [SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] GameObject item;
-    [SerializeField] GameObject unlockedText, prompt;
+    [SerializeField] GameObject unlockedText;
 
     private bool locked;
     private bool open;
     private bool canUnlock;
+    private bool highlighted;
+
+    private void Awake()
+    {
+        currentSpriteArray = new Sprite[2];
+    }
 
     private void Start()
     {
@@ -22,9 +32,26 @@ public class LockedWardrobeScript : MonoBehaviour
 
         if (item != null) item.SetActive(false);
 
-        spriteRenderer.sprite = lockedSprite;
+        //spriteRenderer.sprite = lockedSprite[0];
 
-        prompt.SetActive(false);
+        highlighted = false;
+
+        SetSprite(lockedSprites);
+    }
+
+    private void Update()
+    {
+        switch (highlighted)
+        {
+            case true:
+                currentSprite = currentSpriteArray[1];
+                break;
+            case false:
+                currentSprite = currentSpriteArray[0];
+                break;
+        }
+
+        spriteRenderer.sprite = currentSprite;
     }
 
     public void UnlockWardrobe()
@@ -48,14 +75,14 @@ public class LockedWardrobeScript : MonoBehaviour
         canUnlock = false;
         locked = false;
         unlockedText.SetActive(true);
-        spriteRenderer.sprite = unlockedSprite;
+        SetSprite(unlockedSprites);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput) && !open && !locked)
+        if (collision.gameObject.TryGetComponent(out PlayerInput _playerInput))
         {
-            prompt.SetActive(true);
+            highlighted = true;
         }
     }
 
@@ -63,7 +90,7 @@ public class LockedWardrobeScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
-            prompt.SetActive(false);
+            highlighted = false;
         }
     }
 
@@ -81,17 +108,14 @@ public class LockedWardrobeScript : MonoBehaviour
                     {
                         case true:
                             open = false;
-                            spriteRenderer.sprite = unlockedSprite;
-                            //item.SetActive(false);
+                            SetSprite(unlockedSprites);
                             ShowItem(item, false);
                             break;
 
                         case false:
                             open = true;
-                            spriteRenderer.sprite = openSprite;
-                            //item.SetActive(true);
+                            SetSprite(openSprites);
                             ShowItem(item, true);
-                            prompt.SetActive(false);
                             break;
                     }
                 }
@@ -109,5 +133,20 @@ public class LockedWardrobeScript : MonoBehaviour
         {
             obj.SetActive(value);
         }
+    }
+
+    void SetSprite(Sprite[] sprites)
+    {
+        currentSpriteArray = sprites;
+        switch (highlighted)
+        {
+            case true:
+                currentSprite = currentSpriteArray[1];
+                break;
+            case false:
+                currentSprite = currentSpriteArray[0];
+                break;
+        }
+        spriteRenderer.sprite = currentSprite;
     }
 }

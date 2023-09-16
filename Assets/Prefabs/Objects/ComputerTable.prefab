@@ -633,6 +633,10 @@ MonoBehaviour:
   - {fileID: 4461408401213903834}
   - {fileID: 3439346632033587915}
   - {fileID: 271405452826494149}
+  drawerSprite: {fileID: 21300000, guid: faff0c5af727d324fadd85d39d8566d4, type: 3}
+  highlightDrawerSprite: {fileID: 21300000, guid: 1e21fee1cc1a0a148803912715877375, type: 3}
+  tableSprite: {fileID: 21300000, guid: 8999db1030f6c2b4fb205573123187cc, type: 3}
+  highlightTableSprite: {fileID: 21300000, guid: 81264c4afbc39d44caf4a6829806486a, type: 3}
   item: {fileID: 0}
 --- !u!1 &8665125257966169830
 GameObject:

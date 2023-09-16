@@ -9,6 +9,7 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] bool playAnimation;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite sprite, highlightSprite;
 
     private void Start()
     {
@@ -50,7 +51,7 @@ public class ItemPickUp : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
-            SetColor(Color.white);
+            SetSprite(highlightSprite);
         }
     }
 
@@ -58,14 +59,14 @@ public class ItemPickUp : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
-            SetColor(Color.white);
+            SetSprite(sprite);
         }
     }
 
-    void SetColor(Color color)
+    void SetSprite(Sprite sprite)
     {
         if (spriteRenderer == null) return;
 
-        spriteRenderer.color = color;
+        spriteRenderer.sprite = sprite;
     }
 }

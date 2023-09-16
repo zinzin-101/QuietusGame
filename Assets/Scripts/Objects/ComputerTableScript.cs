@@ -6,8 +6,9 @@ public class ComputerTableScript : MonoBehaviour
 {
     [SerializeField] GameObject table;
     [SerializeField] GameObject[] drawers;
-    private SpriteRenderer tableSprite;
-    private SpriteRenderer[] drawersSprite;
+    private SpriteRenderer tableSpriteRenderer;
+    private SpriteRenderer[] drawersSpriteRenderer;
+    [SerializeField] Sprite drawerSprite, highlightDrawerSprite, tableSprite, highlightTableSprite;
 
     [SerializeField] GameObject item;
 
@@ -16,13 +17,13 @@ public class ComputerTableScript : MonoBehaviour
 
     private void Awake()
     {
-        table.TryGetComponent(out tableSprite);
+        table.TryGetComponent(out tableSpriteRenderer);
         
         numOfDrawer = drawers.Length;
-        drawersSprite = new SpriteRenderer[numOfDrawer];
+        drawersSpriteRenderer = new SpriteRenderer[numOfDrawer];
         for (int i = 0; i < numOfDrawer; i++)
         {
-            drawersSprite[i] = drawers[i].GetComponent<SpriteRenderer>();
+            drawersSpriteRenderer[i] = drawers[i].GetComponent<SpriteRenderer>();
         }
     }
 
@@ -44,11 +45,11 @@ public class ComputerTableScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
-            tableSprite.color = Color.yellow;
+            tableSpriteRenderer.sprite = highlightTableSprite;
 
-            foreach(var drawer in drawersSprite)
+            foreach(var drawer in drawersSpriteRenderer)
             {
-                drawer.color = Color.yellow;
+                drawer.sprite = highlightDrawerSprite;
             }
         }
     }
@@ -57,11 +58,11 @@ public class ComputerTableScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
-            tableSprite.color = Color.white;
+            tableSpriteRenderer.sprite = tableSprite;
 
-            foreach (var drawer in drawersSprite)
+            foreach (var drawer in drawersSpriteRenderer)
             {
-                drawer.color = Color.white;
+                drawer.sprite = drawerSprite;
             }
         }
     }

@@ -470,9 +470,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d7cc5c070fd0a4ab3728aadf5c7edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedSprite: {fileID: 21300000, guid: e28dc7b9833f82a4e8f22782ce3996a1, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 1c313f54c895006419725d525ce66a4d, type: 3}
-  openSprite: {fileID: 21300000, guid: 68eb153386fd6ae409bcdf4ae2ac559f, type: 3}
+  lockedSprites:
+  - {fileID: 21300000, guid: e28dc7b9833f82a4e8f22782ce3996a1, type: 3}
+  - {fileID: 21300000, guid: 405f43bfa6e0fc840ab2d0527f91c2f4, type: 3}
+  unlockedSprites:
+  - {fileID: 21300000, guid: 1c313f54c895006419725d525ce66a4d, type: 3}
+  - {fileID: 21300000, guid: 2e2c1b11a03c57d4d9d8d555cfe1cb00, type: 3}
+  openSprites:
+  - {fileID: 21300000, guid: 68eb153386fd6ae409bcdf4ae2ac559f, type: 3}
+  - {fileID: 21300000, guid: c89f5eba9ab175d4ab8317938c53ccc3, type: 3}
   spriteRenderer: {fileID: 5198760178994157758}
   item: {fileID: 2390152858916975683}
   unlockedText: {fileID: 1160637161752254405}

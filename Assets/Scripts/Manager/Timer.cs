@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
     {
         timeValue = timeLimit;
         canFinishTimer = true;
-        timerActivate = true;
+        //timerActivate = true;
     }
 
     void Update()

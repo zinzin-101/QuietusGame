@@ -95,6 +95,8 @@ MonoBehaviour:
   animator: {fileID: 6559830187520166181}
   playAnimation: 0
   spriteRenderer: {fileID: 7501353556190373210}
+  sprite: {fileID: 21300000, guid: 7f9e2f36e3f9d86409ffdfb5eb5cf5ee, type: 3}
+  highlightSprite: {fileID: 21300000, guid: aada28d888e8603498142c8c6b6246c7, type: 3}
 --- !u!1 &3168302158378264663
 GameObject:
   m_ObjectHideFlags: 0

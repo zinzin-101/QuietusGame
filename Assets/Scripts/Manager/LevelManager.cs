@@ -35,7 +35,12 @@ public class LevelManager : MonoBehaviour
 
         defaultFade = fade.color;
     }
-    
+
+    private void Start()
+    {
+        fadeCanvas.SetActive(false);
+    }
+
     public void FadeToBlack()
     {
         fadeCanvas.SetActive(true);

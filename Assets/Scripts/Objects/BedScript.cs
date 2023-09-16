@@ -5,14 +5,16 @@ using UnityEngine;
 public class BedScript : MonoBehaviour
 {
     [SerializeField] GameObject blanketOn, blanketOff;
-    private SpriteRenderer blanketOnSprite, blanketOffSprite;
+    [SerializeField] Sprite blanketOnSprite, blanketOffSprite;
+    [SerializeField] Sprite blanketOnHighlight, blanketOffHighlight;
+    private SpriteRenderer blanketOnRenderer, blanketOffRenderer;
 
     [SerializeField] GameObject item;
 
     private void Awake()
     {
-        blanketOn.TryGetComponent(out blanketOnSprite);
-        blanketOff.TryGetComponent(out blanketOffSprite);
+        blanketOn.TryGetComponent(out blanketOnRenderer);
+        blanketOff.TryGetComponent(out blanketOffRenderer);
     }
 
     private void Start()
@@ -27,8 +29,8 @@ public class BedScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
-            blanketOnSprite.color = Color.yellow;
-            blanketOffSprite.color = Color.yellow;
+            blanketOnRenderer.sprite = blanketOnHighlight;
+            blanketOffRenderer.sprite = blanketOffHighlight;
         }
     }
 
@@ -36,8 +38,8 @@ public class BedScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
-            blanketOnSprite.color = Color.white;
-            blanketOffSprite.color = Color.white;
+            blanketOnRenderer.sprite = blanketOnSprite;
+            blanketOffRenderer.sprite = blanketOffSprite;
         }
     }
 

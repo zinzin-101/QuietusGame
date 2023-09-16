@@ -41,7 +41,7 @@ public class PickupScript : MonoBehaviour
 
             if (collision.gameObject.TryGetComponent(out ChairScript chairScript))
             {
-                chairScript.ChangeChairState(ChairScript.ChairState.Upfront);
+                chairScript.ChangeChairState(ChairScript.ChairState.Upfront, false);
                 chairScript.ToggleCollision(false);
             }
         }
