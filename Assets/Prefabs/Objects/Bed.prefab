@@ -430,6 +430,7 @@ GameObject:
   - component: {fileID: 9107733541836627968}
   - component: {fileID: 796303768935174842}
   - component: {fileID: 2204666734270781912}
+  - component: {fileID: 9198824053177078916}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -503,8 +504,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 1.0844996, y: 0.06817675}
-      - {x: 0.09885965, y: 0.55185205}
-      - {x: -1.2426924, y: -0.16169108}
+      - {x: 0.123329535, y: 0.5763219}
+      - {x: -1.2426924, y: -0.100516364}
       - {x: -1.2495742, y: -0.73610795}
       - {x: -0.3432061, y: -1.162345}
       - {x: 1.0856578, y: -0.42007262}
@@ -528,6 +529,18 @@ MonoBehaviour:
   blanketOnHighlight: {fileID: 21300000, guid: e49ac4cce35dd9140b8f6244c9690851, type: 3}
   blanketOffHighlight: {fileID: 21300000, guid: f8c92392daa4830498a5e45c5cb3d0c4, type: 3}
   item: {fileID: 5409438272138129949}
+--- !u!114 &9198824053177078916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693757841534351624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b82e2160fb0d54ba2b4a796fb87859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5128136504156074907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -582,11 +595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3835158415527131321, guid: 3238ec0f9a2eefd43bf9f4a3410888b0, type: 3}
       propertyPath: m_Size.x
-      value: 0.90199673
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3835158415527131321, guid: 3238ec0f9a2eefd43bf9f4a3410888b0, type: 3}
       propertyPath: m_Size.y
-      value: 0.89211303
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3835158415527131321, guid: 3238ec0f9a2eefd43bf9f4a3410888b0, type: 3}
       propertyPath: m_Offset.x
