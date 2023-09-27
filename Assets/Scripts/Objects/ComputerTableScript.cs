@@ -8,6 +8,7 @@ public class ComputerTableScript : MonoBehaviour
     [SerializeField] GameObject[] drawers;
     private SpriteRenderer tableSpriteRenderer;
     private SpriteRenderer[] drawersSpriteRenderer;
+    [SerializeField] GameObject[] drawerItems = new GameObject[3];
     [SerializeField] Sprite drawerSprite, highlightDrawerSprite, tableSprite, highlightTableSprite;
 
     [SerializeField] GameObject item;
@@ -21,9 +22,17 @@ public class ComputerTableScript : MonoBehaviour
         
         numOfDrawer = drawers.Length;
         drawersSpriteRenderer = new SpriteRenderer[numOfDrawer];
+
         for (int i = 0; i < numOfDrawer; i++)
         {
             drawersSpriteRenderer[i] = drawers[i].GetComponent<SpriteRenderer>();
+
+            if (drawerItems[i] != null)
+            {
+                drawerItems[i].TryGetComponent(out SpriteRenderer spriteRenderer);
+                spriteRenderer.sortingOrder = drawersSpriteRenderer[i].sortingOrder + 1;
+                drawerItems[i].SetActive(false);
+            }
         }
     }
 
@@ -90,10 +99,14 @@ public class ComputerTableScript : MonoBehaviour
             if (i == (numOfOpenedDrawer - 1))
             {
                 drawers[i].SetActive(true);
+                
+                if (drawerItems[i] != null) drawerItems[i].SetActive(true);
             }
             else
             {
                 drawers[i].SetActive(false);
+
+                if (drawerItems[i] != null) drawerItems[i].SetActive(false);
             }
         }
     }

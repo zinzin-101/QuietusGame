@@ -34,6 +34,11 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventory()
     {
+        foreach (Transform child in selectedItemContent)
+        {
+            Destroy(child.gameObject);
+        }
+
         inventoryPanel.SetActive(!inventoryPanel.activeSelf);
     }
 
