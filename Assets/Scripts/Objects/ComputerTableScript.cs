@@ -8,8 +8,8 @@ public class ComputerTableScript : MonoBehaviour
     [SerializeField] GameObject[] drawers;
     private SpriteRenderer tableSpriteRenderer;
     private SpriteRenderer[] drawersSpriteRenderer;
-    [SerializeField] GameObject[] drawerItems = new GameObject[3];
-    [SerializeField] Sprite drawerSprite, highlightDrawerSprite, tableSprite, highlightTableSprite;
+    [SerializeField] GameObject[] drawerItems = new GameObject[4];
+    [SerializeField] Sprite bigDrawerSprite, highlightBigdrawerSprite, drawerSprite, highlightDrawerSprite, tableSprite, highlightTableSprite;
 
     [SerializeField] GameObject item;
 
@@ -56,9 +56,23 @@ public class ComputerTableScript : MonoBehaviour
         {
             tableSpriteRenderer.sprite = highlightTableSprite;
 
-            foreach(var drawer in drawersSpriteRenderer)
+            //foreach(var drawer in drawersSpriteRenderer)
+            //{
+            //    drawer.sprite = highlightDrawerSprite;
+            //}
+
+            for (int i = 0; i < numOfDrawer; i++)
             {
-                drawer.sprite = highlightDrawerSprite;
+                var drawer = drawersSpriteRenderer[i];
+
+                if (i == 0)
+                {
+                    drawer.sprite = highlightBigdrawerSprite;
+                }
+                else
+                {
+                    drawer.sprite = highlightDrawerSprite;
+                }
             }
         }
     }
@@ -69,9 +83,23 @@ public class ComputerTableScript : MonoBehaviour
         {
             tableSpriteRenderer.sprite = tableSprite;
 
-            foreach (var drawer in drawersSpriteRenderer)
+            //foreach (var drawer in drawersSpriteRenderer)
+            //{
+            //    drawer.sprite = drawerSprite;
+            //}
+
+            for (int i = 0; i < numOfDrawer; i++)
             {
-                drawer.sprite = drawerSprite;
+                var drawer = drawersSpriteRenderer[i];
+
+                if (i == 0)
+                {
+                    drawer.sprite = bigDrawerSprite;
+                }
+                else
+                {
+                    drawer.sprite = drawerSprite;
+                }
             }
         }
     }

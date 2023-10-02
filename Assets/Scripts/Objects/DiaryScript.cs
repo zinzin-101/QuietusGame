@@ -1,0 +1,83 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.U2D;
+using UnityEngine.UI;
+
+public class DiaryScript : MonoBehaviour
+{
+    [SerializeField] Sprite normalSprite, highlightedSprite;
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField] GameObject diaryPanel;
+    [SerializeField] Image panelSpriteRenderer;
+    [SerializeField] Sprite[] diaryPages;
+    private int pageIndex;
+    private int totalPages;
+
+    private void Awake()
+    {
+        TryGetComponent(out spriteRenderer);
+    }
+
+    private void Start()
+    {
+        pageIndex = 0;
+        totalPages = diaryPages.Length;
+        panelSpriteRenderer.sprite = diaryPages[pageIndex];
+        diaryPanel.SetActive(false);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerInteractScript playerInteractScript))
+        {
+            if (playerInteractScript.PickupKeyPressed && playerInteractScript.CanInteract)
+            {
+                StartCoroutine(playerInteractScript.InteractCooldown());
+
+                PlayerInteracted();
+            }
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        PlayerInteracted();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
+        {
+            spriteRenderer.sprite = highlightedSprite;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
+        {
+            spriteRenderer.sprite = normalSprite;
+            diaryPanel.SetActive(false);
+        }
+    }
+
+    void PlayerInteracted()
+    {
+        diaryPanel.SetActive(!diaryPanel.activeSelf);
+    }
+
+    public void FlipDiaryPage()
+    {
+        if (!diaryPanel.activeSelf) return;
+
+        panelSpriteRenderer.sprite = diaryPages[++pageIndex % totalPages];
+
+        if (pageIndex % totalPages == 0)
+        {
+            pageIndex = 0;
+            diaryPanel.SetActive(false);
+        }
+    }
+}
