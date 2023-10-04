@@ -15,6 +15,10 @@ public class DiaryScript : MonoBehaviour
     private int pageIndex;
     private int totalPages;
 
+    public GameObject item;
+    public int itemPageIndex;
+
+
     private void Awake()
     {
         TryGetComponent(out spriteRenderer);
@@ -26,6 +30,7 @@ public class DiaryScript : MonoBehaviour
         totalPages = diaryPages.Length;
         panelSpriteRenderer.sprite = diaryPages[pageIndex];
         diaryPanel.SetActive(false);
+        item.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -73,6 +78,18 @@ public class DiaryScript : MonoBehaviour
         if (!diaryPanel.activeSelf) return;
 
         panelSpriteRenderer.sprite = diaryPages[++pageIndex % totalPages];
+
+        if (item != null)
+        {
+            if (pageIndex == itemPageIndex)
+            {
+                item.SetActive(true);
+            }
+            else
+            {
+                item.SetActive(false);
+            }
+        }
 
         if (pageIndex % totalPages == 0)
         {

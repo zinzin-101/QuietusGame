@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 
 public class ItemPickUp : MonoBehaviour
@@ -10,6 +11,8 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] bool playAnimation;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite sprite, highlightSprite;
+
+    [SerializeField] bool highlightOn = true;
 
     private void Start()
     {
@@ -31,8 +34,16 @@ public class ItemPickUp : MonoBehaviour
         InventoryManager.Instance.Add(Item);
         Destroy(gameObject);
     }
-    private void OnMouseDown()
+    private void OnMouseUpAsButton()
     {
+        //if (EventSystem.current.IsPointerOverGameObject())
+        //{
+        //    if (!EventSystem.current.currentSelectedGameObject.name.Equals(gameObject.name))
+        //    {
+        //        Pickup();
+        //    }
+        //}
+
         Pickup();
     }
 
@@ -49,7 +60,7 @@ public class ItemPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
+        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput) && highlightOn)
         {
             SetSprite(highlightSprite);
         }
@@ -57,7 +68,7 @@ public class ItemPickUp : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
+        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput) && highlightOn)
         {
             SetSprite(sprite);
         }
