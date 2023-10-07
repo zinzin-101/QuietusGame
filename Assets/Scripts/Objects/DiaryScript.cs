@@ -51,6 +51,16 @@ public class DiaryScript : MonoBehaviour
         PlayerInteracted();
     }
 
+    private void OnMouseEnter()
+    {
+        spriteRenderer.sprite = highlightedSprite;
+    }
+
+    private void OnMouseExit()
+    {
+        spriteRenderer.sprite = normalSprite;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))

@@ -16,6 +16,9 @@ public class ComputerTableScript : MonoBehaviour
     private int numOfDrawer;
     private int numOfOpenedDrawer;
 
+    private bool isBigDrawerLocked;
+    [SerializeField] GameObject unlockedText;
+
     private void Awake()
     {
         table.TryGetComponent(out tableSpriteRenderer);
@@ -38,6 +41,8 @@ public class ComputerTableScript : MonoBehaviour
 
     private void Start()
     {
+        isBigDrawerLocked = true;
+
         table.SetActive(true);
 
         foreach (var drawer in drawers)
@@ -122,12 +127,22 @@ public class ComputerTableScript : MonoBehaviour
     {
         if (numOfOpenedDrawer > numOfDrawer) numOfOpenedDrawer = 0;
 
+        if (isBigDrawerLocked)
+        {
+            UnlockBigDrawer();
+        }
+
         for (int i = 0; i < numOfDrawer; i++)
         {
             if (i == (numOfOpenedDrawer - 1))
             {
+                if (i == 0 && isBigDrawerLocked)
+                {
+                    i++;
+                }
+
                 drawers[i].SetActive(true);
-                
+
                 if (drawerItems[i] != null) drawerItems[i].SetActive(true);
             }
             else
@@ -137,5 +152,27 @@ public class ComputerTableScript : MonoBehaviour
                 if (drawerItems[i] != null) drawerItems[i].SetActive(false);
             }
         }
+    }
+
+    void UnlockBigDrawer()
+    {
+        if (!isBigDrawerLocked) return;
+
+        bool hasLockpick = false;
+
+        foreach (var item in InventoryManager.Instance.Items)
+        {
+            if (item.itemName == "Lockpick")
+            {
+                hasLockpick = true;
+                InventoryManager.Instance.Remove(item);
+                break;
+            }
+        }
+
+        if (!hasLockpick) return;
+
+        unlockedText.SetActive(true);
+        isBigDrawerLocked = false;
     }
 }

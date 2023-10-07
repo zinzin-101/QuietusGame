@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D;
@@ -19,9 +20,12 @@ public class LockedWardrobeScript : MonoBehaviour
     private bool canUnlock;
     private bool highlighted;
 
+    private Collider2D col;
+
     private void Awake()
     {
         currentSpriteArray = new Sprite[2];
+        TryGetComponent(out col);
     }
 
     private void Start()
@@ -80,7 +84,7 @@ public class LockedWardrobeScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerInput _playerInput))
+        if (collision.gameObject.TryGetComponent(out PlayerInput _playerInput) && !open)
         {
             highlighted = true;
         }
@@ -104,20 +108,29 @@ public class LockedWardrobeScript : MonoBehaviour
 
                 if (!locked)
                 {
-                    switch (open)
-                    {
-                        case true:
-                            open = false;
-                            SetSprite(unlockedSprites);
-                            ShowItem(item, false);
-                            break;
+                    //switch (open)
+                    //{
+                    //    case true:
+                    //        //open = false;
+                    //        //SetSprite(unlockedSprites);
+                    //        //ShowItem(item, false);
 
-                        case false:
-                            open = true;
-                            SetSprite(openSprites);
-                            ShowItem(item, true);
-                            break;
-                    }
+                    //        //disable interaction after first open
+                    //        break;
+
+                    //    case false:
+                    //        highlighted = false;
+                    //        open = true;
+                    //        SetSprite(openSprites);
+                    //        ShowItem(item, true);
+                    //        break;
+                    //}
+
+                    highlighted = false;
+                    open = true;
+                    SetSprite(openSprites);
+                    ShowItem(item, true);
+                    col.enabled = false;
                 }
                 else
                 {

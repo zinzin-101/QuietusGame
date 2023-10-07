@@ -26,7 +26,11 @@ public class ChairScript : MonoBehaviour
     [SerializeField] Collider2D chairFrontColl, chairSideColl, chairDownColl;
 
     private ChairState currentState;
+    public ChairState CurrentState => currentState;
     private bool collisionOn;
+
+    [SerializeField] Transform sittingPos;
+    public Transform SittingPos => sittingPos;
 
     private void Awake()
     {
@@ -101,7 +105,6 @@ public class ChairScript : MonoBehaviour
                 backRenderer.sprite = backNonUpright;
                 currentState = ChairState.Down;
                 break;
-
         }
         ToggleCollision(collisionOn);
     }

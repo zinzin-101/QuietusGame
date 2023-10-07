@@ -11,10 +11,13 @@ public class BedScript : MonoBehaviour
 
     [SerializeField] GameObject item;
 
+    private Collider2D col;
+
     private void Awake()
     {
         blanketOn.TryGetComponent(out blanketOnRenderer);
         blanketOff.TryGetComponent(out blanketOffRenderer);
+        TryGetComponent(out col);
     }
 
     private void Start()
@@ -51,7 +54,8 @@ public class BedScript : MonoBehaviour
             {
                 StartCoroutine(playerInteractScript.InteractCooldown());
 
-                ToggleBlanket();
+                //ToggleBlanket();
+                OpenBlanket();
             }
         }
     }
@@ -71,5 +75,17 @@ public class BedScript : MonoBehaviour
         {
             item.SetActive(false);
         }
+    }
+
+    void OpenBlanket()
+    {
+        blanketOn.SetActive(false);
+        blanketOff.SetActive(true);
+
+        col.enabled = false;
+
+        if (item == null) return;
+
+        item.SetActive(true);
     }
 }

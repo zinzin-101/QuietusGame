@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
@@ -56,6 +57,16 @@ public class ItemPickUp : MonoBehaviour
                 Pickup();
             }
         }
+    }
+
+    private void OnMouseEnter()
+    {
+        SetSprite(highlightSprite);
+    }
+
+    private void OnMouseExit()
+    {
+        SetSprite(sprite);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

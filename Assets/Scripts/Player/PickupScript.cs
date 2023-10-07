@@ -9,7 +9,6 @@ public class PickupScript : MonoBehaviour
     [SerializeField] float pickupDistance = 0.5f;
     [SerializeField] KeyCode pickUpKey = KeyCode.F;
 
-
     private bool pickedUp;
     private string pickUpName;
 
@@ -17,15 +16,18 @@ public class PickupScript : MonoBehaviour
 
     private bool canInteract;
 
+    private PlayerInteractScript interactScript;
+
     private void Start()
     {
+        TryGetComponent(out interactScript);
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         canInteract = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!pickedUp && Input.GetKey(pickUpKey) && canInteract)
+        if (!pickedUp && Input.GetKey(pickUpKey) && canInteract && !interactScript.IsSitting)
         {
             if (collision.gameObject.TryGetComponent(out PickableObjectScript pickableScript))
             {
