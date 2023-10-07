@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fc48fabf396e54fbf8192e374b1c3a, type: 3}
   m_Name: PaperClip
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  value: 0
-  icon: {fileID: 0}
-  itemType: 0
-  itemDescription: 
+  itemName: Paper Clip
+  icon: {fileID: 21300000, guid: 2ddac43024a369943b53f658f3ccdc2c, type: 3}
+  itemType: 1
+  itemDescription: A paper clip, maybe you can make something out of it?
