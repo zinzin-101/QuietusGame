@@ -64,4 +64,9 @@ public class GameManager : MonoBehaviour
         var task2 = LevelManager.Instance.NormalFadeOut();
         yield return new WaitUntil(() => task2.IsCompleted);
     }
+
+    public void TimerActive(bool value)
+    {
+        timer.SetActiveTimer(value);
+    }
 }

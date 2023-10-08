@@ -89,6 +89,7 @@ public class PlayerInteractScript : MonoBehaviour
                             chairScript.ChangeChairState(ChairScript.ChairState.Upfront);
                             isSitting = false;
                             movementScript.SetToggleMove(true);
+                            GameManager.Instance.TimerActive(true);
                             break;
 
                         case false:
@@ -98,6 +99,7 @@ public class PlayerInteractScript : MonoBehaviour
                             chairScript.ChangeChairState(ChairScript.ChairState.Upside);
                             isSitting = true;
                             movementScript.SetToggleMove(false);
+                            GameManager.Instance.TimerActive(false);
                             break;
                     }
                 }

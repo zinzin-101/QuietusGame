@@ -6,7 +6,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public void StartGame()
     {
-        LevelManager.Instance.FadeToBlackLoadScene("TestScene"); //change later
+        LevelManager.Instance.FadeToBlackLoadScene("Gameplay"); //change later
     }
 
     public void ExitGame()
