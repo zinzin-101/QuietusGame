@@ -45,7 +45,7 @@ public class PallorMortisScript : MonoBehaviour
 
         if (keymasterScript.SelectedItemName == phaseRequiredItem[phaseIndex])
         {
-            phaseIndex++;
+            NextPhase();
         }
     }
 
@@ -70,6 +70,7 @@ public class PallorMortisScript : MonoBehaviour
         firstDialogueTriggered = true;
         canStartPhaseDialogue = true;
         GameManager.Instance.AllowPlayerToSit(true);
+        yield return new WaitForSeconds(3.5f);
         StartCoroutine(StartPhaseDialogue());
     }
 
