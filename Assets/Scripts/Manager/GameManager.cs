@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Transform[] roomCycle;
     private int currentRoom;
+    public int CurrentRoom => currentRoom;
     private int numOfRoom;
 
     [SerializeField] Transform playerTransform;
@@ -19,6 +20,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Camera mainCamera;
     [SerializeField] Vector3 defaultCamPos;
+
+    private bool playerCanSit;
+    public bool PlayerCanSit => playerCanSit;
+
+    private bool canStartDialogue;
+    public bool CanStartDialogue => canStartDialogue;
+
+    [SerializeField] PallorMortisScript pallorScript;
 
     private void Awake()
     {
@@ -29,7 +38,7 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
 
         if (playerTransform == null)
@@ -38,6 +47,9 @@ public class GameManager : MonoBehaviour
         }
 
         numOfRoom = roomCycle.Length;
+
+        playerCanSit = true;
+        canStartDialogue = true;
     }
 
     private void Start()
@@ -48,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ChangeRoom()
     {
+        canStartDialogue = false;
         currentRoom++;
 
         if (currentRoom > numOfRoom) currentRoom = 1;
@@ -61,12 +74,27 @@ public class GameManager : MonoBehaviour
                                                     defaultCamPos.z + roomCycle[currentRoom - 1].position.z);
         timer.ResetTimer();
 
+        DialogueManager.Instance.ResetDialogue();
+
         var task2 = LevelManager.Instance.NormalFadeOut();
         yield return new WaitUntil(() => task2.IsCompleted);
+        canStartDialogue = true;
+
+        switch (currentRoom)
+        {
+            case 1:
+                pallorScript.PlayPhaseDialogue();
+                break;
+        }
     }
 
     public void TimerActive(bool value)
     {
         timer.SetActiveTimer(value);
+    }
+
+    public void AllowPlayerToSit(bool value) //by this I mean allow player to eject from the chair
+    {
+        playerCanSit = value;
     }
 }

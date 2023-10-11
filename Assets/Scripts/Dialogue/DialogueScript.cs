@@ -9,7 +9,7 @@ public class DialogueScript : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        DialogueManager.Instance.StartDialogue(dialogue);
+        DialogueManager.Instance.StartDialogue(dialogue, false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

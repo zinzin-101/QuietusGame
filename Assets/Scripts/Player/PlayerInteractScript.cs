@@ -62,6 +62,14 @@ public class PlayerInteractScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.gameObject.TryGetComponent(out PallorMortisScript pallorScript))
+        {
+            if (isSitting)
+            {
+                pallorScript.TriggerFirstDialogue();
+            }
+        }
+
         if (interactPressed && canInteract)
         {
             if (collision.gameObject.TryGetComponent(out TextInteract textInteract))
@@ -76,7 +84,7 @@ public class PlayerInteractScript : MonoBehaviour
                 dialogueScript.TriggerDialogue();
             }
 
-            if (collision.gameObject.TryGetComponent(out ChairScript chairScript))
+                if (collision.gameObject.TryGetComponent(out ChairScript chairScript))
             {
                 if (chairScript.CurrentState != ChairScript.ChairState.Down)
                 {
@@ -84,12 +92,15 @@ public class PlayerInteractScript : MonoBehaviour
                     switch (isSitting)
                     {
                         case true:
-                            transform.position = chairScript.transform.position;
-                            chairScript.ToggleCollision(true);
-                            chairScript.ChangeChairState(ChairScript.ChairState.Upfront);
-                            isSitting = false;
-                            movementScript.SetToggleMove(true);
-                            GameManager.Instance.TimerActive(true);
+                            if (GameManager.Instance.PlayerCanSit)
+                            {
+                                transform.position = chairScript.transform.position;
+                                chairScript.ToggleCollision(true);
+                                chairScript.ChangeChairState(ChairScript.ChairState.Upfront);
+                                isSitting = false;
+                                movementScript.SetToggleMove(true);
+                                GameManager.Instance.TimerActive(true);
+                            }                          
                             break;
 
                         case false:
@@ -104,7 +115,30 @@ public class PlayerInteractScript : MonoBehaviour
                     }
                 }
             }
-        }      
+                
+            //if (pallorScript != null)
+            //{
+            //    //pallorScript.PlayPhaseDialogue();
+            //}
+
+            if (collision.gameObject.TryGetComponent(out KeyMasterDetect keymasterScript))
+            {
+                StartCoroutine(InteractCooldown());
+
+                InventoryManager.Instance.SetActiveKeyMasterItem(!InventoryManager.Instance.IsKeyMasterItemActive());
+                InventoryManager.Instance.OpenKeymasterItem();
+                keymasterScript.StartCoroutine(keymasterScript.SelectItem());
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out KeyMasterDetect keymasterScript))
+        {
+            InventoryManager.Instance.SetActiveKeyMasterItem(false);
+            keymasterScript.StopCoroutine(keymasterScript.SelectItem());
+        }
     }
 
     public IEnumerator InteractCooldown()

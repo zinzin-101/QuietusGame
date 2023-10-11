@@ -15,9 +15,16 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject inventoryPanel;
     [SerializeField] TMP_Text descriptionText;
 
+    [SerializeField] GameObject keyMasterItem;
+    [SerializeField] Transform keyMasterTransform;
+
+    private string selectedKeyMasterItemName;
+    public string SelectedKeyMasterItemName => selectedKeyMasterItemName;
+
     private void Awake()
     {
         Instance = this;
+        keyMasterItem.SetActive(false);
     }
 
     public void Add(Item item)
@@ -94,5 +101,52 @@ public class InventoryManager : MonoBehaviour
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
         }
+    }
+
+    public void OpenKeymasterItem()
+    {
+        SetActiveKeyMasterItem(true);
+
+        foreach (Transform child in keyMasterTransform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Create a slot for each item in the inventory.
+        foreach (var item in Items)
+        {
+            GameObject obj = Instantiate(InventoryItem, keyMasterTransform);
+
+            obj.TryGetComponent(out InventoryItem inventoryItem);
+            inventoryItem.SetItemDescription(item.itemDescription);
+            inventoryItem.SetItemName(item.name);
+
+            // Find UI elements in the slot prefab.
+            var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
+            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+
+            // Set the text and icon using data from the item.
+            itemName.text = item.itemName;
+            itemIcon.sprite = item.icon;
+        }
+
+    }
+
+    public void SetActiveKeyMasterItem(bool value)
+    {
+        if (keyMasterItem != null)
+        {
+            keyMasterItem.SetActive(value);
+        }
+    }
+
+    public bool IsKeyMasterItemActive()
+    {
+        return keyMasterItem.activeSelf;
+    }
+
+    public void SetKeyMasterItemName(string value)
+    {
+        selectedKeyMasterItemName = value;
     }
 }
