@@ -75,12 +75,26 @@ public class DiaryScript : MonoBehaviour
         {
             spriteRenderer.sprite = normalSprite;
             diaryPanel.SetActive(false);
+
+            if (item != null) item.SetActive(false);
         }
     }
 
     void PlayerInteracted()
     {
         diaryPanel.SetActive(!diaryPanel.activeSelf);
+
+        if (item != null)
+        {
+            if (pageIndex == itemPageIndex)
+            {
+                item.SetActive(true);
+            }
+            else
+            {
+                item.SetActive(false);
+            }
+        }
     }
 
     public void FlipDiaryPage()
