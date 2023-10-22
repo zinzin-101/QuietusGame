@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c6dedc9f9bf8447bdd8e868a275d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: fa7746e39fb50b848a67ddb91faafb22, type: 2}
+  Item: {fileID: 11400000, guid: 59e1d4cafabdf654aab52c65cb9ea177, type: 2}
   animator: {fileID: 0}
   playAnimation: 0
   spriteRenderer: {fileID: 3261351389219847762}

@@ -10,6 +10,9 @@ public class InventoryItem : MonoBehaviour
     private string itemName;
     public string ItemName => itemName;
 
+    private Item item;
+    public Item Item => item;
+
     public void SelectItem()
     {
         InventoryManager.Instance.SetCurrentItem(gameObject, itemDescription);
@@ -28,5 +31,10 @@ public class InventoryItem : MonoBehaviour
     public void SelectKeyMasterItem()
     {
         InventoryManager.Instance.SetKeyMasterItemName(itemName);
+    }
+
+    public void SetItem(Item _item)
+    {
+        item = _item;
     }
 }

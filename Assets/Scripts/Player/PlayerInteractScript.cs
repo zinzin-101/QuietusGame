@@ -119,16 +119,17 @@ public class PlayerInteractScript : MonoBehaviour
             //if (pallorScript != null)
             //{
             //    //pallorScript.PlayPhaseDialogue();
-            //}
+            //}           
+        }
+    }
 
-            if (collision.gameObject.TryGetComponent(out KeyMasterDetect keymasterScript))
-            {
-                StartCoroutine(InteractCooldown());
-
-                InventoryManager.Instance.SetActiveKeyMasterItem(!InventoryManager.Instance.IsKeyMasterItemActive());
-                InventoryManager.Instance.OpenKeymasterItem();
-                keymasterScript.StartCoroutine(keymasterScript.SelectItem());
-            }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out KeyMasterDetect keymasterScript) && keymasterScript.CanSelect)
+        {
+            InventoryManager.Instance.SetActiveKeyMasterItem(!InventoryManager.Instance.IsKeyMasterItemActive());
+            InventoryManager.Instance.OpenKeymasterItem();
+            keymasterScript.StartCoroutine(keymasterScript.SelectItem());
         }
     }
 

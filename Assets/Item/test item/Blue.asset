@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fc48fabf396e54fbf8192e374b1c3a, type: 3}
   m_Name: Blue
   m_EditorClassIdentifier: 
-  id: 3
   itemName: Blue
-  value: 0
   icon: {fileID: 21300000, guid: 9536496fe766a7b4b81351d0051663b0, type: 3}
   itemType: 0
   itemDescription: Blue Item

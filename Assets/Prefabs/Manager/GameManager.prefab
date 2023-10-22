@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284743586252074818}
   - component: {fileID: 4137311007210267309}
+  - component: {fileID: 5702451942504907529}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,3 +45,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 640ee7a39fdc8254fad0bb8733ce3b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  roomCycle: []
+  playerTransform: {fileID: 0}
+  timeDelayBeforeLoadScene: 2
+  mainCamera: {fileID: 0}
+  defaultCamPos: {x: 0, y: 1.2, z: -10}
+  pallorScript: {fileID: 0}
+--- !u!114 &5702451942504907529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500044484582633384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69033394326a31f4380dc681e19a78c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paperclip: {fileID: 11400000, guid: 59e1d4cafabdf654aab52c65cb9ea177, type: 2}
+  lockpick: {fileID: 11400000, guid: fa7746e39fb50b848a67ddb91faafb22, type: 2}

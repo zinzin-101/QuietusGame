@@ -92,6 +92,7 @@ public class InventoryManager : MonoBehaviour
 
             obj.TryGetComponent(out InventoryItem inventoryItem);
             inventoryItem.SetItemDescription(item.itemDescription);
+            inventoryItem.SetItem(item);
 
             // Find UI elements in the slot prefab.
             var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();

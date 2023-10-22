@@ -33,6 +33,8 @@ public class PallorMortisScript : MonoBehaviour
 
     private IEnumerator Start()
     {
+        keymasterScript.SetCanSelect(false);
+
         yield return new WaitForSeconds(2);
         //DialogueManager.Instance.StartDialogue(dialogue[dialogueIndex], true);
 
@@ -72,6 +74,7 @@ public class PallorMortisScript : MonoBehaviour
         GameManager.Instance.AllowPlayerToSit(true);
         yield return new WaitForSeconds(3.5f);
         StartCoroutine(StartPhaseDialogue());
+        keymasterScript.SetCanSelect(true);
     }
 
     public void TriggerFirstDialogue()
@@ -91,7 +94,7 @@ public class PallorMortisScript : MonoBehaviour
 
     IEnumerator StartPhaseDialogue()
     {
-        canStartPhaseDialogue = false;       
+        canStartPhaseDialogue = false;
 
         DialogueManager.Instance.StartDialogue(phaseDialogue[phaseIndex], false);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);

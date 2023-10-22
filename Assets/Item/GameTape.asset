@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fc48fabf396e54fbf8192e374b1c3a, type: 3}
   m_Name: GameTape
   m_EditorClassIdentifier: 
-  id: 0
   itemName: Game Tape
-  value: 0
   icon: {fileID: 21300000, guid: 4ffce00e5b51fbd42ad89dfe87a64877, type: 3}
   itemType: 0
   itemDescription: A game tape

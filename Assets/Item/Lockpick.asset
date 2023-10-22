@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fc48fabf396e54fbf8192e374b1c3a, type: 3}
   m_Name: Lockpick
   m_EditorClassIdentifier: 
-  id: 0
   itemName: Lockpick
-  value: 0
   icon: {fileID: 21300000, guid: ba607d1d39e725540913f445ede148b1, type: 3}
   itemType: 0
   itemDescription: A lockpick. Maybe it can open a drawer?

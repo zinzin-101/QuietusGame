@@ -2094,7 +2094,7 @@ PrefabInstance:
     - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
       propertyPath: SpecialItem
       value: 
-      objectReference: {fileID: 3151557450040262928, guid: bff3191be80c37c4da94b4ee32d09238, type: 3}
+      objectReference: {fileID: 2597960902067598292, guid: fb0e85aec1703ad4eaa5314d1e7718d9, type: 3}
     - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
       propertyPath: itemContent
       value: 
