@@ -1349,6 +1349,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1436871304}
     m_Modifications:
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1363,6 +1367,18 @@ PrefabInstance:
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogueBefore.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].name
+      value: Pallor
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseRequiredItem.Array.data[0]
@@ -1409,6 +1425,18 @@ PrefabInstance:
       value: Pallor
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[0].sentences.Array.size
       value: 12
       objectReference: {fileID: 0}
@@ -1418,11 +1446,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[2].sentences.Array.size
-      value: 2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[3].sentences.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[0]
+      value: "We\u2026..meet again? Wait\u2026..I remembered something."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[1]
+      value: 'You have that, don''t you? A paper. Let me see that!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[2]
+      value: "Uriel\u2026..graduated with the highest score? So it\u2019s a score
+        report?\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[3]
+      value: "Uriel\u2026..? Such a familiar name. I think I\u2019ve seen it somewhere.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[0]
+      value: "\u2026..hello\u2026..again\u2026..\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[1]
+      value: "Kid\u2026..I think I remembered."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[2]
+      value: "You can stop finding the key. That\u2019s worthless."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[3]
+      value: "We shouldn\u2019t get out of this place\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[0]
+      value: "The rope? so\u2026..you found it?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[1]
+      value: "Yeah\u2026..that\u2019s how I died."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[2]
+      value: "We shouldn\u2019t get out of this place\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[3]
+      value: "We shouldn\u2019t get out of this place\u2026.."
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[6]
@@ -1486,20 +1565,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[0]
-      value: "NO\u2026\u2026..NOT AGAIN\u2026\u2026NOT THIS AGAIN"
+      value: "I should have died\u2026..\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[1]
-      value: NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE
-        NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO
+      value: "Sam\u2026.."
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[2]
-      value: "could you\u2026.."
+      value: "Ulysses\u2026..\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[3]
-      value: "oh\u2026..no\u2026.."
+      value: " I\u2019m sorry\u2026..\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[4]
+      value: "The twins\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[5]
+      value: "I\u2019ll never forgive them\u2026.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[6]
+      value: "Kid\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[7]
+      value: "I miss that day\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[8]
+      value: "\u2026..when we were young."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[9]
+      value: "Things will never be the same\u2026.."
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogue.Array.data[3].sentences.Array.data[0]
@@ -1531,6 +1633,14 @@ PrefabInstance:
       propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[11]
       value: NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE
         NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[10]
+      value: "It\u2019s time\u2026..I deserved it."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[11]
+      value: "Goodbye, Qui\u2014?!"
       objectReference: {fileID: 0}
     - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.size

@@ -5,20 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(KeyMasterDetect))]
 public class PallorMortisScript : MonoBehaviour
 {
-    public enum Phases
-    {
-        Before,
-        During,
-        After
-    }
-
     private KeyMasterDetect keymasterScript;
 
     [SerializeField] Dialogue[] dialogue;
     private int dialogueIndex;
     private int maxIndex;
 
-    [SerializeField] Dialogue[] phaseDialogueBefore;
+    [SerializeField] Dialogue[] itemDialogue;
     [SerializeField] Dialogue[] phaseDialogue;
     [SerializeField] Dialogue[] phaseDialogueAfter;
     [SerializeField] Item[] phaseRequiredItem = new Item[3];
@@ -28,7 +21,8 @@ public class PallorMortisScript : MonoBehaviour
     private bool firstDialogueTriggered;
     private bool canStartPhaseDialogue;
 
-    private Phases phaseStatus;
+    private bool[] firstPhaseDialoguePlayed = new bool[3];
+
 
     private void Awake()
     {
@@ -46,7 +40,10 @@ public class PallorMortisScript : MonoBehaviour
             keymasterScript.SetRequiredItem(phaseRequiredItem[i], i);
         }
 
-        phaseStatus = Phases.Before;
+        for (int i = 0; i < firstPhaseDialoguePlayed.Length; i++)
+        {
+            firstPhaseDialoguePlayed[i] = false;
+        }
     }
 
     private IEnumerator Start()
@@ -65,7 +62,7 @@ public class PallorMortisScript : MonoBehaviour
 
         if (keymasterScript.HasItem)
         {
-            NextPhase();
+            StartCoroutine(NextPhase());
             keymasterScript.SetHasItem(false);
         }
     }
@@ -92,7 +89,8 @@ public class PallorMortisScript : MonoBehaviour
         canStartPhaseDialogue = true;
         GameManager.Instance.AllowPlayerToSit(true);
         yield return new WaitForSeconds(3.5f);
-        StartCoroutine(StartPhaseDialogue(phaseStatus));
+        //StartCoroutine(StartPhaseDialogue());
+        PlayPhaseDialogue();
         keymasterScript.SetCanInteract(true);
     }
 
@@ -108,66 +106,46 @@ public class PallorMortisScript : MonoBehaviour
         if (GameManager.Instance.CurrentRoom != 1 && GameManager.Instance.CanStartDialogue) return;
         if (!canStartPhaseDialogue) return;
 
-        if (phaseStatus == Phases.Before)
+        switch (firstPhaseDialoguePlayed[phaseIndex])
         {
-            if (phaseIndex == 0)
-            {
-                phaseStatus = Phases.After;
-                return;
-            }
-            StartCoroutine(StartPhaseDialogue(phaseStatus));
-            phaseStatus = Phases.During;
-            return;
+            case true:
+                StartCoroutine(StartPhaseDialogue());
+                break;
+            case false:
+                StartCoroutine(StartFirstPhaseDialogue());
+                break;
         }
-
-        if (phaseStatus == Phases.During)
-        {
-            StartCoroutine(StartPhaseDialogue(phaseStatus));
-            phaseStatus = Phases.After;
-            return;
-        }
-        
-        StartCoroutine(StartPhaseDialogue(phaseStatus));
     }
 
-
-
-    IEnumerator StartPhaseDialogue(Phases phase)
+    IEnumerator StartPhaseDialogue()
     {
         canStartPhaseDialogue = false;
 
-        switch (phase)
-        {
-            case Phases.Before:
-                if (phaseIndex == 0)
-                {
-                    phaseStatus = Phases.During;
-                    break;
-                }
-                DialogueManager.Instance.StartDialogue(phaseDialogueBefore[phaseIndex], true);
-                break;
-
-            case Phases.During:
-                DialogueManager.Instance.StartDialogue(phaseDialogue[phaseIndex], false);
-                break;
-
-            case Phases.After:
-                DialogueManager.Instance.StartDialogue(phaseDialogueAfter[phaseIndex], true);
-                break;
-        }
-        if (phaseStatus == Phases.During && phaseIndex == 0)
-        {
-            phaseStatus = Phases.After;
-        }
-
+        DialogueManager.Instance.StartDialogue(phaseDialogueAfter[phaseIndex], true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
 
         canStartPhaseDialogue = true;
     }
 
-    void NextPhase()
+    IEnumerator StartFirstPhaseDialogue()
+    {
+        firstPhaseDialoguePlayed[phaseIndex] = true;
+        canStartPhaseDialogue = false;
+
+        DialogueManager.Instance.StartDialogue(phaseDialogue[phaseIndex], false);
+        
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+
+        canStartPhaseDialogue = true;
+    }
+
+    IEnumerator NextPhase()
     {
         DialogueManager.Instance.ResetDialogue();
+
+        GameManager.Instance.AllowPlayerToSit(false);
+
+        DialogueManager.Instance.StartDialogue(itemDialogue[phaseIndex], true);
 
         phaseIndex++;
         if (phaseIndex > maxPhaseIndex)
@@ -175,15 +153,8 @@ public class PallorMortisScript : MonoBehaviour
             phaseIndex = maxPhaseIndex;
         }
 
-        phaseStatus = Phases.Before;
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
 
-        if (phaseIndex == maxPhaseIndex - 1)
-        {
-            PlayPhaseDialogue();
-            phaseIndex++;
-            return;
-        }
-
-        PlayPhaseDialogue();
+        GameManager.Instance.AllowPlayerToSit(true);
     }
 }

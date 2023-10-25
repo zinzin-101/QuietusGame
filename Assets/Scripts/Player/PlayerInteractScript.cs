@@ -70,6 +70,14 @@ public class PlayerInteractScript : MonoBehaviour
             }
         }
 
+        if (collision.TryGetComponent(out KeyMasterDetect keymasterScript))
+        {
+            if (isSitting && keymasterScript.CanInteract)
+            {
+                keymasterScript.CheckItem();
+            }
+        }
+
         if (interactPressed && canInteract)
         {
             if (collision.gameObject.TryGetComponent(out TextInteract textInteract))
@@ -115,12 +123,12 @@ public class PlayerInteractScript : MonoBehaviour
                     }
                 }
             }
-                
-            if (collision.TryGetComponent(out KeyMasterDetect keymasterScript) && keymasterScript.CanInteract)
-            {
-                StartCoroutine(InteractCooldown());
-                keymasterScript.CheckItem();
-            }
+
+            //if (collision.TryGetComponent(out KeyMasterDetect keymasterScript) && keymasterScript.CanInteract)
+            //{
+            //    StartCoroutine(InteractCooldown());
+            //    keymasterScript.CheckItem();
+            //}
         }
     }
 
