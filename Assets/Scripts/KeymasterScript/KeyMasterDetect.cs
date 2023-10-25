@@ -4,29 +4,51 @@ using UnityEngine;
 
 public class KeyMasterDetect : MonoBehaviour
 {
-    private string selectedItemName;
-    public string SelectedItemName => selectedItemName;
+    [SerializeField] Item[] itemList = new Item[3];
 
-    private bool canSelect;
-    public bool CanSelect => canSelect;
+    private bool canInteract;
+    public bool CanInteract => canInteract;
 
-    private void Start()
+    private int currentItemIndex;
+    private bool hasItem;
+    public bool HasItem => hasItem;
+
+    private void Awake()
     {
-        canSelect = false;
+        canInteract = false;
+        currentItemIndex = 0;
     }
 
-    public IEnumerator SelectItem()
+    public void CheckItem()
     {
-        if (canSelect)
+        hasItem = false;
+
+        foreach (Item item in InventoryManager.Instance.Items)
         {
-            InventoryManager.Instance.SetKeyMasterItemName("");
-            yield return new WaitUntil(() => InventoryManager.Instance.SelectedKeyMasterItemName != "");
-            selectedItemName = InventoryManager.Instance.SelectedKeyMasterItemName;
+            if (currentItemIndex > itemList.Length - 1) return;
+            if (item == null) continue;
+            if (itemList[currentItemIndex].name == item.name)
+            {
+                hasItem = true;
+                InventoryManager.Instance.Remove(item);
+                currentItemIndex++;
+                break;
+            }
         }
     }
 
-    public void SetCanSelect(bool value)
+    public void SetCanInteract(bool value)
     {
-        canSelect = value;
+        canInteract = value;
+    }
+
+    public void SetHasItem(bool value)
+    {
+        hasItem = value;
+    }
+
+    public void SetRequiredItem(Item item, int index)
+    {
+        itemList[index] = item;
     }
 }

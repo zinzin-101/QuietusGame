@@ -116,30 +116,22 @@ public class PlayerInteractScript : MonoBehaviour
                 }
             }
                 
-            //if (pallorScript != null)
-            //{
-            //    //pallorScript.PlayPhaseDialogue();
-            //}           
+            if (collision.TryGetComponent(out KeyMasterDetect keymasterScript) && keymasterScript.CanInteract)
+            {
+                StartCoroutine(InteractCooldown());
+                keymasterScript.CheckItem();
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out KeyMasterDetect keymasterScript) && keymasterScript.CanSelect)
-        {
-            InventoryManager.Instance.SetActiveKeyMasterItem(!InventoryManager.Instance.IsKeyMasterItemActive());
-            InventoryManager.Instance.OpenKeymasterItem();
-            keymasterScript.StartCoroutine(keymasterScript.SelectItem());
-        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out KeyMasterDetect keymasterScript))
-        {
-            InventoryManager.Instance.SetActiveKeyMasterItem(false);
-            keymasterScript.StopCoroutine(keymasterScript.SelectItem());
-        }
+
     }
 
     public IEnumerator InteractCooldown()

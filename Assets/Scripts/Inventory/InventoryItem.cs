@@ -28,11 +28,6 @@ public class InventoryItem : MonoBehaviour
         itemName = name;
     }
 
-    public void SelectKeyMasterItem()
-    {
-        InventoryManager.Instance.SetKeyMasterItemName(itemName);
-    }
-
     public void SetItem(Item _item)
     {
         item = _item;

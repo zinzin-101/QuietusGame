@@ -5,19 +5,30 @@ using UnityEngine;
 [RequireComponent(typeof(KeyMasterDetect))]
 public class PallorMortisScript : MonoBehaviour
 {
+    public enum Phases
+    {
+        Before,
+        During,
+        After
+    }
+
     private KeyMasterDetect keymasterScript;
 
     [SerializeField] Dialogue[] dialogue;
     private int dialogueIndex;
     private int maxIndex;
 
+    [SerializeField] Dialogue[] phaseDialogueBefore;
     [SerializeField] Dialogue[] phaseDialogue;
-    [SerializeField] string[] phaseRequiredItem;
+    [SerializeField] Dialogue[] phaseDialogueAfter;
+    [SerializeField] Item[] phaseRequiredItem = new Item[3];
     private int phaseIndex;
     private int maxPhaseIndex;
 
     private bool firstDialogueTriggered;
     private bool canStartPhaseDialogue;
+
+    private Phases phaseStatus;
 
     private void Awake()
     {
@@ -29,11 +40,18 @@ public class PallorMortisScript : MonoBehaviour
         maxPhaseIndex = phaseDialogue.Length - 1;
         firstDialogueTriggered = false;
         canStartPhaseDialogue = false;
+
+        for (int i = 0; i < phaseRequiredItem.Length; i++)
+        {
+            keymasterScript.SetRequiredItem(phaseRequiredItem[i], i);
+        }
+
+        phaseStatus = Phases.Before;
     }
 
     private IEnumerator Start()
     {
-        keymasterScript.SetCanSelect(false);
+        keymasterScript.SetCanInteract(false);
 
         yield return new WaitForSeconds(2);
         //DialogueManager.Instance.StartDialogue(dialogue[dialogueIndex], true);
@@ -45,9 +63,10 @@ public class PallorMortisScript : MonoBehaviour
     {
         //PlayPhaseDialogue();
 
-        if (keymasterScript.SelectedItemName == phaseRequiredItem[phaseIndex])
+        if (keymasterScript.HasItem)
         {
             NextPhase();
+            keymasterScript.SetHasItem(false);
         }
     }
 
@@ -73,8 +92,8 @@ public class PallorMortisScript : MonoBehaviour
         canStartPhaseDialogue = true;
         GameManager.Instance.AllowPlayerToSit(true);
         yield return new WaitForSeconds(3.5f);
-        StartCoroutine(StartPhaseDialogue());
-        keymasterScript.SetCanSelect(true);
+        StartCoroutine(StartPhaseDialogue(phaseStatus));
+        keymasterScript.SetCanInteract(true);
     }
 
     public void TriggerFirstDialogue()
@@ -88,15 +107,59 @@ public class PallorMortisScript : MonoBehaviour
     {
         if (GameManager.Instance.CurrentRoom != 1 && GameManager.Instance.CanStartDialogue) return;
         if (!canStartPhaseDialogue) return;
+
+        if (phaseStatus == Phases.Before)
+        {
+            if (phaseIndex == 0)
+            {
+                phaseStatus = Phases.After;
+                return;
+            }
+            StartCoroutine(StartPhaseDialogue(phaseStatus));
+            phaseStatus = Phases.During;
+            return;
+        }
+
+        if (phaseStatus == Phases.During)
+        {
+            StartCoroutine(StartPhaseDialogue(phaseStatus));
+            phaseStatus = Phases.After;
+            return;
+        }
         
-        StartCoroutine(StartPhaseDialogue());
+        StartCoroutine(StartPhaseDialogue(phaseStatus));
     }
 
-    IEnumerator StartPhaseDialogue()
+
+
+    IEnumerator StartPhaseDialogue(Phases phase)
     {
         canStartPhaseDialogue = false;
 
-        DialogueManager.Instance.StartDialogue(phaseDialogue[phaseIndex], false);
+        switch (phase)
+        {
+            case Phases.Before:
+                if (phaseIndex == 0)
+                {
+                    phaseStatus = Phases.During;
+                    break;
+                }
+                DialogueManager.Instance.StartDialogue(phaseDialogueBefore[phaseIndex], true);
+                break;
+
+            case Phases.During:
+                DialogueManager.Instance.StartDialogue(phaseDialogue[phaseIndex], false);
+                break;
+
+            case Phases.After:
+                DialogueManager.Instance.StartDialogue(phaseDialogueAfter[phaseIndex], true);
+                break;
+        }
+        if (phaseStatus == Phases.During && phaseIndex == 0)
+        {
+            phaseStatus = Phases.After;
+        }
+
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
 
         canStartPhaseDialogue = true;
@@ -104,10 +167,23 @@ public class PallorMortisScript : MonoBehaviour
 
     void NextPhase()
     {
+        DialogueManager.Instance.ResetDialogue();
+
         phaseIndex++;
         if (phaseIndex > maxPhaseIndex)
         {
             phaseIndex = maxPhaseIndex;
         }
+
+        phaseStatus = Phases.Before;
+
+        if (phaseIndex == maxPhaseIndex - 1)
+        {
+            PlayPhaseDialogue();
+            phaseIndex++;
+            return;
+        }
+
+        PlayPhaseDialogue();
     }
 }

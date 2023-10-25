@@ -97,4 +97,10 @@ public class GameManager : MonoBehaviour
     {
         playerCanSit = value;
     }
+
+    public void NextRoomButton()
+    {
+        StartCoroutine(ChangeRoom());
+        timer.ResetTimer();
+    }
 }

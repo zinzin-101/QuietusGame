@@ -7,12 +7,12 @@ using Unity.VisualScripting;
 public struct DialoguePlayer
 {
     public Dialogue dialogue;
-    public bool stopTime;
+    public bool isDialogueBox;
 
-    public DialoguePlayer(Dialogue _dialogue, bool _stopTime)
+    public DialoguePlayer(Dialogue _dialogue, bool _isDialogueBox)
     {
         dialogue = _dialogue;
-        stopTime = _stopTime;
+        isDialogueBox = _isDialogueBox;
     }
 }
 
@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] GameObject dialogueObject;
+    [SerializeField] GameObject dialogueButton;
     //[SerializeField] float dialogueDelay = 3f;
 
     private TMP_Text dialogueText;
@@ -72,15 +73,20 @@ public class DialogueManager : MonoBehaviour
         if (dialogueQueue.Count != 0 && !isRunning)
         {
             DialoguePlayer dialoguePlayer = dialogueQueue.Dequeue();
-            StartDialogue(dialoguePlayer.dialogue, dialoguePlayer.stopTime);
+            StartDialogue(dialoguePlayer.dialogue, dialoguePlayer.isDialogueBox);
         }
     }
 
-    public void StartDialogue(Dialogue dialogue, bool stopTimer)
+    public void StartDialogue(Dialogue dialogue, bool isDialogueBox)
     {
-        if (stopTimer)
+        if (isDialogueBox)
         {
             GameManager.Instance.TimerActive(false);
+            dialogueButton.SetActive(true);
+        }
+        else
+        {
+            dialogueButton.SetActive(false);
         }
 
         //dialoguePanel.SetActive(true);
@@ -100,10 +106,10 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        DisplayNextSentence(isDialogueBox);
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence(bool isDialogueBox)
     {
         if (sentences.Count == 0)
         {
@@ -114,7 +120,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
-        StartCoroutine(PrintSentence(sentence));
+        StartCoroutine(PrintSentence(sentence, isDialogueBox));
     }
 
     void EndDialogue()
@@ -130,17 +136,31 @@ public class DialogueManager : MonoBehaviour
         GameManager.Instance.TimerActive(true);
     }
 
-    IEnumerator PrintSentence(string sentence)
+    IEnumerator PrintSentence(string sentence, bool isDialogueBox)
     {
+        int n = sentence.Length;
+        float timeTaken = 3.5f / (float)n;
         dialogueText.text = dialogueName + ": ";
         foreach (char letter in sentence)
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.025f);
+
+            if (isDialogueBox)
+            {
+                yield return new WaitForSeconds(0.025f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(timeTaken);
+            }
+            
         }
 
-        //yield return new WaitForSeconds(dialogueDelay);
-        //DisplayNextSentence();
+        if (!isDialogueBox)
+        {
+            yield return new WaitForSeconds(1.5f);
+            DisplayNextSentence(isDialogueBox);
+        }
     }
 
     public void ResetDialogue()
