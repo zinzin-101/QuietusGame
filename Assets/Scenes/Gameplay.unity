@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0563bbf6951d3340be0e4ff0351ba66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &78829388 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2174593216874482403, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
+  m_PrefabInstance: {fileID: 1975165508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &89517754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2351421202095876663, guid: 172f6073f5d7d8c4e9898d238ba7c09e, type: 3}
@@ -144,11 +149,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9107733541836627968, guid: 6b668d842378bde46a5e6c9698956000, type: 3}
   m_PrefabInstance: {fileID: 7315482981742669046}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &453432392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
+  m_PrefabInstance: {fileID: 8186883654195711473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640ee7a39fdc8254fad0bb8733ce3b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &541509797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3378738404161919120, guid: d56f50ea01b002f47894320b801e171b, type: 3}
   m_PrefabInstance: {fileID: 1223181472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &618536404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 78829388}
+    m_Modifications:
+    - target: {fileID: 1882772098789072702, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_Name
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 263.1256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105.2538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 786.9768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 455.2333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073990237727017181, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 453432392}
+    - target: {fileID: 6073990237727017181, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextRoomButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
 --- !u!1 &672436403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6862329142598983093, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
@@ -214,6 +335,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
   m_PrefabInstance: {fileID: 4042464597060706408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &830441880 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4905092914869098941, guid: 18a8c4ff7c2a1fc44af965d779692129, type: 3}
+  m_PrefabInstance: {fileID: 618536404}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &872794000
 PrefabInstance:
@@ -906,7 +1032,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2174593216874482403, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 830441880}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
 --- !u!4 &2012301907 stripped
@@ -1073,6 +1202,297 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1436871304}
     m_Modifications:
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseRequiredItem.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c599a4096d7c2a46a26426e99dcfdfb, type: 2}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseRequiredItem.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: bf244648267444e41b5d6c20b6538c51, type: 2}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseRequiredItem.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: bc357b6a220224b42bb201f8e503bcd4, type: 2}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[0].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[1].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[2].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[0].sentences.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[0]
+      value: "We\u2026..meet again? Wait\u2026..I remembered something."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[1]
+      value: 'You have that, don''t you? A paper. Let me see that!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[2]
+      value: "Uriel\u2026..graduated with the highest score? So it\u2019s a score
+        report?\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[3]
+      value: "Uriel\u2026..? Such a familiar name. I think I\u2019ve seen it somewhere.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[0]
+      value: "\u2026..hello\u2026..again\u2026..\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[1]
+      value: "Kid\u2026..I think I remembered."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[2]
+      value: "You can stop finding the key. That\u2019s worthless."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[3]
+      value: "We shouldn\u2019t get out of this place\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[0]
+      value: "The rope? so\u2026..you found it?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[1]
+      value: "Yeah\u2026..that\u2019s how I died."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[6]
+      value: "hey\u2026..kid\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[7]
+      value: "i feel\u2026..weird\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[8]
+      value: "could you\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[9]
+      value: "oh\u2026..no\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[0]
+      value: "You should take\u2014ugh!? My stomach! Not now please!\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[1]
+      value: "Don\u2019t mind me. I haven't eaten anything since I've been here.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[2]
+      value: "You should take a look at the table. I think I\u2019ve seen a book
+        somewhere there."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[3]
+      value: "Maybe that\u2019s a diary? I\u2019ve never opened it, but I\u2019m
+        pretty sure there\u2019s the word \u201CUriel\u201D on the cover."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[4]
+      value: 'I hope that diary will provide us with the key to unlock this room.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[5]
+      value: "ugh\u2026..headache\u2026..\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[6]
+      value: "Uriel\u2026..that name\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[7]
+      value: "\u2026..ugh\u2026..I can\u2019t breathe. Why?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[8]
+      value: "wait\u2026..am I\u2026..? kid\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[9]
+      value: "are you\u2026..Qui\u2014?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[0]
+      value: "I should have died\u2026..\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[1]
+      value: "Sam\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[2]
+      value: "Ulysses\u2026..\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[3]
+      value: " I\u2019m sorry\u2026..\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[4]
+      value: "The twins\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[5]
+      value: "I\u2019ll never forgive them\u2026.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[6]
+      value: "Kid\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[7]
+      value: "I miss that day\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[8]
+      value: "\u2026..when we were young."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[9]
+      value: "Things will never be the same\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[10]
+      value: "NO\u2026\u2026..NOT AGAIN\u2026\u2026NOT THIS AGAIN"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[11]
+      value: NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE
+        NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[10]
+      value: "NO\u2026\u2026..NOT AGAIN\u2026\u2026NOT THIS AGAIN"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[11]
+      value: NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE
+        NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[10]
+      value: "It\u2019s time\u2026..I deserved it."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[11]
+      value: "Goodbye, Qui\u2014?!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.data[0]
+      value: "d\xE9j\xE0-vu? have i met you before?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.data[1]
+      value: ' i just woke up from a weird dream. a-very-weird-dream.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.data[2]
+      value: "anyway\u2026..do you know what exactly this place is? it\u2019s getting
+        weirder and weirder."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[0]
+      value: "D\xE9j\xE0-vu? Not the first time we met, aren\u2019t we?\t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[1]
+      value: You should continue checking the book. There might be something important
+        in it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[2]
+      value: "ugh\u2026..headache\u2026..again\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[0]
+      value: "The rope? so\u2026..you found it?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[1]
+      value: "Yeah\u2026..that\u2019s how I died."
+      objectReference: {fileID: 0}
     - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.58
