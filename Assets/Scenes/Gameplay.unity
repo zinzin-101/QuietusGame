@@ -581,6 +581,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7769c82a89fcf6643a02fa5968eea84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1409377952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670068971815969064, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+  m_PrefabInstance: {fileID: 4042464597060706408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1409377956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409377952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17f874836423ce4f9680e79f25713a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerGameObjectName: PlayerUI
 --- !u!1001 &1409619990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -812,7 +830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4114211931375880592, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: timeLimit
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4114211931375880592, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: timerActivate
@@ -1106,6 +1124,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6862329142598983093, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 672436404}
+    - targetCorrespondingSourceObject: {fileID: 2670068971815969064, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1409377956}
   m_SourcePrefab: {fileID: 100100000, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
 --- !u!1001 &7315482981742669046
 PrefabInstance:
