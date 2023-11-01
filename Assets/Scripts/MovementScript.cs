@@ -29,7 +29,7 @@ public class MovementScript : MonoBehaviour
     void Update()
     {
         //
-        canMove = GameManager.Instance.PlayerCanMove;
+        //canMove = GameManager.Instance.PlayerCanMove;
         //
     }
 
