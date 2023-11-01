@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
 
     private bool canFinishTimer = true;
     private bool timerActivate;
+    private bool forcedStop;
 
     [SerializeField] float timeDelayBeforeLoadScene = 2f;
 
@@ -21,11 +22,13 @@ public class Timer : MonoBehaviour
         timeValue = timeLimit;
         canFinishTimer = true;
         timerActivate = true;
+
+        forcedStop = false;
     }
 
     void Update()
     {
-        if (!timerActivate) return;
+        if (!timerActivate || forcedStop) return;
 
         if (timeValue > 0 && !timeUp)
         {
@@ -57,6 +60,11 @@ public class Timer : MonoBehaviour
     public void SetActiveTimer(bool value)
     {
         timerActivate = value;
+    }
+
+    public void SetForcedStopTimer(bool value)
+    {
+        forcedStop = value;
     }
 
     // Method to retrieve the current timer value

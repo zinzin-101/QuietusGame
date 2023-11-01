@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6475946573399315790}
   - component: {fileID: 930645784437538291}
   - component: {fileID: 1056427461928714635}
+  - component: {fileID: 1663081731866853840}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -106,6 +107,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1663081731866853840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670068971815969064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17f874836423ce4f9680e79f25713a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerGameObjectName: TimerGameObject
 --- !u!1 &6862329142598983093
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +188,7 @@ MonoBehaviour:
     - "i want to get out, but i can\u2019t. the door is locked."
     - you should help me so we can get out of here together.
     - "firstly, we need to know\u2026..What exactly is this place?"
+  itemDialogue: []
   phaseDialogue:
   - name: Pallor
     sentences:
@@ -191,6 +206,7 @@ MonoBehaviour:
     - "i feel\u2026..weird\u2026.."
     - "could you\u2026.."
     - "oh\u2026..no\u2026.."
+  phaseDialogueAfter: []
   phaseRequiredItem:
   - {fileID: 0}
   - {fileID: 0}

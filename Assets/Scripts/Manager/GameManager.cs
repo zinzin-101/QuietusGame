@@ -93,6 +93,11 @@ public class GameManager : MonoBehaviour
         timer.SetActiveTimer(value);
     }
 
+    public void TimerForcedStop(bool value)
+    {
+        timer.SetForcedStopTimer(value);
+    }
+
     public void AllowPlayerToSit(bool value) //by this I mean allow player to eject from the chair
     {
         playerCanSit = value;
