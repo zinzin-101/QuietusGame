@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     private bool playerCanSit;
     public bool PlayerCanSit => playerCanSit;
 
+    private bool playerCanMove;
+    public bool PlayerCanMove => playerCanMove;
+
     private bool canStartDialogue;
     public bool CanStartDialogue => canStartDialogue;
 
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
         numOfRoom = roomCycle.Length;
 
         playerCanSit = true;
+        playerCanMove = true;
         canStartDialogue = true;
     }
 
@@ -102,6 +106,11 @@ public class GameManager : MonoBehaviour
     public void AllowPlayerToSit(bool value) //by this I mean allow player to eject from the chair
     {
         playerCanSit = value;
+    }
+
+    public void AllowPlayerToMove(bool value)
+    {
+        playerCanMove = value;
     }
 
     public void NextRoomButton()

@@ -28,7 +28,9 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
-
+        //
+        canMove = GameManager.Instance.PlayerCanMove;
+        //
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
