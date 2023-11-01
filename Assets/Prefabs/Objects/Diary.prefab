@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7289259040991963270}
   - component: {fileID: 3980928606847922119}
   - component: {fileID: 1904708096017265068}
+  - component: {fileID: 6579183122457370449}
   m_Layer: 0
   m_Name: Diary
   m_TagString: Untagged
@@ -162,6 +163,19 @@ MonoBehaviour:
   - {fileID: -273094821, guid: 1427e0a68034bc049ab0a250157fdc8d, type: 3}
   item: {fileID: 6977761252646258094}
   itemPageIndex: 9
+--- !u!114 &6579183122457370449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059748903633510577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24458ede8da13f546ac81f1b4f3a3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 1
 --- !u!1 &3111621663519346307
 GameObject:
   m_ObjectHideFlags: 0

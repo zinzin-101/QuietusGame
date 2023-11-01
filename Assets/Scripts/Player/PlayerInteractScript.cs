@@ -14,6 +14,9 @@ public class PlayerInteractScript : MonoBehaviour
     [SerializeField] KeyCode interactKey = KeyCode.E;
     [SerializeField] KeyCode itemPickUpKey = KeyCode.F;
 
+    [SerializeField] GameObject interactPrompt;
+    [SerializeField] GameObject pickupPrompt;
+
     private bool canInteract;
     private bool interactPressed;
 
@@ -37,6 +40,9 @@ public class PlayerInteractScript : MonoBehaviour
         canInteract = true;
         interactPressed = false;
         isSitting = false;
+
+        interactPrompt.SetActive(false);
+        pickupPrompt.SetActive(false);
     }
 
     private void Update()
@@ -161,5 +167,15 @@ public class PlayerInteractScript : MonoBehaviour
         //}
 
         canInteract = true;
+    }
+
+    public void SetActiveInteractPrompt(bool value)
+    {
+        interactPrompt.SetActive(value);
+    }
+
+    public void SetActivePickupPrompt(bool value)
+    {
+        pickupPrompt.SetActive(value);
     }
 }

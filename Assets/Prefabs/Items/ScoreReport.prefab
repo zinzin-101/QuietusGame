@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7373342547820703621}
   - component: {fileID: 1006252200289356354}
   - component: {fileID: 1976088281826949740}
+  - component: {fileID: 2114384591548880343}
   m_Layer: 0
   m_Name: ScoreReport
   m_TagString: Untagged
@@ -149,3 +150,17 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7373342547820703621}
   sprite: {fileID: 21300000, guid: 5a9462d3a7d33cd4ba4740ace4d4bb5b, type: 3}
   highlightSprite: {fileID: 21300000, guid: 85a1c1462df91e348a428efe1b76013b, type: 3}
+  highlightOn: 1
+--- !u!114 &2114384591548880343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137303273679735623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24458ede8da13f546ac81f1b4f3a3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 1

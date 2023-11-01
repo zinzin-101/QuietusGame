@@ -32,9 +32,12 @@ public class ChairScript : MonoBehaviour
     [SerializeField] Transform sittingPos;
     public Transform SittingPos => sittingPos;
 
+    private InteractCheck interactCheck;
+
     private void Awake()
     {
         TryGetComponent(out spriteRenderer);
+        TryGetComponent(out interactCheck);
         chairBackDownRenderer = chairBackDownObject.GetComponent<SpriteRenderer>();
     }
 
@@ -50,6 +53,18 @@ public class ChairScript : MonoBehaviour
         }
 
         collisionOn = true;
+    }
+
+    private void Update()
+    {
+        if (currentState == ChairState.Down)
+        {
+            interactCheck.ChangeInteractType(InteractCheck.InteractType.Pickup);
+        }
+        else
+        {
+            interactCheck.ChangeInteractType(InteractCheck.InteractType.Interact);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

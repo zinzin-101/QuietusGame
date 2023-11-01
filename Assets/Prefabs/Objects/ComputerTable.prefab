@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 1586404566106051301}
   - component: {fileID: 1142467581985875699}
   - component: {fileID: 3527414873716570770}
+  - component: {fileID: -2630533796077940486}
   m_Layer: 0
   m_Name: ComputerTable
   m_TagString: Untagged
@@ -983,6 +984,19 @@ MonoBehaviour:
   highlightTableSprite: {fileID: 21300000, guid: 81264c4afbc39d44caf4a6829806486a, type: 3}
   item: {fileID: 0}
   unlockedText: {fileID: 5964933798585781107}
+--- !u!114 &-2630533796077940486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7333840113585626354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24458ede8da13f546ac81f1b4f3a3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 0
 --- !u!1 &8665125257966169830
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6522325820196721576}
   - component: {fileID: 8359144793762355048}
   - component: {fileID: 6808227378154812383}
+  - component: {fileID: 3755930953913350950}
   m_Layer: 0
   m_Name: LockpickContainer
   m_TagString: Untagged
@@ -148,6 +149,19 @@ MonoBehaviour:
   openedSprite: {fileID: 21300000, guid: 5aca6f197ed51644888b4aa592f6aac5, type: 3}
   highlightClosed: {fileID: 21300000, guid: 57cb1b58680f2384d88256de8943b04e, type: 3}
   lockpickObject: {fileID: 6092180078894193673}
+--- !u!114 &3755930953913350950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312785805769137394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24458ede8da13f546ac81f1b4f3a3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 0
 --- !u!1001 &6609643680199238547
 PrefabInstance:
   m_ObjectHideFlags: 0
