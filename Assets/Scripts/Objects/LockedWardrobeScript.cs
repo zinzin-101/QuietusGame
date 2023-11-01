@@ -80,6 +80,7 @@ public class LockedWardrobeScript : MonoBehaviour
         locked = false;
         unlockedText.SetActive(true);
         SetSprite(unlockedSprites);
+        SoundManager.PlaySound(SoundManager.Sound.Closet);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

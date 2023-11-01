@@ -144,6 +144,7 @@ public class ComputerTableScript : MonoBehaviour
                 drawers[i].SetActive(true);
 
                 if (drawerItems[i] != null) drawerItems[i].SetActive(true);
+                SoundManager.PlaySound(SoundManager.Sound.Desk);
             }
             else
             {
@@ -174,5 +175,6 @@ public class ComputerTableScript : MonoBehaviour
 
         unlockedText.SetActive(true);
         isBigDrawerLocked = false;
+        SoundManager.PlaySound(SoundManager.Sound.BedSheet);
     }
 }

@@ -72,6 +72,7 @@ public class PickupScript : MonoBehaviour
             {
                 chairScript.ToggleCollision(true);
             }
+            SoundManager.PlaySound(SoundManager.Sound.Chair);
 
             _pickupTransform.transform.parent = null;
             pickedUp = false;
