@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Initialize();
         if (instance != null)
         {
             Destroy(gameObject);

@@ -37,6 +37,8 @@ public class PlayerInteractScript : MonoBehaviour
         canInteract = true;
         interactPressed = false;
         isSitting = false;
+
+        
     }
 
     private void Update()

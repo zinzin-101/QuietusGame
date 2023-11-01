@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,6 +12,7 @@ public class MovementScript : MonoBehaviour
     public bool FacingRight => facingRight;
 
     private bool canMove;
+    private bool isMoving;
 
     [SerializeField] float moveSpeed = 5f;
 
@@ -41,17 +43,31 @@ public class MovementScript : MonoBehaviour
 
     public void Move(Vector2 input)
     {
+
         if (!canMove)
         {
             return;
         }
 
-        rb.velocity = input * moveSpeed;
+        if (input != Vector2.zero)
+        {
+            rb.velocity = input * moveSpeed;
+            SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
+
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+
+        
 
         if ((input.x > 0 && !facingRight) || (input.x < 0 && facingRight))
         {
             //Flip();
         }
+        
+
     }
 
     void Flip()
