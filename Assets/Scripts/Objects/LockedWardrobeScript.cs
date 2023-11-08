@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -22,10 +23,13 @@ public class LockedWardrobeScript : MonoBehaviour
 
     private Collider2D col;
 
+    private ActionProgress actionProgress;
+
     private void Awake()
     {
         currentSpriteArray = new Sprite[2];
         TryGetComponent(out col);
+        TryGetComponent(out actionProgress);
     }
 
     private void Start()
@@ -58,23 +62,42 @@ public class LockedWardrobeScript : MonoBehaviour
         spriteRenderer.sprite = currentSprite;
     }
 
-    public void UnlockWardrobe()
+    public async void UnlockWardrobe()
     {
         if (!locked || !canUnlock) return;
 
         bool hasKey = false;
+        Item keyItem = null;
 
         foreach (var item in InventoryManager.Instance.Items)
         {
             if (item.itemName == "Key")
             {
                 hasKey = true;
-                InventoryManager.Instance.Remove(item);
+                //InventoryManager.Instance.Remove(item);
+                keyItem = item;
                 break;
             }
         }
 
         if (!hasKey) return;
+
+        actionProgress.ShowBar();
+        actionProgress.SetProgressActive(true);
+
+        while (true)
+        {
+            if (!actionProgress.Activate && !actionProgress.ActionFinished) return;
+            if (actionProgress.ActionFinished) break;
+            await Task.Delay(1);
+        }
+
+        actionProgress.HideBar();
+
+        if (keyItem != null)
+        {
+            InventoryManager.Instance.Remove(keyItem);
+        }
 
         canUnlock = false;
         locked = false;
@@ -96,6 +119,7 @@ public class LockedWardrobeScript : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
             highlighted = false;
+            actionProgress.ResetProgressBar();
         }
     }
 

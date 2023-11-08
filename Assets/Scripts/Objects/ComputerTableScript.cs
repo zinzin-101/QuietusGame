@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ComputerTableScript : MonoBehaviour
@@ -19,9 +20,12 @@ public class ComputerTableScript : MonoBehaviour
     private bool isBigDrawerLocked;
     [SerializeField] GameObject unlockedText;
 
+    private ActionProgress actionProgress;
+
     private void Awake()
     {
         table.TryGetComponent(out tableSpriteRenderer);
+        TryGetComponent(out actionProgress);
         
         numOfDrawer = drawers.Length;
         drawersSpriteRenderer = new SpriteRenderer[numOfDrawer];
@@ -106,6 +110,8 @@ public class ComputerTableScript : MonoBehaviour
                     drawer.sprite = drawerSprite;
                 }
             }
+
+            actionProgress.ResetProgressBar();
         }
     }
 
@@ -155,23 +161,42 @@ public class ComputerTableScript : MonoBehaviour
         }
     }
 
-    void UnlockBigDrawer()
+    async void UnlockBigDrawer()
     {
         if (!isBigDrawerLocked) return;
 
         bool hasLockpick = false;
+        Item keyItem = null;
 
         foreach (var item in InventoryManager.Instance.Items)
         {
             if (item.itemName == "Lockpick")
             {
                 hasLockpick = true;
-                InventoryManager.Instance.Remove(item);
+                //InventoryManager.Instance.Remove(item);
+                keyItem = item;
                 break;
             }
         }
 
         if (!hasLockpick) return;
+
+        actionProgress.ShowBar();
+        actionProgress.SetProgressActive(true);
+
+        while (true)
+        {
+            if (!actionProgress.Activate && !actionProgress.ActionFinished) return;
+            if (actionProgress.ActionFinished) break;
+            await Task.Delay(1);
+        }
+
+        if (keyItem != null)
+        {
+            InventoryManager.Instance.Remove(keyItem);
+        }
+
+        actionProgress.HideBar();
 
         unlockedText.SetActive(true);
         isBigDrawerLocked = false;
