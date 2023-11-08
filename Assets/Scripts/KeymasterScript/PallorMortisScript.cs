@@ -23,6 +23,8 @@ public class PallorMortisScript : MonoBehaviour
 
     private bool[] firstPhaseDialoguePlayed = new bool[3];
 
+    [SerializeField] PallorAnimation pallorAnim;
+
 
     private void Awake()
     {
@@ -162,5 +164,10 @@ public class PallorMortisScript : MonoBehaviour
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
 
         GameManager.Instance.AllowPlayerToSit(true);
+    }
+
+    public void PlayHeadExplodeAnimation()
+    {
+        pallorAnim.PlayExplodeAnimation();
     }
 }
