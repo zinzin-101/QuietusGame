@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public bool CanStartDialogue => canStartDialogue;
 
     [SerializeField] PallorMortisScript pallorScript;
+    [SerializeField] PallorAnimation pallorAnimation;
+
 
     private void Awake()
     {
@@ -117,5 +119,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(ChangeRoom());
         timer.ResetTimer();
+        pallorAnimation.PlayExplodeAnimation();
     }
 }
