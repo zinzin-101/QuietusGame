@@ -446,10 +446,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5109772369152106839, guid: d56f50ea01b002f47894320b801e171b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0033e7ef7a8d58749a544e67ebaa07be, type: 3}
+    - target: {fileID: 6388860101958338839, guid: d56f50ea01b002f47894320b801e171b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 33741a9ca4b2f5845bec068bca6dc022, type: 3}
     - target: {fileID: 8268819911220910358, guid: d56f50ea01b002f47894320b801e171b, type: 3}
       propertyPath: m_Name
       value: RoomTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 8627432615130173301, guid: d56f50ea01b002f47894320b801e171b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65af9444e253b394ab1e27a575fa406a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
