@@ -144,7 +144,8 @@ public class ComputerTableScript : MonoBehaviour
             {
                 if (i == 0 && isBigDrawerLocked)
                 {
-                    i++;
+                    numOfOpenedDrawer++;
+                    continue;
                 }
 
                 drawers[i].SetActive(true);
