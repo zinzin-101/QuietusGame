@@ -29,7 +29,7 @@ public class MovementScript : MonoBehaviour
     void Update()
     {
         //
-        //canMove = GameManager.Instance.PlayerCanMove;
+        canMove = GameManager.Instance.PlayerCanMove;
         //
     }
 
@@ -48,6 +48,7 @@ public class MovementScript : MonoBehaviour
 
         if (!canMove)
         {
+            rb.velocity = Vector2.zero;
             return;
         }
 

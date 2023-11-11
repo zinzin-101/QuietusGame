@@ -21,6 +21,7 @@ public class KeyMasterDetect : MonoBehaviour
 
     public void CheckItem()
     {
+        canInteract = false;
         hasItem = false;
 
         foreach (Item item in InventoryManager.Instance.Items)

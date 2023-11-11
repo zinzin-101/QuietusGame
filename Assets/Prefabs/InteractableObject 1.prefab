@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 8301137084007015060}
   - component: {fileID: 6515078729758748871}
   m_Layer: 0
-  m_Name: InteractableObject
+  m_Name: InteractableObject 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

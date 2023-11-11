@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] PallorMortisScript pallorScript;
     //[SerializeField] PallorAnimation pallorAnimation;
 
+    private PlayerInteractScript playerInteractScript;
+
 
     private void Awake()
     {
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
         {
             GameObject.FindWithTag("Player");
         }
+
+        playerInteractScript = playerTransform.GetComponent<PlayerInteractScript>();
 
         numOfRoom = roomCycle.Length;
 
@@ -108,6 +112,11 @@ public class GameManager : MonoBehaviour
     public void AllowPlayerToSit(bool value) //by this I mean allow player to eject from the chair
     {
         playerCanSit = value;
+    }
+
+    public bool GetPlayerSittingStat()
+    {
+        return playerInteractScript.IsSitting;
     }
 
     public void AllowPlayerToMove(bool value)

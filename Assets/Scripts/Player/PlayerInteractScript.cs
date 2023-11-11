@@ -112,7 +112,8 @@ public class PlayerInteractScript : MonoBehaviour
                                 chairScript.ToggleCollision(true);
                                 chairScript.ChangeChairState(ChairScript.ChairState.Upfront);
                                 isSitting = false;
-                                movementScript.SetToggleMove(true);
+                                //movementScript.SetToggleMove(true);
+                                GameManager.Instance.AllowPlayerToMove(true);
                                 GameManager.Instance.TimerActive(true);
                             }                          
                             break;
@@ -123,7 +124,8 @@ public class PlayerInteractScript : MonoBehaviour
                             chairScript.ToggleCollision(false);
                             chairScript.ChangeChairState(ChairScript.ChairState.Upside);
                             isSitting = true;
-                            movementScript.SetToggleMove(false);
+                            //movementScript.SetToggleMove(false);
+                            GameManager.Instance.AllowPlayerToMove(false);
                             GameManager.Instance.TimerActive(false);
                             break;
                     }

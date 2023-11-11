@@ -163,6 +163,7 @@ public class PallorMortisScript : MonoBehaviour
 
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
 
+        keymasterScript.SetCanInteract(true);
         GameManager.Instance.AllowPlayerToSit(true);
     }
 
