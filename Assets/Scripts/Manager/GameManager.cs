@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [System.Serializable]
+    public struct SpawnRoom
+    {
+        public Transform spawnPos, cameraPos;
+    }
+
     private static GameManager instance;
     public static GameManager Instance => instance;
 
     [SerializeField] Timer timer;
 
-    [SerializeField] Transform[] roomCycle;
+    [SerializeField] SpawnRoom[] roomCycle;
     private int currentRoom;
     public int CurrentRoom => currentRoom;
     private int numOfRoom;
@@ -79,10 +85,10 @@ public class GameManager : MonoBehaviour
         var task1 = LevelManager.Instance.NormalFadeIn(timeDelayBeforeLoadScene);
         yield return new WaitUntil(() => task1.IsCompleted);
 
-        playerTransform.position = roomCycle[currentRoom - 1].position;
-        mainCamera.transform.position = new Vector3(defaultCamPos.x + roomCycle[currentRoom - 1].position.x,
-                                                    defaultCamPos.y + roomCycle[currentRoom - 1].position.y,
-                                                    defaultCamPos.z + roomCycle[currentRoom - 1].position.z);
+        playerTransform.position = roomCycle[currentRoom - 1].spawnPos.position;
+        mainCamera.transform.position = new Vector3(defaultCamPos.x + roomCycle[currentRoom - 1].cameraPos.position.x,
+                                                    defaultCamPos.y + roomCycle[currentRoom - 1].cameraPos.position.y,
+                                                    defaultCamPos.z + roomCycle[currentRoom - 1].cameraPos.position.z);
         timer.ResetTimer();
 
         DialogueManager.Instance.ResetDialogue();
