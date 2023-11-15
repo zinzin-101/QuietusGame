@@ -32,6 +32,7 @@ public class PickupScript : MonoBehaviour
             if (collision.gameObject.TryGetComponent(out PickableObjectScript pickableScript))
             {
                 pickedUp = true;
+                
                 collision.gameObject.transform.parent = transform;
                 collision.gameObject.transform.localPosition = new Vector3(0f, pickupDistance, 0f);
                 pickUpName = collision.gameObject.name;
