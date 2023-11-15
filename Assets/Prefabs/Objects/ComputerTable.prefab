@@ -1125,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008667705308542144, guid: 47c17693bffeee044a268ab90ec724c0, type: 3}
       propertyPath: m_SortingOrder
-      value: 29
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 8697886365004713455, guid: 47c17693bffeee044a268ab90ec724c0, type: 3}
       propertyPath: m_Pivot.x
@@ -1233,6 +1233,10 @@ PrefabInstance:
     - target: {fileID: 7520337785754665499, guid: 47c17693bffeee044a268ab90ec724c0, type: 3}
       propertyPath: m_Name
       value: ActionBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008667705308542144, guid: 47c17693bffeee044a268ab90ec724c0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8697886365004713455, guid: 47c17693bffeee044a268ab90ec724c0, type: 3}
       propertyPath: m_Pivot.x

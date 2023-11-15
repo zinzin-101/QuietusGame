@@ -481,6 +481,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5830367587890253017, guid: 7c28a9d91dd318343b7b4e5a429cc4f8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -534,7 +538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008667705308542144, guid: 47c17693bffeee044a268ab90ec724c0, type: 3}
       propertyPath: m_SortingOrder
-      value: 29
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 8697886365004713455, guid: 47c17693bffeee044a268ab90ec724c0, type: 3}
       propertyPath: m_Pivot.x
