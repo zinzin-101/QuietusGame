@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 1586404566106051301}
   - component: {fileID: 1142467581985875699}
   - component: {fileID: 3649541124014137699}
+  - component: {fileID: 723432728966957765}
   m_Layer: 0
   m_Name: ComputerTableBefore
   m_TagString: Untagged
@@ -669,6 +670,19 @@ MonoBehaviour:
   keyboardItem: {fileID: 11400000, guid: 51cc19526f19dea44bc8fe53281d9d7e, type: 2}
   pcItem: {fileID: 11400000, guid: c5772f9b6a43124478beb0022b165b3b, type: 2}
   mouseItem: {fileID: 11400000, guid: e9b9d485a50c2c54f960cbd8bffaf244, type: 2}
+--- !u!114 &723432728966957765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7333840113585626354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24458ede8da13f546ac81f1b4f3a3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 0
 --- !u!1001 &546476942215768852
 PrefabInstance:
   m_ObjectHideFlags: 0
