@@ -160,6 +160,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3378738404161919120, guid: d56f50ea01b002f47894320b801e171b, type: 3}
   m_PrefabInstance: {fileID: 1223181472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &581487615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1663081731866853840, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+  m_PrefabInstance: {fileID: 4042464597060706408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17f874836423ce4f9680e79f25713a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &672436405 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
@@ -1822,6 +1833,10 @@ PrefabInstance:
       propertyPath: defaultCamPos.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
+      propertyPath: pallorAnimation
+      value: 
+      objectReference: {fileID: 581487615}
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: playerTransform
       value: 
