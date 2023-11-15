@@ -160,33 +160,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3378738404161919120, guid: d56f50ea01b002f47894320b801e171b, type: 3}
   m_PrefabInstance: {fileID: 1223181472}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &581487615 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1663081731866853840, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-  m_PrefabInstance: {fileID: 4042464597060706408}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17f874836423ce4f9680e79f25713a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &672436405 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-  m_PrefabInstance: {fileID: 4042464597060706408}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3f9f4152a1277488a69c8bd717a03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &672436406 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-  m_PrefabInstance: {fileID: 4042464597060706408}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &783823166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -746,7 +719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 672436406}
+  - {fileID: 8167439075209221562}
   m_Father: {fileID: 2087571525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1442722994
@@ -780,6 +753,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 921205006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1703080385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 61521979523043413, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_Name
+      value: DialogueObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409498236600604034, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611523588155644694, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611523588155644694, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: blue thing
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
 --- !u!1001 &1975165508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1072,6 +1110,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 020bba4c5f5dc3a49be973656dbd8b81, type: 3}
+--- !u!114 &2090835142289697758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7215505288009670467, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+  m_PrefabInstance: {fileID: 7485608761409429850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3f9f4152a1277488a69c8bd717a03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3069490941702925277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1129,480 +1178,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 402e1e2d7e5025c4988ac3023bd78c7b, type: 3}
---- !u!1001 &4042464597060706408
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1436871304}
-    m_Modifications:
-    - target: {fileID: 930645784437538291, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -338650384, guid: 397d8ab2a430f8741ad0e564ea9f9e7a, type: 3}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseRequiredItem.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[0].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[1].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[2].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseRequiredItem.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2c599a4096d7c2a46a26426e99dcfdfb, type: 2}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseRequiredItem.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: bf244648267444e41b5d6c20b6538c51, type: 2}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseRequiredItem.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: bc357b6a220224b42bb201f8e503bcd4, type: 2}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[3].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[0].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[1].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[2].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[1].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[2].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[3].name
-      value: Pallor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[0].sentences.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[1].sentences.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[2].sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[0].sentences.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[3].sentences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[0]
-      value: "We\u2026..meet again? Wait\u2026..I remembered something."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[1]
-      value: 'You have that, don''t you? A paper. Let me see that!
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[2]
-      value: "Uriel\u2026..graduated with the highest score? So it\u2019s a score
-        report?\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[0].sentences.Array.data[3]
-      value: "Uriel\u2026..? Such a familiar name. I think I\u2019ve seen it somewhere.\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[0]
-      value: "\u2026..hello\u2026..again\u2026..\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[1]
-      value: "Kid\u2026..I think I remembered."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[2]
-      value: "You can stop finding the key. That\u2019s worthless."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[1].sentences.Array.data[3]
-      value: "We shouldn\u2019t get out of this place\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[0]
-      value: "The rope? so\u2026..you found it?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[1]
-      value: "Yeah\u2026..that\u2019s how I died."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[2]
-      value: "We shouldn\u2019t get out of this place\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemDialogue.Array.data[2].sentences.Array.data[3]
-      value: "We shouldn\u2019t get out of this place\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[6]
-      value: "hey\u2026..kid\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[7]
-      value: "i feel\u2026..weird\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[8]
-      value: "could you\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[9]
-      value: "oh\u2026..no\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[0]
-      value: "You should take\u2014ugh!? My stomach! Not now please!\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[1]
-      value: "Don\u2019t mind me. I haven't eaten anything since I've been here.\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[2]
-      value: "You should take a look at the table. I think I\u2019ve seen a book
-        somewhere there."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[3]
-      value: "Maybe that\u2019s a diary? I\u2019ve never opened it, but I\u2019m
-        pretty sure there\u2019s the word \u201CUriel\u201D on the cover."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[4]
-      value: 'I hope that diary will provide us with the key to unlock this room.
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[5]
-      value: "ugh\u2026..headache\u2026..\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[6]
-      value: "Uriel\u2026..that name\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[7]
-      value: "\u2026..ugh\u2026..I can\u2019t breathe. Why?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[8]
-      value: "wait\u2026..am I\u2026..? kid\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[9]
-      value: "are you\u2026..Qui\u2014?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[0]
-      value: "I should have died\u2026..\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[1]
-      value: "Sam\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[2]
-      value: "Ulysses\u2026..\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[3]
-      value: " I\u2019m sorry\u2026..\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[4]
-      value: "The twins\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[5]
-      value: "I\u2019ll never forgive them\u2026.\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[6]
-      value: "Kid\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[7]
-      value: "I miss that day\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[8]
-      value: "\u2026..when we were young."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[9]
-      value: "Things will never be the same\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[3].sentences.Array.data[0]
-      value: "d\xE9j\xE0-vu? have i met you before?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[3].sentences.Array.data[1]
-      value: i just woke up from a weird dream. a-very-weird-dream.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[3].sentences.Array.data[2]
-      value: "anyway\u2026..do you know what exactly this place is? it\u2019s getting
-        weirder and weirder."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[10]
-      value: "NO\u2026\u2026..NOT AGAIN\u2026\u2026NOT THIS AGAIN"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[11]
-      value: NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE
-        NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[10]
-      value: "NO\u2026\u2026..NOT AGAIN\u2026\u2026NOT THIS AGAIN"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[1].sentences.Array.data[11]
-      value: NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE
-        NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO PLEASE NO
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[10]
-      value: "It\u2019s time\u2026..I deserved it."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogue.Array.data[2].sentences.Array.data[11]
-      value: "Goodbye, Qui\u2014?!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[1].sentences.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[2].sentences.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[3].sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.data[0]
-      value: "d\xE9j\xE0-vu? have i met you before?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.data[1]
-      value: ' i just woke up from a weird dream. a-very-weird-dream.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.data[2]
-      value: "anyway\u2026..do you know what exactly this place is? it\u2019s getting
-        weirder and weirder."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[0].sentences.Array.data[3]
-      value: "Uriel\u2026..? Such a familiar name. I think I\u2019ve seen it somewhere."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[0]
-      value: "D\xE9j\xE0-vu? Not the first time we met, aren\u2019t we?\t"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[1]
-      value: You should continue checking the book. There might be something important
-        in it.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[2]
-      value: "ugh\u2026..headache\u2026..again\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[0]
-      value: "The rope? so\u2026..you found it?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[1]
-      value: "Yeah\u2026..that\u2019s how I died."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[2]
-      value: "ugh\u2026..headache\u2026..again\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[1].sentences.Array.data[0]
-      value: "We\u2026..meet again? Wait\u2026..I remembered something."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[1].sentences.Array.data[1]
-      value: You have that, don't you? A paper. Let me see that!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[1].sentences.Array.data[2]
-      value: "Uriel\u2026..graduated with the highest score? So it\u2019s a score
-        report?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[1].sentences.Array.data[3]
-      value: "Uriel\u2026..? Such a familiar name. I think I\u2019ve seen it somewhere."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[2].sentences.Array.data[0]
-      value: "\u2026..hello\u2026..again\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[2].sentences.Array.data[1]
-      value: "Kid\u2026..I think I remembered."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[2].sentences.Array.data[2]
-      value: "You can stop finding the key. That\u2019s worthless."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[2].sentences.Array.data[3]
-      value: "We shouldn\u2019t get out of this place\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[3].sentences.Array.data[0]
-      value: "The rope? so\u2026..you found it?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[3].sentences.Array.data[1]
-      value: "Yeah\u2026..that\u2019s how I died.\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[3].sentences.Array.data[2]
-      value: "We shouldn\u2019t get out of this place\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674464564056279990, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: phaseDialogueBefore.Array.data[3].sentences.Array.data[3]
-      value: "We shouldn\u2019t get out of this place\u2026.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278547186384696786, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6862329142598983093, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: m_Name
-      value: PallorMortis
-      objectReference: {fileID: 0}
-    - target: {fileID: 7588072385456076606, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
-      propertyPath: itemList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b8d0cb48801cf6341b633583894b96f4, type: 3}
+--- !u!114 &3390590549482856888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7036555607119036685, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+  m_PrefabInstance: {fileID: 7485608761409429850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17f874836423ce4f9680e79f25713a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6444683663221700699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1769,6 +1355,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b668d842378bde46a5e6c9698956000, type: 3}
+--- !u!1001 &7485608761409429850
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1436871304}
+    m_Modifications:
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870729974906206259, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+      propertyPath: m_Name
+      value: PallorMortis
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+--- !u!4 &8167439075209221562 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 136710457986602680, guid: 673c9b88f42486b4fa5c01aa93f6818d, type: 3}
+  m_PrefabInstance: {fileID: 7485608761409429850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8186883654195711473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1824,7 +1472,7 @@ PrefabInstance:
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: pallorScript
       value: 
-      objectReference: {fileID: 672436405}
+      objectReference: {fileID: 2090835142289697758}
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: defaultCamPos.y
       value: 1.2
@@ -1836,7 +1484,7 @@ PrefabInstance:
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: pallorAnimation
       value: 
-      objectReference: {fileID: 581487615}
+      objectReference: {fileID: 3390590549482856888}
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: playerTransform
       value: 
@@ -1956,3 +1604,4 @@ SceneRoots:
   - {fileID: 2087571525}
   - {fileID: 921205006}
   - {fileID: 783823166}
+  - {fileID: 1703080385}

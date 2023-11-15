@@ -31,7 +31,9 @@ public class GameManager : MonoBehaviour
     public bool CanStartDialogue => canStartDialogue;
 
     [SerializeField] PallorMortisScript pallorScript;
-    [SerializeField] PallorAnimation pallorAnimation;
+    //[SerializeField] PallorAnimation pallorAnimation;
+
+    private PlayerInteractScript playerInteractScript;
 
 
     private void Awake()
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
         {
             GameObject.FindWithTag("Player");
         }
+
+        playerInteractScript = playerTransform.GetComponent<PlayerInteractScript>();
 
         numOfRoom = roomCycle.Length;
 
@@ -110,6 +114,11 @@ public class GameManager : MonoBehaviour
         playerCanSit = value;
     }
 
+    public bool GetPlayerSittingStat()
+    {
+        return playerInteractScript.IsSitting;
+    }
+
     public void AllowPlayerToMove(bool value)
     {
         playerCanMove = value;
@@ -119,6 +128,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(ChangeRoom());
         timer.ResetTimer();
-        pallorAnimation.PlayExplodeAnimation();
+        pallorScript.PlayHeadExplodeAnimation();
     }
 }

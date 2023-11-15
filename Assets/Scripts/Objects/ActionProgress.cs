@@ -12,7 +12,7 @@ public class ActionProgress : MonoBehaviour
     private bool activate;
     public bool Activate => activate;
 
-    [SerializeField] GameObject progressBar;
+    [SerializeField] GameObject progressBar, progressBarBG;
     private float defaultScale, currentScale;
 
     private void Awake()
@@ -63,11 +63,13 @@ public class ActionProgress : MonoBehaviour
     public void ShowBar()
     {
         progressBar.SetActive(true);
+        progressBarBG.SetActive(true);
     }
 
     public void HideBar()
     {
         progressBar.SetActive(false);
+        progressBarBG.SetActive(false);
     }
 
     public void ResetProgressBar()

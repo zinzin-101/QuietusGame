@@ -82,6 +82,7 @@ public class DialogueManager : MonoBehaviour
         if (isDialogueBox)
         {
             GameManager.Instance.TimerActive(false);
+            GameManager.Instance.AllowPlayerToMove(false);
             dialogueButton.SetActive(true);
         }
         else
@@ -134,13 +135,27 @@ public class DialogueManager : MonoBehaviour
         }
 
         GameManager.Instance.TimerActive(true);
+
+        if (!GameManager.Instance.GetPlayerSittingStat())
+        {
+            GameManager.Instance.AllowPlayerToMove(true);
+        }
     }
 
     IEnumerator PrintSentence(string sentence, bool isDialogueBox)
     {
         int n = sentence.Length;
         float timeTaken = 3.5f / (float)n;
-        dialogueText.text = dialogueName + ": ";
+
+        if (dialogueName != "")
+        {
+            dialogueText.text = dialogueName + ": ";
+        }
+        else
+        {
+            dialogueText.text = "";
+        }
+
         foreach (char letter in sentence)
         {
             dialogueText.text += letter;
