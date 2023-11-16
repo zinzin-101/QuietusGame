@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
 
         DialogueManager.Instance.ResetDialogue();
 
+        AllowPlayerToMove(true);
+
         var task2 = LevelManager.Instance.NormalFadeOut();
         yield return new WaitUntil(() => task2.IsCompleted);
         canStartDialogue = true;
@@ -128,6 +130,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil(() => task2.IsCompleted);
         canStartDialogue = true;
 
+        AllowPlayerToMove(false);
         hangmanScript.StartRoom();
     }
 

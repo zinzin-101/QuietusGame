@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HangmanScript : MonoBehaviour
 {
@@ -21,7 +22,18 @@ public class HangmanScript : MonoBehaviour
     [SerializeField] int maxTries = 6;
     private int tries;
 
+    [TextArea(3, 10)]
     [SerializeField] string[] hangmanDialogue;
+    [TextArea(3, 10)]
+    [SerializeField] string[] rightDialogue;
+    [TextArea(3, 10)]
+    [SerializeField] string[] wrongDialogue;
+
+    private bool isActive;
+    public bool IsActive => isActive;
+
+    [SerializeField] Sprite[] hangmanPages;
+    [SerializeField] Image hangmanImage;
 
     private void Awake()
     {
@@ -31,9 +43,9 @@ public class HangmanScript : MonoBehaviour
 
         answerIndex = 0;
         maxIndex = answers.Length;
+
+        isActive = false;
     }
-
-
 
     private void Update()
     {
@@ -51,7 +63,6 @@ public class HangmanScript : MonoBehaviour
                 keyPressed = Input.inputString;
                 if (Regex.IsMatch(keyPressed, "^[abcdefghijklmnopkrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ']"))
                 {
-                    //keyPressed = "";
                     if (keyEntered < currentMaxAnswerLength)
                     {
                         keyEntered++;
@@ -66,14 +77,6 @@ public class HangmanScript : MonoBehaviour
                         playerAnswer = playerAnswer.Remove(playerAnswer.Length - 1);
                     }
                 }
-                //else
-                //{
-                //    if (keyEntered < currentMaxAnswerLength)
-                //    {
-                //        keyEntered++;
-                //        playerAnswer += keyPressed;
-                //    }
-                //}
 
                 if (playerAnswer.Length >= currentMaxAnswerLength)
                 {
@@ -83,7 +86,7 @@ public class HangmanScript : MonoBehaviour
                     }
                     else
                     {
-                        GameActive();
+                        GameActive(false);
                         tries--;
                     }
                 }
@@ -103,6 +106,7 @@ public class HangmanScript : MonoBehaviour
         textObject.SetActive(true);
 
         started = true;
+        isActive = true;
         tries = maxTries;
         answerIndex = 0;
         GameActive();
@@ -110,6 +114,8 @@ public class HangmanScript : MonoBehaviour
 
     public void GameActive()
     {
+        hangmanImage.sprite = hangmanPages[maxTries - tries];
+
         currentAnswer = answers[answerIndex];
         currentMaxAnswerLength = answers[answerIndex].Length;
         keyEntered = 0;
@@ -121,22 +127,43 @@ public class HangmanScript : MonoBehaviour
         {
             hangmanText.text += "_ ";
         }
-
+        StopAllCoroutines();
         StartCoroutine(PlayHint());
+    }
+
+    public void GameActive(bool correct)
+    {
+        hangmanImage.sprite = hangmanPages[maxTries - tries];
+
+        currentAnswer = answers[answerIndex];
+        currentMaxAnswerLength = answers[answerIndex].Length;
+        keyEntered = 0;
+
+        playerAnswer = "";
+        hangmanText.text = "";
+
+        for (int i = 0; i < currentMaxAnswerLength; i++)
+        {
+            hangmanText.text += "_ ";
+        }
+        StopAllCoroutines();
+        StartCoroutine(PlayHint(correct));
     }
 
     public void NextWord()
     {
         answerIndex++;
         if (answerIndex > maxIndex) answerIndex = maxIndex;
-        GameActive();
+        GameActive(true);
     }
 
     public void StopGame()
     {
         started = false;
+        isActive = false;
         textObject.SetActive(false);
         GameManager.Instance.AllowPlayerToMove(true);
+        StopAllCoroutines();
         StartCoroutine(GameManager.Instance.ChangeRoom());
     }
 
@@ -150,11 +177,39 @@ public class HangmanScript : MonoBehaviour
         }
     }
 
+    IEnumerator PlayHint(bool correct)
+    {
+        hintText.text = "";
+        switch (correct)
+        {
+            case true:
+                foreach (char letter in rightDialogue[answerIndex-1])
+                {
+                    hintText.text += letter;
+                    yield return new WaitForSeconds(0.025f);
+                }
+                break;
+            case false:
+                foreach (char letter in wrongDialogue[answerIndex])
+                {
+                    hintText.text += letter;
+                    yield return new WaitForSeconds(0.025f);
+                }
+                break;
+        }
+
+        yield return new WaitForSeconds(3f);
+        hintText.text = "";
+
+        foreach (char letter in hangmanDialogue[answerIndex])
+        {
+            hintText.text += letter;
+            yield return new WaitForSeconds(0.025f);
+        }
+    }
+
     void PrintText()
     {
-        print("hangmantext: " + hangmanText.text);
-        print("player: " + playerAnswer);
-
         hangmanText.text = "";
         for (int i = 1; i <= currentMaxAnswerLength; i++)
         {
