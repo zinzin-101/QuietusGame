@@ -49,9 +49,9 @@ public class HangmanScript : MonoBehaviour
             {
                 string keyPressed;
                 keyPressed = Input.inputString;
-
-                if (Regex.IsMatch(keyPressed, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ':;\\.,"))
+                if (Regex.IsMatch(keyPressed, "^[abcdefghijklmnopkrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ']"))
                 {
+                    //keyPressed = "";
                     if (keyEntered < currentMaxAnswerLength)
                     {
                         keyEntered++;
@@ -66,10 +66,14 @@ public class HangmanScript : MonoBehaviour
                         playerAnswer = playerAnswer.Remove(playerAnswer.Length - 1);
                     }
                 }
-                else
-                {
-                    keyPressed = "";
-                }
+                //else
+                //{
+                //    if (keyEntered < currentMaxAnswerLength)
+                //    {
+                //        keyEntered++;
+                //        playerAnswer += keyPressed;
+                //    }
+                //}
 
                 if (playerAnswer.Length >= currentMaxAnswerLength)
                 {
