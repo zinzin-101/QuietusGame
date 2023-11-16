@@ -19,11 +19,6 @@ public class KeyMasterDetect : MonoBehaviour
         currentItemIndex = 0;
     }
 
-    private void Update()
-    {
-        print(canInteract);
-    }
-
     public void CheckItem()
     {
         canInteract = false;
@@ -39,7 +34,7 @@ public class KeyMasterDetect : MonoBehaviour
                 InventoryManager.Instance.Remove(item);
                 currentItemIndex++;
                 break;
-            }
+            }   
         }
         
         if (!hasItem)

@@ -163,6 +163,11 @@ public class GameManager : MonoBehaviour
         pallorScript.PlayHeadExplodeAnimation();
     }
 
+    public void HangManRoomButton()
+    {
+        StartCoroutine(ChangeRoomFinal());
+    }
+
     public void ResetTimer()
     {
         timer.ResetTimer();

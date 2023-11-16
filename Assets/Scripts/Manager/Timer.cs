@@ -44,6 +44,7 @@ public class Timer : MonoBehaviour
             if (canFinishTimer)
             {
                 canFinishTimer = false;
+                GameManager.Instance.AllowPlayerToMove(true);
                 StartCoroutine(GameManager.Instance.ChangeRoom());
             }
         }

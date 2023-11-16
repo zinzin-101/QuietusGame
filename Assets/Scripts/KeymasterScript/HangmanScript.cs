@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -49,15 +50,7 @@ public class HangmanScript : MonoBehaviour
                 string keyPressed;
                 keyPressed = Input.inputString;
 
-                if (keyPressed == "\b")
-                {
-                    if (keyEntered > 0)
-                    {
-                        keyEntered--;
-                        playerAnswer.Remove(playerAnswer.Length - 1);
-                    }
-                }
-                else
+                if (Regex.IsMatch(keyPressed, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ':;\\.,"))
                 {
                     if (keyEntered < currentMaxAnswerLength)
                     {
@@ -65,8 +58,18 @@ public class HangmanScript : MonoBehaviour
                         playerAnswer += keyPressed;
                     }
                 }
-
-                PrintText();
+                else if (keyPressed == "\b")
+                {
+                    if (keyEntered > 0)
+                    {
+                        keyEntered--;
+                        playerAnswer = playerAnswer.Remove(playerAnswer.Length - 1);
+                    }
+                }
+                else
+                {
+                    keyPressed = "";
+                }
 
                 if (playerAnswer.Length >= currentMaxAnswerLength)
                 {
@@ -80,6 +83,9 @@ public class HangmanScript : MonoBehaviour
                         tries--;
                     }
                 }
+
+                PrintText();
+
             }
             else
             {
@@ -142,9 +148,12 @@ public class HangmanScript : MonoBehaviour
 
     void PrintText()
     {
+        print("hangmantext: " + hangmanText.text);
+        print("player: " + playerAnswer);
+
+        hangmanText.text = "";
         for (int i = 1; i <= currentMaxAnswerLength; i++)
         {
-            hangmanText.text = "";
             if (i <= keyEntered)
             {
                 hangmanText.text += playerAnswer[i - 1];
