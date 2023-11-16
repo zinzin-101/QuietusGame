@@ -159,16 +159,20 @@ MonoBehaviour:
   answers:
   - Uriel
   - Uriel's Bedroom
+  - /
   maxTries: 6
   hangmanDialogue:
   - First question, who am I?
   - Second question, what is this place?
+  - Last question, how did I die?
   rightDialogue:
   - "Yes\u2026..that\u2019s my real name. I\u2019m Uriel."
   - "My bedroom\u2026..a very nostalgic place isn\u2019t it"
+  - "Yes\u2026..that\u2019s how I die."
   wrongDialogue:
   - "You should pay more attention when I\u2019m talking."
   - That diary told you everything.
+  - Last question, how did I die?
   hangmanPages:
   - {fileID: 1472379807, guid: 1427e0a68034bc049ab0a250157fdc8d, type: 3}
   - {fileID: -197342343, guid: 1427e0a68034bc049ab0a250157fdc8d, type: 3}

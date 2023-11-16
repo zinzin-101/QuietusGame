@@ -174,15 +174,15 @@ public class HangmanScript : MonoBehaviour
 
     IEnumerator End()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         StopAllCoroutines();
         StopGame();
     }
 
     IEnumerator TriggerEnd()
     {
-        yield return new WaitForSeconds(3f);
         hintText.text = "";
+        yield return new WaitForSeconds(3f);
 
         foreach (char letter in rightDialogue[answerIndex])
         {
@@ -191,7 +191,6 @@ public class HangmanScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        print("game end");
         StopGame();
     }
 

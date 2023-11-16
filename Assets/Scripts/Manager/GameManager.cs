@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     private PlayerInteractScript playerInteractScript;
 
     [SerializeField] HangmanScript hangmanScript;
+    public bool HangManActive => hangmanScript.IsActive;
 
     private void Awake()
     {
