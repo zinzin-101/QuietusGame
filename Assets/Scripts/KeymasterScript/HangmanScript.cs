@@ -42,7 +42,7 @@ public class HangmanScript : MonoBehaviour
         started = false;
 
         answerIndex = 0;
-        maxIndex = answers.Length;
+        maxIndex = answers.Length - 1;
 
         isActive = false;
     }
@@ -51,10 +51,18 @@ public class HangmanScript : MonoBehaviour
     {
         if (started)
         {
-            if (tries <= 0)
+            if (tries < 0)
             {
-                StopGame();
-                return;
+                if (answerIndex == maxIndex)
+                {
+                    GameEnd();
+                    return;
+                }
+                else
+                {
+                    StartCoroutine(End());
+                    return;
+                }
             }
 
             if (Input.anyKeyDown)
@@ -155,6 +163,36 @@ public class HangmanScript : MonoBehaviour
         answerIndex++;
         if (answerIndex > maxIndex) answerIndex = maxIndex;
         GameActive(true);
+    }
+
+    public void GameEnd()
+    {
+        started = false;
+        StopAllCoroutines();
+        StartCoroutine(TriggerEnd());
+    }
+
+    IEnumerator End()
+    {
+        yield return new WaitForSeconds(2f);
+        StopAllCoroutines();
+        StopGame();
+    }
+
+    IEnumerator TriggerEnd()
+    {
+        yield return new WaitForSeconds(3f);
+        hintText.text = "";
+
+        foreach (char letter in rightDialogue[answerIndex])
+        {
+            hintText.text += letter;
+            yield return new WaitForSeconds(0.025f);
+        }
+
+        yield return new WaitForSeconds(2f);
+        print("game end");
+        StopGame();
     }
 
     public void StopGame()

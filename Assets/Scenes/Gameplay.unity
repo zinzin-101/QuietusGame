@@ -2396,6 +2396,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: answers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: answers.Array.data[2]
+      value: /
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: rightDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: wrongDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: hangmanDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: rightDialogue.Array.data[2]
+      value: "Yes\u2026..that\u2019s how I die."
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: wrongDialogue.Array.data[2]
+      value: Last question, how did I die?
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: hangmanDialogue.Array.data[2]
+      value: Last question, how did I die?
+      objectReference: {fileID: 0}
     - target: {fileID: 3720006911299576288, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
