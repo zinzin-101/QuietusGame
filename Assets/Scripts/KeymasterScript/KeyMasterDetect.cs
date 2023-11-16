@@ -19,9 +19,13 @@ public class KeyMasterDetect : MonoBehaviour
         currentItemIndex = 0;
     }
 
+    private void Update()
+    {
+        print(canInteract);
+    }
+
     public void CheckItem()
     {
-        if (!canInteract) return;
         canInteract = false;
         hasItem = false;
 
@@ -36,6 +40,11 @@ public class KeyMasterDetect : MonoBehaviour
                 currentItemIndex++;
                 break;
             }
+        }
+        
+        if (!hasItem)
+        {
+            canInteract = true;
         }
     }
 

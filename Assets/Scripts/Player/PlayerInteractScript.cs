@@ -80,6 +80,7 @@ public class PlayerInteractScript : MonoBehaviour
         {
             if (isSitting && keymasterScript.CanInteract)
             {
+                keymasterScript.SetCanInteract(false);
                 keymasterScript.CheckItem();
             }
         }

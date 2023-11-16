@@ -70,8 +70,8 @@ public class PallorMortisScript : MonoBehaviour
 
         if (keymasterScript.HasItem)
         {
-            StartCoroutine(NextPhase());
             keymasterScript.SetHasItem(false);
+            StartCoroutine(NextPhase());
         }
     }
 
