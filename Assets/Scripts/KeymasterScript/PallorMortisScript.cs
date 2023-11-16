@@ -97,7 +97,7 @@ public class PallorMortisScript : MonoBehaviour
         canStartPhaseDialogue = true;
         GameManager.Instance.AllowPlayerToSit(true);
         GameManager.Instance.TimerForcedStop(false);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.5f);
         //PlayPhaseDialogue();
         keymasterScript.SetCanInteract(true);
     }
@@ -154,6 +154,12 @@ public class PallorMortisScript : MonoBehaviour
         GameManager.Instance.AllowPlayerToSit(false);
 
         DialogueManager.Instance.StartDialogue(itemDialogue[phaseIndex], true);
+
+        if (phaseIndex == maxPhaseIndex)
+        {
+            yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+            StartCoroutine(GameManager.Instance.ChangeRoomFinal());
+        }
 
         phaseIndex++;
         if (phaseIndex > maxPhaseIndex)

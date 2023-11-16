@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] SpawnRoom[] roomCycle;
     private int currentRoom;
+
+    [SerializeField] SpawnRoom finalRoom;
+
     public int CurrentRoom => currentRoom;
     private int numOfRoom;
 
@@ -41,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     private PlayerInteractScript playerInteractScript;
 
+    [SerializeField] HangmanScript hangmanScript;
 
     private void Awake()
     {
@@ -105,6 +109,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public IEnumerator ChangeRoomFinal()
+    {
+        canStartDialogue = false;
+
+        var task1 = LevelManager.Instance.NormalFadeIn(timeDelayBeforeLoadScene);
+        yield return new WaitUntil(() => task1.IsCompleted);
+
+        playerTransform.position = finalRoom.spawnPos.position;
+        mainCamera.transform.position = new Vector3(defaultCamPos.x + finalRoom.cameraPos.position.x,
+                                                    defaultCamPos.y + finalRoom.cameraPos.position.y,
+                                                    defaultCamPos.z + finalRoom.cameraPos.position.z);
+        timer.ResetTimer();
+
+        DialogueManager.Instance.ResetDialogue();
+
+        var task2 = LevelManager.Instance.NormalFadeOut();
+        yield return new WaitUntil(() => task2.IsCompleted);
+        canStartDialogue = true;
+
+        hangmanScript.StartRoom();
+    }
+
     public void TimerActive(bool value)
     {
         timer.SetActiveTimer(value);
@@ -135,5 +161,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ChangeRoom());
         timer.ResetTimer();
         pallorScript.PlayHeadExplodeAnimation();
+    }
+
+    public void ResetTimer()
+    {
+        timer.ResetTimer();
     }
 }

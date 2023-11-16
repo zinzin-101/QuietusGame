@@ -1905,7 +1905,6 @@ MonoBehaviour:
   timerText: {fileID: 7659827365658157238}
   timeLimit: 60
   timeDelayBeforeLoadScene: 2
-  timerActivate: 0
 --- !u!1 &9129717103789480453
 GameObject:
   m_ObjectHideFlags: 0

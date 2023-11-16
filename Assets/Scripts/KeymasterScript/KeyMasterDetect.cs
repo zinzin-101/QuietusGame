@@ -21,6 +21,7 @@ public class KeyMasterDetect : MonoBehaviour
 
     public void CheckItem()
     {
+        if (!canInteract) return;
         canInteract = false;
         hasItem = false;
 

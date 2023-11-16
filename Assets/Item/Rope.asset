@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Rope
   m_EditorClassIdentifier: 
   itemName: Rope
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7926404c9aa6681489b4f88345028bea, type: 3}
   itemType: 0
   itemDescription: rope
