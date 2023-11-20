@@ -11,6 +11,7 @@ public class PickupScript : MonoBehaviour
 
     private bool pickedUp;
     private string pickUpName;
+    public string PickUpName => pickUpName;
 
     private SpriteRenderer spriteRenderer;
 
@@ -31,6 +32,11 @@ public class PickupScript : MonoBehaviour
         {
             if (collision.gameObject.TryGetComponent(out PickableObjectScript pickableScript))
             {
+                if (collision.gameObject.TryGetComponent(out BagScript bag) && !GameManager.Instance.CanPickUpBag)
+                {
+                    return;
+                }
+
                 pickedUp = true;
                 
                 collision.gameObject.transform.parent = transform;
@@ -58,7 +64,7 @@ public class PickupScript : MonoBehaviour
         }
     }
 
-    public void DropObject()
+    public Transform DropObject()
     {
         Transform _pickupTransform = transform.Find(pickUpName);
 
@@ -77,7 +83,9 @@ public class PickupScript : MonoBehaviour
 
             _pickupTransform.transform.parent = null;
             pickedUp = false;
+            return _pickupTransform;
         }
+        return null;
     }
 
     public void DropChair()

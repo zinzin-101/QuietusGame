@@ -5,10 +5,12 @@ using UnityEngine;
 public class BonsaiScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+    [SerializeField] GameObject col;
 
     private void Awake()
     {
         TryGetComponent(out spriteRenderer);
+        col.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -25,5 +27,10 @@ public class BonsaiScript : MonoBehaviour
                 spriteRenderer.sortingOrder = playerRenderer.sortingOrder + 1;
             }
         }
+    }
+
+    public void SetCollider(bool value)
+    {
+        col.SetActive(value);
     }
 }

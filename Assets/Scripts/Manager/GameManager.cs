@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] HangmanScript hangmanScript;
     public bool HangManActive => hangmanScript.IsActive;
 
+    private bool canPickUpBag;
+    public bool CanPickUpBag => canPickUpBag;
+
     private void Awake()
     {
         SoundManager.Initialize();
@@ -175,5 +178,10 @@ public class GameManager : MonoBehaviour
     public void ResetTimer()
     {
         timer.ResetTimer();
+    }
+
+    public void AllowBagPickup(bool value)
+    {
+        canPickUpBag = value;
     }
 }
