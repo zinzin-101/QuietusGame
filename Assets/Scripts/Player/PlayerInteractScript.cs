@@ -85,6 +85,18 @@ public class PlayerInteractScript : MonoBehaviour
             }
         }
 
+        if (collision.TryGetComponent(out DigiClockScript digiclock))
+        {
+            if (isSitting)
+            {
+                digiclock.Interact();
+            }
+            else if (!isSitting)
+            {
+                digiclock.UnInteract();
+            }
+        }
+
         if (interactPressed && canInteract)
         {
             if (collision.gameObject.TryGetComponent(out TextInteract textInteract))
