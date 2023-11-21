@@ -2370,7 +2370,7 @@ PrefabInstance:
     - target: {fileID: 7579832402997149982, guid: fcd6476a9ffd04f4bb6ce0839e8102ac, type: 3}
       propertyPath: itemAppear
       value: 
-      objectReference: {fileID: 2489728256959022001, guid: cc4e73e7ccb35224f99cf48db2d97adc, type: 3}
+      objectReference: {fileID: 61521979523043413, guid: 5ef657fde640d81478cb4647ee8aba84, type: 3}
     - target: {fileID: 7579832402997149982, guid: fcd6476a9ffd04f4bb6ce0839e8102ac, type: 3}
       propertyPath: itemSpawnPos
       value: 
