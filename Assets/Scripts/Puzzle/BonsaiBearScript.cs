@@ -52,6 +52,8 @@ public class BonsaiBearScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInput input))
         {
+            if (bonsaiSpriteRenderer == null) return;
+
             SpriteRenderer playerRenderer = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
             if (collision.gameObject.transform.position.y < transform.position.y - 0.8f)
             {

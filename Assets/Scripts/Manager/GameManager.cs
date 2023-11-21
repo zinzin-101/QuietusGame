@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
     private bool canPickUpBag;
     public bool CanPickUpBag => canPickUpBag;
 
+    private bool canPickBonsai;
+    public bool CanPickBonsai => canPickBonsai;
+
     private void Awake()
     {
         SoundManager.Initialize();
@@ -183,5 +186,10 @@ public class GameManager : MonoBehaviour
     public void AllowBagPickup(bool value)
     {
         canPickUpBag = value;
+    }
+
+    public void AllowBonsaiPickup(bool value)
+    {
+        canPickBonsai = value;
     }
 }

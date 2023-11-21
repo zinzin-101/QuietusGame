@@ -76,6 +76,7 @@ public class DigiClockScript : MonoBehaviour
 
         completed = true;
         panel.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void ChangeDigit0(bool add)

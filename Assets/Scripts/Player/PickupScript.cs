@@ -38,6 +38,11 @@ public class PickupScript : MonoBehaviour
                     return;
                 }
 
+                if (collision.gameObject.TryGetComponent(out BonsaiScript bonsaiScript) && !GameManager.Instance.CanPickBonsai)
+                {
+                    return;
+                }
+
                 pickedUp = true;
                 
                 collision.gameObject.transform.parent = transform;
