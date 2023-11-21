@@ -10,6 +10,7 @@ public class PickupScript : MonoBehaviour
     [SerializeField] KeyCode pickUpKey = KeyCode.F;
 
     private bool pickedUp;
+    public bool PickedUp => pickedUp;
     private string pickUpName;
     public string PickUpName => pickUpName;
 

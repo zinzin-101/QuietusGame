@@ -15,10 +15,10 @@ public class BonsaiScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
+        if (collision.gameObject.TryGetComponent(out PickupScript pickupScript))
         {
             SpriteRenderer playerRenderer = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
-            if (collision.gameObject.transform.position.y < transform.position.y)
+            if (collision.gameObject.transform.position.y < transform.position.y - 0.6f && !pickupScript.PickedUp)
             {
                 spriteRenderer.sortingOrder = playerRenderer.sortingOrder - 1;
             }

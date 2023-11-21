@@ -5,6 +5,8 @@ using UnityEngine;
 public class BonsaiBearScript : MonoBehaviour
 {
     private bool activated;
+    private Transform bonsai;
+    private SpriteRenderer bonsaiSpriteRenderer;
 
     private void Awake()
     {
@@ -21,13 +23,15 @@ public class BonsaiBearScript : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out PickupScript pickupScript))
         {
             if (pickupScript.PickUpName != "Bonsai") return;
-            Transform bonsai = pickupScript.DropObject();
-            TryGetComponent(out BonsaiScript bonsaiScript);
+            bonsai = pickupScript.DropObject();
+            //TryGetComponent(out BonsaiScript bonsaiScript);
             
             //if (bonsaiScript != null)
             //{
             //    bonsaiScript.SetCollider(true);
             //}
+
+            if (bonsai == null) return;
 
             bonsai.transform.parent = transform;
             bonsai.transform.localPosition = new Vector3(-3.64f, -0.65f, 0f);
@@ -35,10 +39,27 @@ public class BonsaiBearScript : MonoBehaviour
             if (activated) return;
 
             GameManager.Instance.AllowBagPickup(true);
-            Collider2D col = bonsai.GetComponent<Collider2D>();
+            bonsai.TryGetComponent(out Collider2D col);
             if (col != null)
             {
                 col.enabled = false;
+            }
+            bonsai.TryGetComponent(out bonsaiSpriteRenderer);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerInput input))
+        {
+            SpriteRenderer playerRenderer = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
+            if (collision.gameObject.transform.position.y < transform.position.y - 0.8f)
+            {
+                bonsaiSpriteRenderer.sortingOrder = playerRenderer.sortingOrder - 1;
+            }
+            else
+            {
+                bonsaiSpriteRenderer.sortingOrder = playerRenderer.sortingOrder + 1;
             }
         }
     }
