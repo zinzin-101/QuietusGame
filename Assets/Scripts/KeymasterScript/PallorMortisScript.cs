@@ -52,13 +52,10 @@ public class PallorMortisScript : MonoBehaviour
     {
         keymasterScript.SetCanInteract(false);
         GameManager.Instance.TimerForcedStop(true);
-
         //GameManager.Instance.AllowPlayerToMove(false);
-
         yield return new WaitForSeconds(1f);
-        //DialogueManager.Instance.StartDialogue(dialogue[dialogueIndex], true);
-
-        DialogueManager.Instance.AddDialogueQueue(new DialoguePlayer(dialogue[dialogueIndex], true));
+        DialogueManager.Instance.StartDialogue(dialogue[dialogueIndex], true);
+        //DialogueManager.Instance.AddDialogueQueue(new DialoguePlayer(dialogue[dialogueIndex], true));
         
         //yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         //GameManager.Instance.AllowPlayerToMove(true);
