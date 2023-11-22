@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class BagScript : MonoBehaviour
 {
-    
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
 }

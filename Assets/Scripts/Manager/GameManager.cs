@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
     private bool canPickBonsai;
     public bool CanPickBonsai => canPickBonsai;
 
+    [SerializeField] GameObject skipButton;
+
     private void Awake()
     {
         SoundManager.Initialize();
@@ -78,6 +80,11 @@ public class GameManager : MonoBehaviour
         playerCanSit = true;
         playerCanMove = true;
         canStartDialogue = true;
+
+        if (skipButton != null)
+        {
+            skipButton.SetActive(false);
+        }
     }
 
     private void Start()
@@ -191,5 +198,10 @@ public class GameManager : MonoBehaviour
     public void AllowBonsaiPickup(bool value)
     {
         canPickBonsai = value;
+    }
+
+    public void EnableSkip(bool value)
+    {
+        skipButton.SetActive(value);
     }
 }
