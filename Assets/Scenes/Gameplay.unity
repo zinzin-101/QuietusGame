@@ -338,6 +338,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroupedDigiClockPuzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 8137320148601646254, guid: 9f9c1a3c77eec314fba28b88e17a47c6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9352815
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137320148601646254, guid: 9f9c1a3c77eec314fba28b88e17a47c6, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.08264077
+      objectReference: {fileID: 0}
     - target: {fileID: 8851105089769096203, guid: 9f9c1a3c77eec314fba28b88e17a47c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.28
@@ -1028,7 +1036,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -7.3798137, y: -1.2653217}
+    - - {x: -7.6644645, y: -1.8438072}
       - {x: -6.089583, y: -2.0680637}
       - {x: -6.77784, y: -2.6102145}
       - {x: -7.990953, y: -1.7665251}
