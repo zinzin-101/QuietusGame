@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         if (skipButton != null)
         {
-            skipButton.SetActive(false);
+            EnableSkip(false);
         }
     }
 
