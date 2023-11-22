@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GameTape
   m_EditorClassIdentifier: 
   itemName: Game Tape
-  icon: {fileID: 21300000, guid: 4ffce00e5b51fbd42ad89dfe87a64877, type: 3}
+  icon: {fileID: 21300000, guid: a70c4507e0ce6d34a893e8682d1576f4, type: 3}
   itemType: 0
   itemDescription: A game tape
