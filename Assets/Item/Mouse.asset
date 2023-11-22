@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mouse
   m_EditorClassIdentifier: 
   itemName: Mouse
-  icon: {fileID: 21300000, guid: e520dde62872a864ab613fbfd4288b1e, type: 3}
+  icon: {fileID: 21300000, guid: 144fac9b408dad04e829a83d0de8fb6a, type: 3}
   itemType: 0
   itemDescription: Mouse

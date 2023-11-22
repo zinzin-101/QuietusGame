@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   itemName: Key
-  icon: {fileID: 21300000, guid: f417cbd101851cd47830dbdf8757b3e2, type: 3}
+  icon: {fileID: 21300000, guid: 28926e656e0b19646a548a70ea013b3c, type: 3}
   itemType: 0
   itemDescription: A key

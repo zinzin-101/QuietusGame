@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PC
   m_EditorClassIdentifier: 
   itemName: PC
-  icon: {fileID: 21300000, guid: 911b66891eac9dc42808b596c3befbf8, type: 3}
+  icon: {fileID: 21300000, guid: 68ef6782d04bc3c48991f1f62c6bc1d2, type: 3}
   itemType: 0
   itemDescription: computer

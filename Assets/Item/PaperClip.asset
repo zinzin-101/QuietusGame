@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: PaperClip
   m_EditorClassIdentifier: 
   itemName: Paper Clip
-  icon: {fileID: 21300000, guid: 2ddac43024a369943b53f658f3ccdc2c, type: 3}
+  icon: {fileID: 21300000, guid: 751fccadc4f4e1e4f9ae584ab8d4aa77, type: 3}
   itemType: 1
-  TransformedItem: {fileID: 11400000, guid: fa7746e39fb50b848a67ddb91faafb22, type: 2}
   itemDescription: A paper clip, maybe you can make something out of it?

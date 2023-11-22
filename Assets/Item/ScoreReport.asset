@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ScoreReport
   m_EditorClassIdentifier: 
   itemName: Score Report
-  icon: {fileID: 21300000, guid: a7c9d2b92d657f544a0a4a82905c83d3, type: 3}
+  icon: {fileID: 21300000, guid: c97af136536dbef4e89ac1169ac6aa1d, type: 3}
   itemType: 0
   itemDescription: A score report
