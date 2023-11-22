@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -87,13 +88,16 @@ public class PlayerInteractScript : MonoBehaviour
 
         if (collision.TryGetComponent(out DigiClockScript digiclock))
         {
-            if (isSitting)
+            if (!digiclock.Grouped)
             {
-                digiclock.Interact();
-            }
-            else if (!isSitting)
-            {
-                digiclock.UnInteract();
+                if (isSitting)
+                {
+                    digiclock.Interact();
+                }
+                else if (!isSitting)
+                {
+                    digiclock.UnInteract();
+                }
             }
         }
 
@@ -109,6 +113,21 @@ public class PlayerInteractScript : MonoBehaviour
             {
                 StartCoroutine(InteractCooldown());
                 dialogueScript.TriggerDialogue();
+            }
+
+            if (digiclock != null && digiclock.Grouped)
+            {
+                StartCoroutine(InteractCooldown());
+                
+                switch (digiclock.Showing)
+                {
+                    case true:
+                        digiclock.UnInteract();
+                        break;
+                    case false:
+                        digiclock.Interact();
+                        break;
+                }
             }
 
                 if (collision.gameObject.TryGetComponent(out ChairScript chairScript))
@@ -160,7 +179,13 @@ public class PlayerInteractScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
+        if (collision.gameObject.TryGetComponent(out DigiClockScript digiclock))
+        {
+            if (digiclock.Grouped)
+            {
+                digiclock.UnInteract();
+            }
+        }
     }
 
     public IEnumerator InteractCooldown()

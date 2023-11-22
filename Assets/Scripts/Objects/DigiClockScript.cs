@@ -15,6 +15,15 @@ public class DigiClockScript : MonoBehaviour
     [SerializeField] TMP_Text codeText;
 
     private bool completed;
+    public bool Completed => completed;
+
+    [SerializeField] bool grouped;
+    public bool Grouped => grouped;
+
+    private bool disable;
+
+    private bool showing;
+    public bool Showing => showing;
 
     private void Awake()
     {
@@ -25,25 +34,30 @@ public class DigiClockScript : MonoBehaviour
         
         panel.SetActive(false);
         completed = false;
+        disable = false;
     }
 
     public void Interact()
     {
-        if (completed) return;
+        if (disable) return;
+        if (completed && !grouped) return;
 
         panel.SetActive(true);
+        showing = true;
         PrintCode();
     }
 
     public void UnInteract()
     {
-        if (completed) return;
+        if (completed && !grouped) return;
 
         panel.SetActive(false);
+        showing = false;
     }
 
     private void PrintCode()
     {
+        if (disable) return;
         codeText.text = "";
         for (int i = 0; i < 4; i++)
         {
@@ -58,6 +72,7 @@ public class DigiClockScript : MonoBehaviour
 
     private void CheckCode()
     {
+        if (disable) return;
         bool correct = true;
         for (int i = 0; i < 4; i++)
         {
@@ -68,13 +83,19 @@ public class DigiClockScript : MonoBehaviour
             }
         }
 
+        if (grouped)
+        {
+            completed = correct;
+            return;
+        }
         if (!correct) return;
+
+        completed = true;
 
         Instantiate(itemAppear, itemSpawnPos.position, Quaternion.identity);
 
         //play sound here or something
 
-        completed = true;
         panel.SetActive(false);
         Destroy(gameObject);
     }
@@ -101,7 +122,8 @@ public class DigiClockScript : MonoBehaviour
 
     private void ChangeDigit(int index, bool add)
     {
-        if (completed) return;
+        if (disable) return;
+        if (completed && !grouped) return;
 
         switch (add)
         {
@@ -125,5 +147,16 @@ public class DigiClockScript : MonoBehaviour
 
         PrintCode();
         CheckCode();
+    }
+
+    public void SetDisable(bool value)
+    {
+        UnInteract();
+        disable = value;
+    }
+
+    public void SetActiveGameObject(bool value)
+    {
+        gameObject.SetActive(value);
     }
 }

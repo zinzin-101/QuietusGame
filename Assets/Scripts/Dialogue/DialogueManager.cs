@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public struct DialoguePlayer
 {
@@ -24,7 +25,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private Queue<DialoguePlayer> dialogueQueue;
 
-    [SerializeField] GameObject dialoguePanel;
+    [SerializeField] Image dialoguePanel;
     [SerializeField] GameObject dialogueObject;
     [SerializeField] GameObject dialogueButton;
     //[SerializeField] float dialogueDelay = 3f;
@@ -36,7 +37,6 @@ public class DialogueManager : MonoBehaviour
     public bool IsRunning => isRunning;
 
     private Animator animator;
-
 
     private void Awake()
     {
@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        //dialoguePanel.SetActive(false);
+        dialoguePanel.enabled = false;
 
         if (animator != null)
         {
@@ -83,11 +83,13 @@ public class DialogueManager : MonoBehaviour
         {
             GameManager.Instance.TimerActive(false);
             GameManager.Instance.AllowPlayerToMove(false);
+            dialoguePanel.enabled = true;
             dialogueButton.SetActive(true);
         }
         else
         {
             dialogueButton.SetActive(false);
+            dialoguePanel.enabled = false;
         }
 
         //dialoguePanel.SetActive(true);
@@ -140,6 +142,8 @@ public class DialogueManager : MonoBehaviour
         {
             GameManager.Instance.AllowPlayerToMove(true);
         }
+
+        dialoguePanel.enabled = false;
     }
 
     IEnumerator PrintSentence(string sentence, bool isDialogueBox)

@@ -25,7 +25,7 @@ public class SamScript : MonoBehaviour
         {
             if (item.name == requiredItem.name)
             {
-                InventoryManager.Instance.Items.Remove(item);
+                InventoryManager.Instance.Remove(item);
                 return true;
             }
         }
@@ -51,6 +51,7 @@ public class SamScript : MonoBehaviour
                         {
                             finished = true;
                             GameManager.Instance.AllowBonsaiPickup(true);
+                            GameManager.Instance.EnableSkip(true);
                             TriggerDialogue(dialogueAfter);
                         }
                         else
