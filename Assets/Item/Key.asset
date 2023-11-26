@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fc48fabf396e54fbf8192e374b1c3a, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: 
-  itemName: Key
+  itemName: A Key
   icon: {fileID: 21300000, guid: 28926e656e0b19646a548a70ea013b3c, type: 3}
   itemType: 0
-  itemDescription: A key
+  itemDescription: A vintage key whispers of hidden mysteries, a charming promise
+    to unlock the secrets within the worn wardrobe.

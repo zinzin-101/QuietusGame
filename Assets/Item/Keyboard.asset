@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Keyboard
   icon: {fileID: 21300000, guid: 02d8c17b1d2361c4db2a9569f2cf1620, type: 3}
   itemType: 0
-  itemDescription: keyboard
+  itemDescription: One of the three missing parts of the computer.

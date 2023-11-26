@@ -1666,7 +1666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4114211931375880592, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: timeLimit
-      value: 60
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4114211931375880592, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: timerActivate
@@ -1735,7 +1735,19 @@ PrefabInstance:
     - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8d92f8bd191e5d240aea79afd55a38f6, type: 2}
+      objectReference: {fileID: 11400000, guid: 5b56dd9dd8a17b749a31db8ae70db5ee, type: 2}
+    - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: m_fontSizeBase
       value: 90
@@ -1743,7 +1755,11 @@ PrefabInstance:
     - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -7401552821216388430, guid: 8d92f8bd191e5d240aea79afd55a38f6, type: 2}
+      objectReference: {fileID: 951433563311327358, guid: 5b56dd9dd8a17b749a31db8ae70db5ee, type: 2}
+    - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7675244403412684622, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0

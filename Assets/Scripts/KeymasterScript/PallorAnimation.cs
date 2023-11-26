@@ -33,7 +33,7 @@ public class PallorAnimation : MonoBehaviour
                 {
                     float timerValue = timerScript.GetTimeValue();
 
-                    if (timerValue <= 30f)
+                    if (timerValue <= 15f)
                     {
                         animator.SetBool("TransitionTo2", true);
                         animator.SetBool("TransitionTo3", true);
@@ -41,7 +41,7 @@ public class PallorAnimation : MonoBehaviour
                         animator.SetBool("TransitionTo6", false);
                         animator.SetBool("TransitionTo1", false);
                     }
-                    if (timerValue <= 10f)
+                    if (timerValue <= 5f)
                     {
                         animator.SetBool("TransitionTo4", true);
                         animator.SetBool("TransitionTo5", true);

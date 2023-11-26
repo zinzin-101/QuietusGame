@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fc48fabf396e54fbf8192e374b1c3a, type: 3}
   m_Name: Lockpick
   m_EditorClassIdentifier: 
-  itemName: Lockpick
+  itemName: A Lockpick
   icon: {fileID: 21300000, guid: 4be9a83419a7faf4ba473cd34a7e24f2, type: 3}
   itemType: 0
-  itemDescription: A lockpick. Maybe it can open a drawer?
+  itemDescription: A hidden lockpick whispers of mysteries, a silent invitation to
+    unveil secrets within.
