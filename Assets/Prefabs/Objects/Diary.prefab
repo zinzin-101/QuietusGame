@@ -161,6 +161,42 @@ MonoBehaviour:
   - {fileID: 1934950863, guid: 1427e0a68034bc049ab0a250157fdc8d, type: 3}
   - {fileID: -776001977, guid: 1427e0a68034bc049ab0a250157fdc8d, type: 3}
   - {fileID: -273094821, guid: 1427e0a68034bc049ab0a250157fdc8d, type: 3}
+  diaryText:
+  - name: 16/11/2008
+    sentences:
+    - "Dad locked me in a room after hearing the news this morning. I don\u2019t
+      know what\u2019s happening, but he keeps blaming me. "
+  - name: 17/11/2008
+    sentences:
+    - "The door\u2019s still locked. I feel like something bad is going to happen."
+  - name: '18/11/2008 '
+    sentences:
+    - "I\u2019ve heard a gunshot outside. There are many unfamiliar sounds behind
+      this door. I tried to call for help, but none of them replied."
+  - name: 19/11/2008
+    sentences:
+    - 'Help.
+
+      (Sign: Uriel)'
+  - name: 20/11/2008
+    sentences:
+    - "-----------one----de----ant----------elp-----an\u2019t ---------ound."
+  - name: '21/11/2008 '
+    sentences:
+    - (All texts have been crossed out)
+  - name: 
+    sentences:
+    - Rope.
+  - name: 
+    sentences:
+    - (You are not supposed to read this page.)
+  - name: 
+    sentences:
+    - (Empty)
+  - name: 
+    sentences:
+    - "(There\u2019s an old game cartridge on the last page of the diary. You should
+      bring it to Pallor. He might know something.)"
   item: {fileID: 6977761252646258094}
   itemPageIndex: 9
 --- !u!114 &6579183122457370449

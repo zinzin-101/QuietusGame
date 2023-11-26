@@ -35,11 +35,13 @@ public class PickupScript : MonoBehaviour
             {
                 if (collision.gameObject.TryGetComponent(out BagScript bag) && !GameManager.Instance.CanPickUpBag)
                 {
+                    DialogueManager.Instance.StartDialogue(bag.NoBonsai, true);
                     return;
                 }
 
                 if (collision.gameObject.TryGetComponent(out BonsaiScript bonsaiScript) && !GameManager.Instance.CanPickBonsai)
                 {
+                    DialogueManager.Instance.StartDialogue(bonsaiScript.CantBonsai, true);
                     return;
                 }
 

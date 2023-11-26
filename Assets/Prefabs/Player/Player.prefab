@@ -140,7 +140,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupDistance: 1
   pickUpKey: 102
-  spriteRenderer: {fileID: 7458808398982838418}
+  noBagDialogue:
+    name: Bear?
+    sentences:
+    - No.....Mine.....
 --- !u!114 &8369721843506567769
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -103,6 +103,11 @@ public class PlayerInteractScript : MonoBehaviour
 
         if (interactPressed && canInteract)
         {
+            if (collision.gameObject.TryGetComponent(out BonsaiBearScript bear))
+            {
+                bear.PlayBonsaiDialogue();
+            }
+
             if (collision.gameObject.TryGetComponent(out TextInteract textInteract))
             {
                 StartCoroutine(InteractCooldown());
@@ -130,7 +135,12 @@ public class PlayerInteractScript : MonoBehaviour
                 }
             }
 
-                if (collision.gameObject.TryGetComponent(out ChairScript chairScript))
+            if (collision.gameObject.TryGetComponent(out QuinnScript quinn))
+            {
+                quinn.SetCan(true);
+            }
+
+            if (collision.gameObject.TryGetComponent(out ChairScript chairScript))
             {
                 if (chairScript.CurrentState != ChairScript.ChairState.Down)
                 {
@@ -161,6 +171,14 @@ public class PlayerInteractScript : MonoBehaviour
                             GameManager.Instance.TimerActive(false);
                             break;
                     }
+                }
+            }
+
+            if (digiclock != null && !digiclock.Grouped)
+            {
+                if (!isSitting)
+                {
+                    DialogueManager.Instance.StartDialogue(digiclock.TooHigh, true);
                 }
             }
 

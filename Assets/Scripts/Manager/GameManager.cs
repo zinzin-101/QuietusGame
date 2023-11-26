@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public bool CanPickBonsai => canPickBonsai;
 
     [SerializeField] GameObject skipButton;
+    private bool canSkipRoom;
 
     private void Awake()
     {
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
     {
         mainCamera = FindObjectOfType<Camera>();
         currentRoom = 1;
+        canSkipRoom = false;
     }
 
     public IEnumerator ChangeRoom()
@@ -123,11 +125,46 @@ public class GameManager : MonoBehaviour
                 pallorScript.PlayPhaseDialogue();
                 break;
         }
+        canSkipRoom = true;
+    }
+
+    public IEnumerator ChangeRoom(float fadeIn)
+    {
+        canStartDialogue = false;
+        currentRoom++;
+
+        if (currentRoom > numOfRoom) currentRoom = 1;
+
+        var task1 = LevelManager.Instance.NormalFadeIn(fadeIn);
+        yield return new WaitUntil(() => task1.IsCompleted);
+
+        playerTransform.position = roomCycle[currentRoom - 1].spawnPos.position;
+        mainCamera.transform.position = new Vector3(defaultCamPos.x + roomCycle[currentRoom - 1].cameraPos.position.x,
+                                                    defaultCamPos.y + roomCycle[currentRoom - 1].cameraPos.position.y,
+                                                    defaultCamPos.z + roomCycle[currentRoom - 1].cameraPos.position.z);
+        timer.ResetTimer();
+
+        DialogueManager.Instance.ResetDialogue();
+
+        AllowPlayerToMove(true);
+
+        var task2 = LevelManager.Instance.NormalFadeOut();
+        yield return new WaitUntil(() => task2.IsCompleted);
+        canStartDialogue = true;
+
+        switch (currentRoom)
+        {
+            case 1:
+                pallorScript.PlayPhaseDialogue();
+                break;
+        }
+        canSkipRoom = true;
     }
 
     public IEnumerator ChangeRoomFinal()
     {
         canStartDialogue = false;
+        canSkipRoom = false;
 
         var task1 = LevelManager.Instance.NormalFadeIn(timeDelayBeforeLoadScene);
         yield return new WaitUntil(() => task1.IsCompleted);
@@ -175,8 +212,10 @@ public class GameManager : MonoBehaviour
 
     public void NextRoomButton()
     {
-        StartCoroutine(ChangeRoom());
-        timer.ResetTimer();
+        if (!canSkipRoom) return;
+        canSkipRoom = false;
+        StartCoroutine(ChangeRoom(0.25f));
+        //timer.ResetTimer();
         pallorScript.PlayHeadExplodeAnimation();
     }
 
@@ -203,5 +242,10 @@ public class GameManager : MonoBehaviour
     public void EnableSkip(bool value)
     {
         skipButton.SetActive(value);
+    }
+
+    public void SetCanSkipRoom(bool value)
+    {
+        canSkipRoom = value;
     }
 }

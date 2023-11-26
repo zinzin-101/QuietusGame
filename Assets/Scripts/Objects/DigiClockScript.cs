@@ -25,6 +25,9 @@ public class DigiClockScript : MonoBehaviour
     private bool showing;
     public bool Showing => showing;
 
+    [SerializeField] Dialogue tooHigh;
+    public Dialogue TooHigh => tooHigh;
+
     private void Awake()
     {
         for (int i = 0; i < 4; i++)

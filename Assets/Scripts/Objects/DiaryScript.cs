@@ -12,6 +12,7 @@ public class DiaryScript : MonoBehaviour
     [SerializeField] GameObject diaryPanel;
     [SerializeField] Image panelSpriteRenderer;
     [SerializeField] Sprite[] diaryPages;
+    [SerializeField] Dialogue[] diaryText;
     private int pageIndex;
     private int totalPages;
 
@@ -84,6 +85,11 @@ public class DiaryScript : MonoBehaviour
     {
         diaryPanel.SetActive(!diaryPanel.activeSelf);
 
+        if (pageIndex == 0)
+        {
+            DialogueManager.Instance.StartDialogue(diaryText[0], true);
+        }
+
         if (item != null)
         {
             if (pageIndex == itemPageIndex)
@@ -102,6 +108,10 @@ public class DiaryScript : MonoBehaviour
         if (!diaryPanel.activeSelf) return;
 
         panelSpriteRenderer.sprite = diaryPages[++pageIndex % totalPages];
+        if (pageIndex % totalPages != 0)
+        {
+            DialogueManager.Instance.StartDialogue(diaryText[pageIndex % totalPages], true);
+        }
 
         if (item != null)
         {

@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f23f5bfffb89ec4bb7403b341c610e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRequired: 4
+  timeRequired: 3
   progressBar: {fileID: 5765573424481454921}
   progressBarBG: {fileID: 8718677564951380025}
 --- !u!1 &8665125257966169830

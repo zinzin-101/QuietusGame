@@ -90,9 +90,19 @@ public class PallorMortisScript : MonoBehaviour
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         TriggerNextDialogue();
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        TriggerNextDialogue(); // player receives an hourglass
+        GameManager.Instance.EnableSkip(true);
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        TriggerNextDialogue();
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        TriggerNextDialogue();
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        TriggerNextDialogue();
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         firstDialogueTriggered = true;
         canStartPhaseDialogue = true;
         GameManager.Instance.AllowPlayerToSit(true);
+        GameManager.Instance.SetCanSkipRoom(true);
         GameManager.Instance.TimerForcedStop(false);
         yield return new WaitForSeconds(1.5f);
         //PlayPhaseDialogue();

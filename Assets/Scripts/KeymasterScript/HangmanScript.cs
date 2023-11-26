@@ -201,7 +201,8 @@ public class HangmanScript : MonoBehaviour
         textObject.SetActive(false);
         GameManager.Instance.AllowPlayerToMove(true);
         StopAllCoroutines();
-        StartCoroutine(GameManager.Instance.ChangeRoom());
+        //GameManager.Instance.SetCanSkipRoom(true); might use
+        StartCoroutine(GameManager.Instance.ChangeRoom()); // change later
     }
 
     IEnumerator PlayHint()

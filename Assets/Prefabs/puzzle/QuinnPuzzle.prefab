@@ -128,6 +128,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToGive: {fileID: 11400000, guid: c5772f9b6a43124478beb0022b165b3b, type: 2}
+  before:
+    name: ???
+    sentences:
+    - Morning meself.
+    - Meself go school. Where me backpack?
+    - Me want Backpack. Not box thing. Where me backpack.
+  after:
+    name: ???
+    sentences:
+    - Backpack! Backpack!
+    - (The creature left the box thing for you.)
+    - (You got a PC!)
+  afterAfter:
+    name: ???
+    sentences:
+    - 'Meself go school! '
 --- !u!61 &8603283321846135164
 BoxCollider2D:
   m_ObjectHideFlags: 0

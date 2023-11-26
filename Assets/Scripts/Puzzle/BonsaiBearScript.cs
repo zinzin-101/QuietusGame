@@ -8,6 +8,11 @@ public class BonsaiBearScript : MonoBehaviour
     private Transform bonsai;
     private SpriteRenderer bonsaiSpriteRenderer;
 
+    [SerializeField] Dialogue noBonsai;
+    [SerializeField] Dialogue yesBonsai;
+    public Dialogue NoBonsai => noBonsai;
+    public Dialogue YesBonsai => yesBonsai;
+
     private void Awake()
     {
         activated = false;
@@ -34,7 +39,7 @@ public class BonsaiBearScript : MonoBehaviour
             if (bonsai == null) return;
 
             bonsai.transform.parent = transform;
-            bonsai.transform.localPosition = new Vector3(-3.64f, -0.65f, 0f);
+            bonsai.transform.localPosition = Vector3.zero;
 
             if (activated) return;
 
@@ -45,6 +50,9 @@ public class BonsaiBearScript : MonoBehaviour
                 col.enabled = false;
             }
             bonsai.TryGetComponent(out bonsaiSpriteRenderer);
+
+            activated = true;
+            PlayBonsaiDialogue();
         }
     }
 
@@ -63,6 +71,20 @@ public class BonsaiBearScript : MonoBehaviour
             {
                 bonsaiSpriteRenderer.sortingOrder = playerRenderer.sortingOrder + 1;
             }
+        }
+    }
+
+    public void PlayBonsaiDialogue()
+    {
+        switch (activated)
+        {
+            case true:
+                DialogueManager.Instance.StartDialogue(yesBonsai, true);
+                break;
+            
+            case false:
+                DialogueManager.Instance.StartDialogue(noBonsai, true);
+                break;
         }
     }
 }

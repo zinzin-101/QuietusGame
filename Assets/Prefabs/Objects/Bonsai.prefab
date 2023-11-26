@@ -173,6 +173,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 1189184090419179481}
+  cantBonsai:
+    name: 
+    sentences:
+    - Too heavy...
 --- !u!114 &3749083218491907205
 MonoBehaviour:
   m_ObjectHideFlags: 0

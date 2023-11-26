@@ -149,7 +149,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator PrintSentence(string sentence, bool isDialogueBox)
     {
         int n = sentence.Length;
-        float timeTaken = 3.5f / (float)n;
+        float timeTaken = 4f / (float)n;
 
         if (dialogueName != "")
         {

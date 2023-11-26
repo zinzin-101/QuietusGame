@@ -93,6 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4675427481832767208}
+  - component: {fileID: 6107805791119805277}
+  - component: {fileID: 8696405286789486037}
   - component: {fileID: 1912675362543436518}
   m_Layer: 0
   m_Name: Door Block
@@ -117,6 +119,33 @@ Transform:
   - {fileID: 5585119335791555349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6107805791119805277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036598108861716564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24458ede8da13f546ac81f1b4f3a3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 0
+--- !u!114 &8696405286789486037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036598108861716564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af95c949bbfc2aa48b5a9eba912cadab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 21300000, guid: 7b8a34810fe89bb4c88fb4c46e3740ee, type: 3}
+  highlightedSprite: {fileID: 21300000, guid: e932380b51a68264194173e46a9f413a, type: 3}
 --- !u!60 &1912675362543436518
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class BonsaiScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] GameObject col;
 
+    [SerializeField] Dialogue cantBonsai;
+    public Dialogue CantBonsai => cantBonsai;
+
     private void Awake()
     {
         TryGetComponent(out spriteRenderer);

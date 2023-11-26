@@ -15,6 +15,8 @@ public class PCBeforeScript : MonoBehaviour
 
     [SerializeField] Item keyboardItem, pcItem, mouseItem;
 
+    [SerializeField] Dialogue missingDialogue;
+
     private void Awake()
     {
         TryGetComponent(out col);
@@ -42,12 +44,15 @@ public class PCBeforeScript : MonoBehaviour
             return;
         }
 
+        bool found = false;
+
         foreach (Item item in InventoryManager.Instance.Items)
         {
             if (item == keyboardItem)
             {
                 InventoryManager.Instance.Remove(item);
                 keyboard.SetActive(true);
+                found = true;
                 break;
             }
 
@@ -55,6 +60,7 @@ public class PCBeforeScript : MonoBehaviour
             {
                 InventoryManager.Instance.Remove(item);
                 pc.SetActive(true);
+                found = true;
                 break;
             }
 
@@ -62,8 +68,14 @@ public class PCBeforeScript : MonoBehaviour
             {
                 InventoryManager.Instance.Remove(item);
                 mouse.SetActive(true);
+                found = true;
                 break;
             }
+        }
+
+        if (!found)
+        {
+            DialogueManager.Instance.StartDialogue(missingDialogue, true);
         }
 
         if (!keyboard.activeSelf || !pc.activeSelf || !mouse.activeSelf)

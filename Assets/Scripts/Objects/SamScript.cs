@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SamScript : MonoBehaviour
 {
-    [SerializeField] Dialogue dialogueBefore, dialogueAfter;  
+    [SerializeField] Dialogue dialogueBefore, dialogueAfter, dialogueAfterAfter;  
     [SerializeField] Item requiredItem;
 
     private bool finished;
@@ -23,7 +23,7 @@ public class SamScript : MonoBehaviour
     {
         foreach (Item item in InventoryManager.Instance.Items)
         {
-            if (item.name == requiredItem.name)
+            if (item == requiredItem)
             {
                 InventoryManager.Instance.Remove(item);
                 return true;
@@ -36,14 +36,15 @@ public class SamScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerInteractScript playerInteractScript))
         {
-            if (playerInteractScript.InteractPressed && playerInteractScript.CanInteract)
+            if (playerInteractScript.InteractPressed && playerInteractScript.CanInteract && !playerInteractScript.IsSitting)
             {
                 StartCoroutine(playerInteractScript.InteractCooldown());
 
                 switch (finished)
                 {
                     case true:
-                        TriggerDialogue(dialogueAfter);
+                        TriggerDialogue(dialogueAfterAfter);
+                        GameManager.Instance.NextRoomButton();
                         break;
 
                     case false:
@@ -51,7 +52,7 @@ public class SamScript : MonoBehaviour
                         {
                             finished = true;
                             GameManager.Instance.AllowBonsaiPickup(true);
-                            GameManager.Instance.EnableSkip(true);
+                            //GameManager.Instance.EnableSkip(true);
                             TriggerDialogue(dialogueAfter);
                         }
                         else

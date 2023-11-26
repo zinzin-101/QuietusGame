@@ -101,15 +101,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBefore:
-    name: 
+    name: ???
     sentences:
-    - Where is the picture?
-    - Give me the picture.
-    - In exchange, I'll give you that bonsai tree.
+    - You woke me up? Why?
+    - "You want that bonsai-thingy? It\u2019s DEAD! Just take it"
+    - "Too heavy? Duh...Okay. I\u2019m collecting happy pictures. Bring me one and
+      I\u2019ll help you with that."
   dialogueAfter:
-    name: 
+    name: ???
     sentences:
-    - Thank you...
+    - Good one! Now go away. Bring the dead tree out of my sight!
+    - You can now take heavy things with you!
+  dialogueAfterAfter:
+    name: ???
+    sentences:
+    - GO AWAY!
   requiredItem: {fileID: 11400000, guid: ae56b43a5b6a6a042993d7383a84c9b3, type: 2}
 --- !u!114 &8701201226939479134
 MonoBehaviour:
