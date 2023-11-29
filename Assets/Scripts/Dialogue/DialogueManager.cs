@@ -150,6 +150,7 @@ public class DialogueManager : MonoBehaviour
         if (dialogueName != "")
         {
             dialogueText.text = dialogueName + ": ";
+            SoundManager.PlaySound(SoundManager.Sound.Dialog);
         }
         else
         {
