@@ -62,6 +62,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
+        CheckKeyItem();
         // Destroy all existing inventory slots to refresh the display.
         foreach (Transform child in itemContent)
         {

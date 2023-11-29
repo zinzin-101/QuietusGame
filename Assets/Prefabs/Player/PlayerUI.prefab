@@ -2101,6 +2101,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4657231396220270886}
     - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
+      propertyPath: scoreReport
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c599a4096d7c2a46a26426e99dcfdfb, type: 2}
+    - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
+      propertyPath: gameCartride
+      value: 
+      objectReference: {fileID: 11400000, guid: bf244648267444e41b5d6c20b6538c51, type: 2}
+    - target: {fileID: 485184034666483499, guid: a8c90830604a69942aa843809c9def73, type: 3}
       propertyPath: keyMasterItem
       value: 
       objectReference: {fileID: 7384215065290046575}

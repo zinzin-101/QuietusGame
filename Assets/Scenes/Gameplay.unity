@@ -568,6 +568,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672436413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4881171508574591273, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+  m_PrefabInstance: {fileID: 171810539136718173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f01a46c3f1db04384d5cf2f0405b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &731988474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2919,7 +2930,7 @@ PrefabInstance:
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: pallorScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 672436413}
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: hangmanScript
       value: 
