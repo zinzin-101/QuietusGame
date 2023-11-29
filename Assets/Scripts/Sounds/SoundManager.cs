@@ -38,7 +38,7 @@ public static class SoundManager{
             GameObject soundGameObject = new GameObject("Sound");
             AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
             DestroySound destroySound = soundGameObject.AddComponent<DestroySound>();
-            destroySound.delay = 3f;
+            destroySound.delay = 60f;
             audioSource.PlayOneShot(GetAudioClip(sound));
         }
         
