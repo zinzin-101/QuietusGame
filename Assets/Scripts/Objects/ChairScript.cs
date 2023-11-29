@@ -63,7 +63,7 @@ public class ChairScript : MonoBehaviour
         }
         else
         {
-            interactCheck.ChangeInteractType(InteractCheck.InteractType.Interact);
+            interactCheck.ChangeInteractType(InteractCheck.InteractType.Both);
         }
     }
 

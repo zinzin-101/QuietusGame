@@ -44,7 +44,7 @@ public class SamScript : MonoBehaviour
                 {
                     case true:
                         TriggerDialogue(dialogueAfterAfter);
-                        GameManager.Instance.NextRoomButton();
+                        GameManager.Instance.NextRoomButton(true);
                         break;
 
                     case false:

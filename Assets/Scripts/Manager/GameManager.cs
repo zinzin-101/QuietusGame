@@ -105,6 +105,11 @@ public class GameManager : MonoBehaviour
         var task1 = LevelManager.Instance.NormalFadeIn(timeDelayBeforeLoadScene);
         yield return new WaitUntil(() => task1.IsCompleted);
 
+        if (playerInteractScript.IsSitting)
+        {
+            playerInteractScript.SetSit(false);
+        }
+
         playerTransform.position = roomCycle[currentRoom - 1].spawnPos.position;
         mainCamera.transform.position = new Vector3(defaultCamPos.x + roomCycle[currentRoom - 1].cameraPos.position.x,
                                                     defaultCamPos.y + roomCycle[currentRoom - 1].cameraPos.position.y,
@@ -137,6 +142,11 @@ public class GameManager : MonoBehaviour
 
         var task1 = LevelManager.Instance.NormalFadeIn(fadeIn);
         yield return new WaitUntil(() => task1.IsCompleted);
+
+        if (playerInteractScript.IsSitting)
+        {
+            playerInteractScript.SetSit(false);
+        }
 
         playerTransform.position = roomCycle[currentRoom - 1].spawnPos.position;
         mainCamera.transform.position = new Vector3(defaultCamPos.x + roomCycle[currentRoom - 1].cameraPos.position.x,
@@ -214,9 +224,34 @@ public class GameManager : MonoBehaviour
     {
         if (!canSkipRoom) return;
         canSkipRoom = false;
+        if (playerInteractScript.IsSitting)
+        {
+            playerInteractScript.SetSit(false);
+        }
         StartCoroutine(ChangeRoom(0.25f));
         //timer.ResetTimer();
-        pallorScript.PlayHeadExplodeAnimation();
+        //pallorScript.PlayHeadExplodeAnimation();
+    }
+
+    public async void NextRoomButton(bool waitForDialogue)
+    {
+        if (!canSkipRoom) return;
+        canSkipRoom = false;
+        if (playerInteractScript.IsSitting)
+        {
+            playerInteractScript.SetSit(false);
+        }
+
+        if (waitForDialogue)
+        {
+            while (DialogueManager.Instance.IsRunning)
+            {
+                await Task.Delay(1);
+            }
+        }
+        StartCoroutine(ChangeRoom(0.25f));
+        //timer.ResetTimer();
+        //pallorScript.PlayHeadExplodeAnimation();
     }
 
     public void HangManRoomButton()

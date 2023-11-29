@@ -9,6 +9,7 @@ public class InteractCheck : MonoBehaviour
     {
         Interact,
         Pickup,
+        Both,
         None
     }
 
@@ -53,6 +54,11 @@ public class InteractCheck : MonoBehaviour
                     }
                     break;
 
+                case InteractType.Both:
+                    playerScript.SetActiveInteractPrompt(true);
+                    playerScript.SetActivePickupPrompt(true);
+                    break;
+
                 case InteractType.None:
                     playerScript.SetActiveInteractPrompt(false);
                     playerScript.SetActivePickupPrompt(false);
@@ -75,6 +81,11 @@ public class InteractCheck : MonoBehaviour
                 case InteractType.Pickup:
                     playerScript.SetActivePickupPrompt(false);
                     playerScript.SetActiveInteractPrompt(false);
+                    break;
+
+                case InteractType.Both:
+                    playerScript.SetActiveInteractPrompt(false);
+                    playerScript.SetActivePickupPrompt(false);
                     break;
 
                 case InteractType.None:
