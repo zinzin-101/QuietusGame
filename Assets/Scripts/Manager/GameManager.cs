@@ -39,8 +39,10 @@ public class GameManager : MonoBehaviour
     private bool canStartDialogue;
     public bool CanStartDialogue => canStartDialogue;
 
-    [SerializeField] PallorMortisScript pallorScript;
+    //[SerializeField] PallorMortisScript pallorScript;
     //[SerializeField] PallorAnimation pallorAnimation;
+    [SerializeField] PallorMortisScript1 pallorScript;
+    public PallorMortisScript1 PallorScript => pallorScript;
 
     private PlayerInteractScript playerInteractScript;
 
@@ -127,7 +129,8 @@ public class GameManager : MonoBehaviour
         switch (currentRoom)
         {
             case 1:
-                pallorScript.PlayPhaseDialogue();
+                if (DialogueManager.Instance.DialogueQueue.Count == 0)
+                    pallorScript.TriggerAllDialogue();
                 break;
         }
         canSkipRoom = true;
@@ -165,7 +168,8 @@ public class GameManager : MonoBehaviour
         switch (currentRoom)
         {
             case 1:
-                pallorScript.PlayPhaseDialogue();
+                if (DialogueManager.Instance.DialogueQueue.Count == 0)
+                    pallorScript.TriggerAllDialogue();
                 break;
         }
         canSkipRoom = true;

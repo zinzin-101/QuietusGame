@@ -43,7 +43,7 @@ public class QuinnScript : MonoBehaviour
                 bag.TryGetComponent(out BagScript bagScript);
                 bagScript.DestroyObject();
                 DialogueManager.Instance.StartDialogue(after, true);
-                print("pass");
+                GameManager.Instance.PallorScript.NextAll();
                 activated = true;
                 return;
             }

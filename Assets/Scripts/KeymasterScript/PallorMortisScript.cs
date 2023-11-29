@@ -100,12 +100,12 @@ public class PallorMortisScript : MonoBehaviour
         TriggerNextDialogue();
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         firstDialogueTriggered = true;
-        canStartPhaseDialogue = true;
+        //canStartPhaseDialogue = true;
         GameManager.Instance.AllowPlayerToSit(true);
         GameManager.Instance.SetCanSkipRoom(true);
         GameManager.Instance.TimerForcedStop(false);
         yield return new WaitForSeconds(1.5f);
-        //PlayPhaseDialogue();
+        StartCoroutine(StartFirstPhaseDialogue());
         keymasterScript.SetCanInteract(true);
     }
 
@@ -119,39 +119,42 @@ public class PallorMortisScript : MonoBehaviour
     public void PlayPhaseDialogue()
     {
         if (GameManager.Instance.CurrentRoom != 1 && GameManager.Instance.CanStartDialogue) return;
-        if (!canStartPhaseDialogue) return;
+        //if (!canStartPhaseDialogue) return;
 
-        switch (firstPhaseDialoguePlayed[phaseIndex])
-        {
-            case true:
-                StartCoroutine(StartPhaseDialogue());
-                break;
-            case false:
-                StartCoroutine(StartFirstPhaseDialogue());
-                break;
-        }
+        StartCoroutine(StartPhaseDialogue());
+
+        //switch (firstPhaseDialoguePlayed[phaseIndex])
+        //{
+        //    case true:
+        //        StartCoroutine(StartPhaseDialogue());
+        //        break;
+        //    case false:
+        //        StartCoroutine(StartFirstPhaseDialogue());
+        //        break;
+        //}
     }
 
     IEnumerator StartPhaseDialogue()
     {
-        canStartPhaseDialogue = false;
+        //canStartPhaseDialogue = false;
 
         DialogueManager.Instance.StartDialogue(phaseDialogueAfter[phaseIndex], true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
 
-        canStartPhaseDialogue = true;
+        //canStartPhaseDialogue = true;
+        StartCoroutine(StartFirstPhaseDialogue());
     }
 
     IEnumerator StartFirstPhaseDialogue()
     {
         firstPhaseDialoguePlayed[phaseIndex] = true;
-        canStartPhaseDialogue = false;
+        //canStartPhaseDialogue = false;
 
         DialogueManager.Instance.StartDialogue(phaseDialogue[phaseIndex], false);
         
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
 
-        canStartPhaseDialogue = true;
+        //canStartPhaseDialogue = true;
     }
 
     IEnumerator NextPhase()
