@@ -221,10 +221,12 @@ public class PallorMortisScript1 : MonoBehaviour
         DialogueManager.Instance.StartDialogue(finalBoom, true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButtonAnimation();
+        GameManager.Instance.TimerActive(false);
         yield return new WaitUntil(() => GameManager.Instance.CanStartDialogue);
         DialogueManager.Instance.StartDialogue(v1, true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButton();
+        GameManager.Instance.TimerActive(false);
         yield return new WaitUntil(() => GameManager.Instance.CanStartDialogue);
         DialogueManager.Instance.StartDialogue(v2, true);
 
