@@ -128,7 +128,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
   m_PrefabInstance: {fileID: 8186883654195711473}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436848579}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 640ee7a39fdc8254fad0bb8733ce3b22, type: 3}
@@ -1266,34 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7769c82a89fcf6643a02fa5968eea84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1436848579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6500044484582633384, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
-  m_PrefabInstance: {fileID: 8186883654195711473}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1436848582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436848579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6284c21a8a23214a83ec664e258bca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundAudioClipArray:
-  - sound: 0
-    audioClip: {fileID: 8300000, guid: a31d26881454aaa4b8a301f799aabeab, type: 3}
-  - sound: 1
-    audioClip: {fileID: 8300000, guid: cd2b8252e83ea9b45a6920cd4d0539b8, type: 3}
-  - sound: 2
-    audioClip: {fileID: 8300000, guid: c08b61c1845658949b0a7465eab08593, type: 3}
-  - sound: 3
-    audioClip: {fileID: 8300000, guid: 31f10ee1cadc7c04f89f670b817f14d1, type: 3}
-  - sound: 4
-    audioClip: {fileID: 8300000, guid: a31d26881454aaa4b8a301f799aabeab, type: 3}
 --- !u!4 &1567969133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4380702307070208469, guid: b389e8cfddc2d3b42ac55baf0e85bb80, type: 3}
@@ -3332,10 +3304,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6500044484582633384, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1436848582}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
 --- !u!4 &8477823255164057806 stripped
 Transform:
@@ -3474,12 +3443,12 @@ SceneRoots:
   - {fileID: 1264051449}
   - {fileID: 1229497145}
   - {fileID: 171810539136718173}
+  - {fileID: 7334198003122209789}
+  - {fileID: 9098407495849218913}
   - {fileID: 3701641229209162004}
   - {fileID: 5528054419245764348}
-  - {fileID: 7334198003122209789}
   - {fileID: 6705423184178125871}
   - {fileID: 4911872228153552301}
-  - {fileID: 9098407495849218913}
   - {fileID: 4404285079027844678}
   - {fileID: 218257090107523072}
   - {fileID: 1476557848639388935}

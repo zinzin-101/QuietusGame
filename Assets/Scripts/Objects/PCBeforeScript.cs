@@ -53,6 +53,7 @@ public class PCBeforeScript : MonoBehaviour
                 InventoryManager.Instance.Remove(item);
                 keyboard.SetActive(true);
                 found = true;
+                SoundManager.PlaySound(SoundManager.Sound.PlaceComClue);
                 break;
             }
 
@@ -61,6 +62,7 @@ public class PCBeforeScript : MonoBehaviour
                 InventoryManager.Instance.Remove(item);
                 pc.SetActive(true);
                 found = true;
+                SoundManager.PlaySound(SoundManager.Sound.PlaceComClue);
                 break;
             }
 
@@ -69,6 +71,7 @@ public class PCBeforeScript : MonoBehaviour
                 InventoryManager.Instance.Remove(item);
                 mouse.SetActive(true);
                 found = true;
+                SoundManager.PlaySound(SoundManager.Sound.PlaceComClue);
                 break;
             }
         }

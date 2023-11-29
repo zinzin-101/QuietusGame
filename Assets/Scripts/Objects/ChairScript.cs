@@ -50,6 +50,7 @@ public class ChairScript : MonoBehaviour
         else
         {
             ChangeChairState(ChairState.Down);
+            
         }
 
         collisionOn = true;
@@ -60,6 +61,7 @@ public class ChairScript : MonoBehaviour
         if (currentState == ChairState.Down)
         {
             interactCheck.ChangeInteractType(InteractCheck.InteractType.Pickup);
+            
         }
         else
         {
@@ -96,6 +98,7 @@ public class ChairScript : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out PlayerInput playerInput))
         {
             ChangeChairState(currentState, false);
+            
         }
     }
 
@@ -107,18 +110,22 @@ public class ChairScript : MonoBehaviour
                 spriteRenderer.sprite = chairUprightFront;
                 backRenderer.sprite = backUprightFront;
                 currentState = ChairState.Upfront;
+
                 break;
 
             case ChairState.Upside:
                 spriteRenderer.sprite = chairUprightSide;
                 backRenderer.sprite = backUprightSide;
                 currentState = ChairState.Upside;
+                SoundManager.PlaySound(SoundManager.Sound.StandOnChair);
+
                 break;
 
             case ChairState.Down:
                 spriteRenderer.sprite = chairNonUpright;
                 backRenderer.sprite = backNonUpright;
                 currentState = ChairState.Down;
+
                 break;
         }
         ToggleCollision(collisionOn);

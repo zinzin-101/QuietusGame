@@ -74,6 +74,7 @@ public class LockedWardrobeScript : MonoBehaviour
             if (item.itemName == "Key")
             {
                 hasKey = true;
+                SoundManager.PlaySound(SoundManager.Sound.UseKey);
                 //InventoryManager.Instance.Remove(item);
                 keyItem = item;
                 break;
@@ -103,7 +104,6 @@ public class LockedWardrobeScript : MonoBehaviour
         locked = false;
         unlockedText.SetActive(true);
         SetSprite(unlockedSprites);
-        SoundManager.PlaySound(SoundManager.Sound.Closet);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -156,6 +156,7 @@ public class LockedWardrobeScript : MonoBehaviour
                     SetSprite(openSprites);
                     ShowItem(item, true);
                     col.enabled = false;
+                    SoundManager.PlaySound(SoundManager.Sound.WardropeOpen);
                 }
                 else
                 {

@@ -56,7 +56,7 @@ public class BedScript : MonoBehaviour
 
                 //ToggleBlanket();
                 OpenBlanket();
-                SoundManager.PlaySound(SoundManager.Sound.BedSheet);
+                SoundManager.PlaySound(SoundManager.Sound.Blanked);
             }
         }
     }
@@ -86,7 +86,11 @@ public class BedScript : MonoBehaviour
 
         col.enabled = false;
 
-        if (item == null) return;
+        if (item == null)
+        {
+            
+            return;
+        }
 
         item.SetActive(true);
     }

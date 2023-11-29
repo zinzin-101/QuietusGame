@@ -8,11 +8,19 @@ public static class SoundManager{
 
     public enum Sound
     {
+        Blanked,
+        FindingLockPick,
         PlayerMove,
-        BedSheet,
-        Desk,
-        Closet,
-        Chair,
+        KeyPickUp,
+        OpenDrawer,
+        Paper,
+        ChairDown,
+        PlaceComClue,
+        StandOnChair,
+        UseKey,
+        WardropeOpen,
+        PickupItem
+
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;

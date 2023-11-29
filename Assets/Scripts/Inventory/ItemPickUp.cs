@@ -15,6 +15,8 @@ public class ItemPickUp : MonoBehaviour
 
     [SerializeField] bool highlightOn = true;
 
+
+
     private void Start()
     {
         if (animator != null)
@@ -27,11 +29,12 @@ public class ItemPickUp : MonoBehaviour
             {
                 animator.enabled = false;
             }
-        }     
+        }
     }
 
     void Pickup()
     {
+        SoundManager.PlaySound(SoundManager.Sound.PickupItem);
         InventoryManager.Instance.Add(Item);
         Destroy(gameObject);
     }

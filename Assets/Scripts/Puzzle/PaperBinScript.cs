@@ -13,6 +13,7 @@ public class PaperBinScript : MonoBehaviour
             if (playerInteractScript.InteractPressed && playerInteractScript.CanInteract)
             {
                 StartCoroutine(playerInteractScript.InteractCooldown());
+                SoundManager.PlaySound(SoundManager.Sound.Paper);
                 DialogueManager.Instance.StartDialogue(hint, true);
             }
         }
