@@ -181,7 +181,8 @@ public class HangmanScript : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         StopAllCoroutines();
-        StopGame();
+        //StopGame();
+        LevelManager.Instance.FadeLoadSceneNoBar("BadEnding");
     }
 
     IEnumerator TriggerEnd()
@@ -196,7 +197,8 @@ public class HangmanScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        StopGame();
+        //StopGame();
+        LevelManager.Instance.FadeLoadSceneNoBar("GoodEnding");
     }
 
     public void StopGame()
