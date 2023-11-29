@@ -188,6 +188,7 @@ public class GameManager : MonoBehaviour
                                                     defaultCamPos.y + finalRoom.cameraPos.position.y,
                                                     defaultCamPos.z + finalRoom.cameraPos.position.z);
         timer.ResetTimer();
+        TimerActive(false);
 
         DialogueManager.Instance.ResetDialogue();
 
