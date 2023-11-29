@@ -129,11 +129,13 @@ public class HangmanScript : MonoBehaviour
         keyEntered = 0;
 
         playerAnswer = "";
-        hangmanText.text = "";
-
         if (answerIndex == 1)
         {
             hangmanText.text = "Uriel’s ";
+        }
+        else
+        {
+            hangmanText.text = "";
         }
 
         for (int i = 0; i < currentMaxAnswerLength; i++)
@@ -153,7 +155,14 @@ public class HangmanScript : MonoBehaviour
         keyEntered = 0;
 
         playerAnswer = "";
-        hangmanText.text = "";
+        if (answerIndex == 1)
+        {
+            hangmanText.text = "Uriel’s ";
+        }
+        else
+        {
+            hangmanText.text = "";
+        }
 
         for (int i = 0; i < currentMaxAnswerLength; i++)
         {
@@ -255,7 +264,15 @@ public class HangmanScript : MonoBehaviour
 
     void PrintText()
     {
-        hangmanText.text = "";
+        if (answerIndex == 1)
+        {
+            hangmanText.text = "Uriel’s ";
+        }
+        else
+        {
+            hangmanText.text = "";
+        }
+
         for (int i = 1; i <= currentMaxAnswerLength; i++)
         {
             if (i <= keyEntered)

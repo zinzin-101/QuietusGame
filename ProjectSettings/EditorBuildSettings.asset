@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestGameplay.unity
     guid: 55784892a86051c41a33cefffac0d2d6
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: 4785e01481e99ca429447dbfdee08098
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 51282e68fb52d2544a17389ba9837f8a
   m_configObjects: {}
