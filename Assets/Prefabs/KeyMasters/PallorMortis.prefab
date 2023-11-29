@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5278547186384696786}
-  - component: {fileID: 2674464564056279990}
+  - component: {fileID: 781307799970126522}
   - component: {fileID: 7588072385456076606}
   - component: {fileID: 3414710800155370722}
   m_Layer: 0
@@ -154,7 +154,7 @@ Transform:
   - {fileID: 6475946573399315790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2674464564056279990
+--- !u!114 &781307799970126522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,53 +163,92 @@ MonoBehaviour:
   m_GameObject: {fileID: 6862329142598983093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3f9f4152a1277488a69c8bd717a03e, type: 3}
+  m_Script: {fileID: 11500000, guid: 40f01a46c3f1db04384d5cf2f0405b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
   - name: ???
     sentences:
-    - morning, i guess.
-    - "*yawn* i don\u2019t want to say it out loud. could you come near me?\r\n"
-    - "\u2026..too short, aren\u2019t you? maybe the chair could help. bring it here
+    - Good afternoon, little friend.
+    - "I can\u2019t talk so loud. Could you come near me?"
+    - "\u2026..too short, aren\u2019t you? Maybe the chair could help. Bring it here
       and stand on it, then we\u2019ll talk."
   - name: ???
     sentences:
-    - great.
-    - "i\u2019m pallor. pallor the lazy."
+    - Good job!
+    - Call me Pallor.
   - name: Pallor
     sentences:
-    - "i\u2019m\u2026..the keymaster. yeah, the keymaster. i don\u2019t know what
-      the keymaster is, but here i am."
-    - "you\u2019d wonder what this place is\u2026.."
-    - "\u2026..me too! it\u2019s felt so long since i\u2019ve been here, but i still
-      don\u2019t know."
-    - "i want to get out, but i can\u2019t. the door is locked."
-    - you should help me so we can get out of here together.
-    - "firstly, we need to know\u2026..What exactly is this place?"
-  itemDialogue: []
-  phaseDialogue:
+    - "I\u2019m\u2026..the keymaster. yeah, the keymaster."
+    - "\u201CThey\u201D told me to call myself \u201CThe Keymaster\u201D so\u2026.."
+    - "Anyway, you\u2019d wonder what this place is\u2026..me too! "
+    - "It\u2019s been so long since I've been here."
+    - "I want to get out, but I can't. I don\u2019t even know where the door is."
+    - You should help me so we can get out of here together.
+    - "And\u2026..Ah! Found it! You should take this with you!"
+  - name: 
+    sentences:
+    - You got an Hourglass!
   - name: Pallor
     sentences:
-    - "to be honest, i still don\u2019t know why i call myself a keymaster.\r"
-    - "i just\u2026..feel like it."
-    - "maybe i have a key? oh\u2026..wait? i think i\u2019ve seen a key nearby. \r"
-    - "is that the reason why i call myself a keymaster? nonsense\u2026.."
-    - "talking about nonsense\u2026..have you seen a weird piece of paper at the
-      table?"
-    - "it\u2019s feel so familiar to me. is it something important? i don\u2019t
-      really think so."
+    - "\u201CThey\u201D gave me this. It\u2019s useless to me anyway."
+  - name: 
+    sentences:
+    - "The time is ticking. You should flip an Hourglass before the time runs out\u2026.or
+      something bad might happen."
   - name: Pallor
     sentences:
-    - "hey\u2026..kid\u2026..\r"
-    - "i feel\u2026..weird\u2026.."
-    - "could you\u2026.."
-    - "oh\u2026..no\u2026.."
-  phaseDialogueAfter: []
-  phaseRequiredItem:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+    - "That\u2019s pretty much it so\u2026..firstly, we need to know\u2026..What
+      exactly is this place?"
+  loop:
+  - name: Pallor
+    sentences:
+    - "I think I\u2019ve seen a drawer in this room before."
+    - Where is it now?
+    - "I feel like there\u2019s something important in there."
+    - . . .
+    - . . .
+    - "Wait\u2026.Did you hear that? Little friend."
+    - "\u201CThey\u201D are coming."
+    - "IT\u2019S TIME! NO!"
+  - name: Pallor
+    sentences:
+    - "The picture near that computer\u2026..Quinn, Sam, and Uriel? Those are such
+      familiar names\u2026."
+    - "You should observe near the computer. I feel like it\u2019s hiding something."
+    - . . .
+    - . . .
+    - . . .
+    - "Wait\u2026.Did you hear that? Little friend."
+    - "\u201CThey\u201D are coming. AGAIN!"
+    - "FLIP THE HOURG\u2014"
+  box:
+  - name: Pallor
+    sentences:
+    - Have I met you before, little friend?
+    - I just woke up from a weird dream. A-Very-Weird-Dream.
+    - "anyway\u2026..Do you know What exactly this place is? It\u2019s getting weirder
+      and weirder."
+  - name: Pallor
+    sentences:
+    - "We\u2026..meet again? Wait\u2026..I remembered something."
+    - "There\u2019s a picture of someone like me\u2026..is that a clue for something?"
+    - "I think you\u2019re going in the right way! Keep going!"
+  - name: Pallor
+    sentences:
+    - "You\u2026.found all computer parts? Time to reveal the secret of that thing!"
+    - "I think you\u2019re going in the right way! Keep going!"
+  - name: Pallor
+    sentences:
+    - "That thing\u2026..so nostalgic."
+    - "Keep finding. There\u2019ll be some more important things there."
+  - name: Pallor
+    sentences:
+    - "That\u2019s\u2026..give it to me."
+  - name: Pallor
+    sentences:
+    - "This is\u2026.."
+    - "It can\u2019t be\u2014"
   pallorAnim: {fileID: 1663081731866853840}
 --- !u!114 &7588072385456076606
 MonoBehaviour:

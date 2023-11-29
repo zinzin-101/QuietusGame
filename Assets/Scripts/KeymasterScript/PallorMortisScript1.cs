@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(KeyMasterDetect))]
 public class PallorMortisScript1 : MonoBehaviour
-{
-    private KeyMasterDetect keymasterScript;
-
+{   
     [SerializeField] Dialogue[] dialogue;
     private int dialogueIndex;
     private int maxIndex;
@@ -25,8 +22,6 @@ public class PallorMortisScript1 : MonoBehaviour
 
     private void Awake()
     {
-        TryGetComponent(out keymasterScript);
-
         dialogueIndex = 0;
         maxIndex = dialogue.Length - 1;
 
@@ -41,7 +36,6 @@ public class PallorMortisScript1 : MonoBehaviour
 
     private IEnumerator Start()
     {
-        keymasterScript.SetCanInteract(false);
         GameManager.Instance.TimerForcedStop(true);
         //GameManager.Instance.AllowPlayerToMove(false);
         yield return new WaitForSeconds(1f);
@@ -102,7 +96,6 @@ public class PallorMortisScript1 : MonoBehaviour
         GameManager.Instance.TimerForcedStop(false);
         yield return new WaitForSeconds(1.5f);
         DialogueLoop();
-        keymasterScript.SetCanInteract(true);
     }
 
     public void DialogueLoop()
