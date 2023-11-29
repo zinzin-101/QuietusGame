@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &376594584082236072
 Transform:
   m_ObjectHideFlags: 0
@@ -1878,6 +1878,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 5369929394182811377}
   dialogueObject: {fileID: 2250423426307008770}
   dialogueButton: {fileID: 3754181958051032299}
+  animator: {fileID: 0}
 --- !u!114 &4008681498490685272
 MonoBehaviour:
   m_ObjectHideFlags: 0

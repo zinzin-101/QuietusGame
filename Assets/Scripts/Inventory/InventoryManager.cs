@@ -27,6 +27,8 @@ public class InventoryManager : MonoBehaviour
     {
         gameValid = false;
         scoreValid = false;
+
+        inventoryPanel.SetActive(false);
     }
 
     public void Add(Item item)
