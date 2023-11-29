@@ -16,10 +16,17 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] TMP_Text descriptionText;
 
     [SerializeField] Item gameCartride, scoreReport;
+    private bool gameValid, scoreValid;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        gameValid = false;
+        scoreValid = false;
     }
 
     public void Add(Item item)
@@ -106,16 +113,18 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (Item item in Items)
         {
-            if (item == gameCartride)
+            if (item == gameCartride && !gameValid)
             {
                 GameManager.Instance.PallorScript.NextAll();
                 GameManager.Instance.PallorScript.TriggerAllDialogue();
+                gameValid = true;
                 return;
             }
 
-            if (item == scoreReport)
+            if (item == scoreReport && !scoreValid)
             {
                 GameManager.Instance.PallorScript.ScoreAcquired();
+                scoreValid = true;
                 return;
             }
         }

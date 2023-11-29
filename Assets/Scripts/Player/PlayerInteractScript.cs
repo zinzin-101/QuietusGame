@@ -82,21 +82,18 @@ public class PlayerInteractScript : MonoBehaviour
             if (isSitting)
             {
                 pallorScript1.TriggerFirstDialogue();
-            }
-            else if (isSitting && pallorScript1.CanCheckInventory)
-            {
                 pallorScript1.CheckForScore();
             }
         }
 
-        if (collision.TryGetComponent(out KeyMasterDetect keymasterScript))
-        {
-            if (isSitting && keymasterScript.CanInteract)
-            {
-                keymasterScript.SetCanInteract(false);
-                keymasterScript.CheckItem();
-            }
-        }
+        //if (collision.TryGetComponent(out KeyMasterDetect keymasterScript))
+        //{
+        //    if (isSitting && keymasterScript.CanInteract)
+        //    {
+        //        keymasterScript.SetCanInteract(false);
+        //        keymasterScript.CheckItem();
+        //    }
+        //}
 
         if (collision.TryGetComponent(out DigiClockScript digiclock))
         {

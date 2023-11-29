@@ -29,6 +29,9 @@ public class PallorMortisScript1 : MonoBehaviour
     public bool CanCheckInventory => canCheckInventory;
     private bool validScore;
 
+    private bool finalActivated;
+    public bool FinalActivated;
+
     private bool firstDialogueTriggered;
 
     [SerializeField] PallorAnimation pallorAnim;
@@ -41,6 +44,7 @@ public class PallorMortisScript1 : MonoBehaviour
             col.enabled = true;
         }
 
+        finalActivated = false;
         spriteObject.SetActive(true);
         rope.SetActive(false);
         bear.SetActive(true);
@@ -175,6 +179,8 @@ public class PallorMortisScript1 : MonoBehaviour
 
     public void TriggerAllDialogue()
     {
+        if (finalActivated) return;
+
         StartCoroutine(QueueDialogueBox());
     }
 
@@ -205,6 +211,7 @@ public class PallorMortisScript1 : MonoBehaviour
         GameManager.Instance.EnableSkip(false);
         DialogueManager.Instance.StartDialogue(score, true);
         canCheckInventory = true;
+        finalActivated = true;
         StartCoroutine(FinalSceneStart());
     }
 
@@ -214,17 +221,17 @@ public class PallorMortisScript1 : MonoBehaviour
         DialogueManager.Instance.StartDialogue(finalBoom, true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButtonAnimation();
-
         yield return new WaitUntil(() => GameManager.Instance.CanStartDialogue);
         DialogueManager.Instance.StartDialogue(v1, true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButton();
+        yield return new WaitUntil(() => GameManager.Instance.CanStartDialogue);
         DialogueManager.Instance.StartDialogue(v2, true);
 
         spriteObject.SetActive(false);
         col.enabled = false;
-        bear.SetActive(false);
-        rope.SetActive(true);
+        if (bear != null) bear.SetActive(false);
+        if (rope != null) rope.SetActive(true);
 
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButton();
