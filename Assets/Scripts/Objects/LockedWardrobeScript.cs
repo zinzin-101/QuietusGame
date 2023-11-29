@@ -15,6 +15,7 @@ public class LockedWardrobeScript : MonoBehaviour
 
     [SerializeField] GameObject item;
     [SerializeField] GameObject unlockedText;
+    [SerializeField] Item requiredItem;
 
     private bool locked;
     private bool open;
@@ -71,7 +72,7 @@ public class LockedWardrobeScript : MonoBehaviour
 
         foreach (var item in InventoryManager.Instance.Items)
         {
-            if (item.itemName == "Key")
+            if (item.itemName == requiredItem.name)
             {
                 hasKey = true;
                 SoundManager.PlaySound(SoundManager.Sound.UseKey);

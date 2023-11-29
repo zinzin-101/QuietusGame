@@ -137,6 +137,7 @@ public class PlayerInteractScript : MonoBehaviour
 
             if (collision.gameObject.TryGetComponent(out QuinnScript quinn))
             {
+                StartCoroutine(InteractCooldown());
                 quinn.SetCan(true);
             }
 
@@ -156,7 +157,7 @@ public class PlayerInteractScript : MonoBehaviour
                                 isSitting = false;
                                 //movementScript.SetToggleMove(true);
                                 GameManager.Instance.AllowPlayerToMove(true);
-                                GameManager.Instance.TimerActive(true);
+                                //GameManager.Instance.TimerActive(true);
                             }                          
                             break;
 
@@ -168,7 +169,7 @@ public class PlayerInteractScript : MonoBehaviour
                             isSitting = true;
                             //movementScript.SetToggleMove(false);
                             GameManager.Instance.AllowPlayerToMove(false);
-                            GameManager.Instance.TimerActive(false);
+                            //GameManager.Instance.TimerActive(false);
                             break;
                     }
                 }
@@ -235,5 +236,10 @@ public class PlayerInteractScript : MonoBehaviour
     public void SetActivePickupPrompt(bool value)
     {
         pickupPrompt.SetActive(value);
+    }
+
+    public void SetSit(bool value)
+    {
+        isSitting = value;
     }
 }
