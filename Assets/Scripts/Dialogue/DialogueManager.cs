@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
     private bool isRunning;
     public bool IsRunning => isRunning;
 
-    private Animator animator;
+    [SerializeField] Animator animator;
 
     private void Awake()
     {
@@ -51,8 +51,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialogueObject.TryGetComponent(out dialogueText);
-
-        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
