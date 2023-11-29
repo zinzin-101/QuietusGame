@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
     private Queue<DialoguePlayer> dialogueQueue;
+    public Queue<DialoguePlayer> DialogueQueue => dialogueQueue;
 
     [SerializeField] Image dialoguePanel;
     [SerializeField] GameObject dialogueObject;
@@ -190,7 +191,7 @@ public class DialogueManager : MonoBehaviour
     public void ResetDialogue()
     {
         sentences.Clear();
-        //dialogueQueue.Clear();
+        dialogueQueue.Clear();
         EndDialogue();
     }
 

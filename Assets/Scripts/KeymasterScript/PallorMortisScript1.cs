@@ -34,7 +34,7 @@ public class PallorMortisScript1 : MonoBehaviour
         maxLoopIndex = loop.Length - 1;
 
         boxIndex = 0;
-        maxBoxIndex = loop.Length - 1;
+        maxBoxIndex = box.Length - 1;
 
         firstDialogueTriggered = false;
     }
@@ -126,9 +126,9 @@ public class PallorMortisScript1 : MonoBehaviour
 
     IEnumerator QueueDialogueBox()
     {
-        yield return new WaitUntil(() => GameManager.Instance.CurrentRoom == 1);
+        yield return new WaitUntil(() => GameManager.Instance.CurrentRoom == 1 && GameManager.Instance.CanStartDialogue);
         DialogueBox();
-        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        yield return new WaitUntil(() => (!DialogueManager.Instance.IsRunning && GameManager.Instance.CanStartDialogue));
         DialogueLoop();
     }
 
@@ -156,8 +156,9 @@ public class PallorMortisScript1 : MonoBehaviour
 
     public void TriggerAllDialogue()
     {
-        StartCoroutine(StartDialogueBox());
+        StartCoroutine(QueueDialogueBox());
     }
+
 
     public void QueueNextAll(bool loopAdd, bool boxAdd)
     {
@@ -166,6 +167,12 @@ public class PallorMortisScript1 : MonoBehaviour
 
         DialogueManager.Instance.ClearQueue();
         StartCoroutine(QueueDialogueBox());
+    }
+
+    public void NextAll()
+    {
+        loopIndex++;
+        boxIndex++;
     }
 
     public void PlayHeadExplodeAnimation()

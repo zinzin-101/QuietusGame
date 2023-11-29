@@ -129,7 +129,8 @@ public class GameManager : MonoBehaviour
         switch (currentRoom)
         {
             case 1:
-                pallorScript.TriggerAllDialogue();
+                if (DialogueManager.Instance.DialogueQueue.Count == 0)
+                    pallorScript.TriggerAllDialogue();
                 break;
         }
         canSkipRoom = true;
@@ -167,7 +168,8 @@ public class GameManager : MonoBehaviour
         switch (currentRoom)
         {
             case 1:
-                pallorScript.TriggerAllDialogue();
+                if (DialogueManager.Instance.DialogueQueue.Count == 0)
+                    pallorScript.TriggerAllDialogue();
                 break;
         }
         canSkipRoom = true;
