@@ -54,6 +54,7 @@ public class SamScript : MonoBehaviour
                             GameManager.Instance.AllowBonsaiPickup(true);
                             //GameManager.Instance.EnableSkip(true);
                             TriggerDialogue(dialogueAfter);
+                            GameManager.Instance.PallorScript.QueueNextAll(true, true);
                         }
                         else
                         {

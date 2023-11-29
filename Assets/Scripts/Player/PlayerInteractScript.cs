@@ -69,11 +69,19 @@ public class PlayerInteractScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PallorMortisScript pallorScript))
+        //if (collision.gameObject.TryGetComponent(out PallorMortisScript pallorScript))
+        //{
+        //    if (isSitting)
+        //    {
+        //        pallorScript.TriggerFirstDialogue();
+        //    }
+        //}
+
+        if (collision.gameObject.TryGetComponent(out PallorMortisScript1 pallorScript1))
         {
             if (isSitting)
             {
-                pallorScript.TriggerFirstDialogue();
+                pallorScript1.TriggerFirstDialogue();
             }
         }
 

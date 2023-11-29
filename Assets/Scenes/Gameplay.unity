@@ -150,6 +150,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2351421202095876663, guid: 172f6073f5d7d8c4e9898d238ba7c09e, type: 3}
   m_PrefabInstance: {fileID: 1229497145}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &141844018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1608144688496434726, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+  m_PrefabInstance: {fileID: 171810539136718173}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &161553640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7727301795936005995, guid: f72c20354eacfcb4492cbfd236159d2c, type: 3}
@@ -559,17 +564,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &672436405 stripped
+--- !u!114 &672436409
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
-  m_PrefabInstance: {fileID: 171810539136718173}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 141844018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3f9f4152a1277488a69c8bd717a03e, type: 3}
+  m_Script: {fileID: 11500000, guid: 40f01a46c3f1db04384d5cf2f0405b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue:
+  - name: ???
+    sentences:
+    - Good afternoon, little friend.
+    - "I can\u2019t talk so loud. Could you come near me?"
+    - "\u2026..too short, aren\u2019t you? Maybe the chair could help. Bring it here
+      and stand on it, then we\u2019ll talk."
+  - name: ???
+    sentences:
+    - Good job!
+    - Call me Pallor.
+  - name: Pallor
+    sentences:
+    - "I\u2019m\u2026..the keymaster. yeah, the keymaster."
+    - "\u201CThey\u201D told me to call myself \u201CThe Keymaster\u201D so\u2026.."
+    - "Anyway, you\u2019d wonder what this place is\u2026..me too! "
+    - "It\u2019s been so long since I've been here."
+    - "I want to get out, but I can't. I don\u2019t even know where the door is."
+    - You should help me so we can get out of here together.
+    - "And\u2026..Ah! Found it! You should take this with you!"
+  - name: 
+    sentences:
+    - You got an Hourglass!
+  - name: Pallor
+    sentences:
+    - "\u201CThey\u201D gave me this. It\u2019s useless to me anyway."
+  - name: 
+    sentences:
+    - "The time is ticking. You should flip an Hourglass before the time runs out\u2026.or
+      something bad might happen."
+  - name: Pallor
+    sentences:
+    - "That\u2019s pretty much it so\u2026..firstly, we need to know\u2026..What
+      exactly is this place?"
+  loop:
+  - name: Pallor
+    sentences:
+    - "I think I\u2019ve seen a drawer in this room before."
+    - Where is it now?
+    - "I feel like there\u2019s something important in there."
+    - . . .
+    - . . .
+    - "Wait\u2026.Did you hear that? Little friend."
+    - "\u201CThey\u201D are coming."
+    - "IT\u2019S TIME! NO!"
+  - name: Pallor
+    sentences:
+    - "The picture near that computer\u2026..Quinn, Sam, and Uriel? Those are such
+      familiar names\u2026."
+    - "You should observe near the computer. I feel like it\u2019s hiding something."
+    - . . .
+    - . . .
+    - . . .
+    - "Wait\u2026.Did you hear that? Little friend."
+    - "\u201CThey\u201D are coming. AGAIN!"
+    - "FLIP THE HOURG\u2014"
+  box:
+  - name: Pallor
+    sentences:
+    - Have I met you before, little friend?
+    - I just woke up from a weird dream. A-Very-Weird-Dream.
+    - "anyway\u2026..Do you know What exactly this place is? It\u2019s getting weirder
+      and weirder."
+  - name: Pallor
+    sentences:
+    - "We\u2026..meet again? Wait\u2026..I remembered something."
+    - "There\u2019s a picture of someone like me\u2026..is that a clue for something?"
+    - "I think you\u2019re going in the right way! Keep going!"
+  - name: Pallor
+    sentences:
+    - "You\u2026.found all computer parts? Time to reveal the secret of that thing!"
+    - "I think you\u2019re going in the right way! Keep going!"
+  - name: Pallor
+    sentences:
+    - "That thing\u2026..so nostalgic."
+    - "Keep finding. There\u2019ll be some more important things there."
+  - name: Pallor
+    sentences:
+    - "That\u2019s\u2026..give it to me."
+  - name: Pallor
+    sentences:
+    - "This is\u2026.."
+    - "It can\u2019t be\u2014"
+  pallorAnim: {fileID: 581487615}
 --- !u!1001 &731988474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2229,6 +2319,10 @@ PrefabInstance:
       value: -1.16
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: dialogue.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -2250,6 +2344,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: dialogue.Array.data[6].name
+      value: Pallor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[3].name
       value: Pallor
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
@@ -2427,7 +2529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[0]
-      value: "I think I\u2019ve ever seen a drawer in this room."
+      value: "I think I\u2019ve  seen a drawer in this room before."
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: phaseDialogue.Array.data[0].sentences.Array.data[1]
@@ -2554,10 +2656,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[3].sentences.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
@@ -2575,21 +2681,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[0]
+      value: "We\u2026..meet again? Wait\u2026..I remembered something."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[1]
+      value: "There\u2019s a picture of someone like me\u2026..is that a clue for
+        something?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[2]
+      value: "I think you\u2019re going in the right way! Keep going!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[0]
       value: "You\u2026.found all computer parts? Time to reveal the secret of that
         thing!"
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[1].sentences.Array.data[1]
+      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[1]
+      value: "Keep finding. There\u2019ll be some more important things there."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[2]
       value: "There\u2019s a paper clip that can be used as a lockpick. You might
         need it."
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[0]
+      propertyPath: phaseDialogueAfter.Array.data[3].sentences.Array.data[0]
       value: "That thing\u2026..so nostalgic."
       objectReference: {fileID: 0}
     - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
-      propertyPath: phaseDialogueAfter.Array.data[2].sentences.Array.data[1]
+      propertyPath: phaseDialogueAfter.Array.data[3].sentences.Array.data[1]
       value: "Keep finding. There\u2019ll be some more important things there."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815785721555273765, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      propertyPath: phaseDialogueAfter.Array.data[3].sentences.Array.data[2]
+      value: "There\u2019s a paper clip that can be used as a lockpick. You might
+        need it."
       objectReference: {fileID: 0}
     - target: {fileID: 7913224265386296516, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       propertyPath: missingDialogue.sentences.Array.size
@@ -2649,6 +2777,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2779915599942987546, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
       insertIndex: -1
       addedObject: {fileID: 294348490}
+    - targetCorrespondingSourceObject: {fileID: 1608144688496434726, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 672436409}
   m_SourcePrefab: {fileID: 100100000, guid: aac0e25acbf2c924096e7b0a846a2199, type: 3}
 --- !u!1001 &218257090107523072
 PrefabInstance:
@@ -3390,7 +3521,7 @@ PrefabInstance:
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: pallorScript
       value: 
-      objectReference: {fileID: 672436405}
+      objectReference: {fileID: 672436409}
     - target: {fileID: 4137311007210267309, guid: d1045d5f1cf43254399ae016afc735c0, type: 3}
       propertyPath: hangmanScript
       value: 

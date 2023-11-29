@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (dialogueQueue.Count != 0 && !isRunning)
+        if (dialogueQueue.Count != 0 && !isRunning && GameManager.Instance.CurrentRoom == 1)
         {
             DialoguePlayer dialoguePlayer = dialogueQueue.Dequeue();
             StartDialogue(dialoguePlayer.dialogue, dialoguePlayer.isDialogueBox);
@@ -148,9 +148,6 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator PrintSentence(string sentence, bool isDialogueBox)
     {
-        int n = sentence.Length;
-        float timeTaken = 4f / (float)n;
-
         if (dialogueName != "")
         {
             dialogueText.text = dialogueName + ": ";
@@ -164,29 +161,42 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text += letter;
 
-            if (isDialogueBox)
-            {
-                yield return new WaitForSeconds(0.025f);
-            }
-            else
-            {
-                yield return new WaitForSeconds(timeTaken);
-            }
-            
+            ///SoundManager.PlaySound(SoundManager.Sound.Dialog);
+
+            //if (isDialogueBox)
+            //{
+            //    yield return new WaitForSeconds(0.025f);
+            //}
+            //else
+            //{
+            //    yield return new WaitForSeconds(timeTaken);
+            //}
+
+            yield return new WaitForSeconds(0.025f);
         }
 
-        if (!isDialogueBox)
+        if (animator != null && !isDialogueBox)
         {
+            yield return new WaitForSeconds(4f);
+            dialogueText.text = "";
+            dialogueText.name = "";
+            animator.SetBool("IsRunning", false);
             yield return new WaitForSeconds(1.5f);
             DisplayNextSentence(isDialogueBox);
+            animator.SetBool("IsRunning", true);
         }
     }
 
     public void ResetDialogue()
     {
         sentences.Clear();
-        dialogueQueue.Clear();
+        //dialogueQueue.Clear();
         EndDialogue();
+    }
+
+    public void ClearQueue()
+    {
+        dialogueQueue.Clear();
     }
 
     public void AddDialogueQueue(DialoguePlayer dialogue)
