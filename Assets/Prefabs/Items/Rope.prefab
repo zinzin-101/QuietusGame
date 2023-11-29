@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5092800059388240677}
   - component: {fileID: 7373342547820703621}
   - component: {fileID: 1006252200289356354}
+  - component: {fileID: 8540853151739736183}
   - component: {fileID: 1976088281826949740}
   - component: {fileID: 2114384591548880343}
   m_Layer: 0
@@ -132,6 +133,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6928633, y: 1.6895959}
   m_EdgeRadius: 0
+--- !u!114 &8540853151739736183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137303273679735623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be54fa09ef16e4b4fa142a875733339b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1976088281826949740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +163,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7373342547820703621}
   sprite: {fileID: 21300000, guid: 7926404c9aa6681489b4f88345028bea, type: 3}
   highlightSprite: {fileID: 21300000, guid: 5abcd54c76076364cab34bcc951e0510, type: 3}
-  highlightOn: 1
+  highlightOn: 0
 --- !u!114 &2114384591548880343
 MonoBehaviour:
   m_ObjectHideFlags: 0

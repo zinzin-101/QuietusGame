@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5278547186384696786}
   - component: {fileID: 781307799970126522}
-  - component: {fileID: 7588072385456076606}
   - component: {fileID: 3414710800155370722}
   m_Layer: 0
   m_Name: PallorMortis
@@ -242,30 +241,28 @@ MonoBehaviour:
     sentences:
     - "That thing\u2026..so nostalgic."
     - "Keep finding. There\u2019ll be some more important things there."
-  - name: Pallor
+  score:
+    name: Pallor
     sentences:
-    - "That\u2019s\u2026..give it to me."
-  - name: Pallor
+    - "That\u2026..give it to me."
+  finalBoom:
+    name: Pallor
     sentences:
     - "This is\u2026.."
     - "It can\u2019t be\u2014"
+  v1:
+    name: ???
+    sentences:
+    - "You aren\u2019t supposed to be here."
+  v2:
+    name: ???
+    sentences:
+    - No. Me.
+  scoreReport: {fileID: 11400000, guid: 2c599a4096d7c2a46a26426e99dcfdfb, type: 2}
+  spriteObject: {fileID: 2670068971815969064}
+  bear: {fileID: 0}
+  rope: {fileID: 0}
   pallorAnim: {fileID: 1663081731866853840}
---- !u!114 &7588072385456076606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862329142598983093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fbe308533c5b7c42974586b3c74f6ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!61 &3414710800155370722
 BoxCollider2D:
   m_ObjectHideFlags: 0

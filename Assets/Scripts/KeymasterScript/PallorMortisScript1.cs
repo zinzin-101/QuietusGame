@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PallorMortisScript1 : MonoBehaviour
@@ -16,12 +17,34 @@ public class PallorMortisScript1 : MonoBehaviour
     private int boxIndex;
     private int maxBoxIndex;
 
+    [SerializeField] Dialogue score;
+    [SerializeField] Dialogue finalBoom;
+    [SerializeField] Dialogue v1, v2;
+    [SerializeField] Item scoreReport;
+    private Collider2D col;
+    [SerializeField] GameObject spriteObject;
+    [SerializeField] GameObject bear;
+    [SerializeField] GameObject rope;
+    private bool canCheckInventory;
+    public bool CanCheckInventory => canCheckInventory;
+    private bool validScore;
+
     private bool firstDialogueTriggered;
 
     [SerializeField] PallorAnimation pallorAnim;
 
     private void Awake()
     {
+        TryGetComponent(out col);
+        if (col != null)
+        {
+            col.enabled = true;
+        }
+
+        spriteObject.SetActive(true);
+        rope.SetActive(false);
+        bear.SetActive(true);
+
         dialogueIndex = 0;
         maxIndex = dialogue.Length - 1;
 
@@ -32,6 +55,9 @@ public class PallorMortisScript1 : MonoBehaviour
         maxBoxIndex = box.Length - 1;
 
         firstDialogueTriggered = false;
+        
+        canCheckInventory = false;
+        validScore = false;
     }
 
     private IEnumerator Start()
@@ -171,5 +197,55 @@ public class PallorMortisScript1 : MonoBehaviour
     public void PlayHeadExplodeAnimation()
     {
         pallorAnim.PlayExplodeAnimation();
+    }
+
+    public void ScoreAcquired()
+    {
+        GameManager.Instance.TimerActive(false);
+        GameManager.Instance.EnableSkip(false);
+        DialogueManager.Instance.StartDialogue(score, true);
+        canCheckInventory = true;
+        StartCoroutine(FinalSceneStart());
+    }
+
+    IEnumerator FinalSceneStart()
+    {
+        yield return new WaitUntil(() => validScore);
+        DialogueManager.Instance.StartDialogue(finalBoom, true);
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        GameManager.Instance.NextRoomButtonAnimation();
+
+        yield return new WaitUntil(() => GameManager.Instance.CanStartDialogue);
+        DialogueManager.Instance.StartDialogue(v1, true);
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        GameManager.Instance.NextRoomButton();
+        DialogueManager.Instance.StartDialogue(v2, true);
+
+        spriteObject.SetActive(false);
+        col.enabled = false;
+        bear.SetActive(false);
+        rope.SetActive(true);
+
+        yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
+        GameManager.Instance.NextRoomButton();
+        GameManager.Instance.TimerActive(false);
+    }
+
+    public void CheckForScore()
+    {
+        if (!canCheckInventory || validScore) return;
+        canCheckInventory = false;
+
+        foreach (Item item in InventoryManager.Instance.Items)
+        {
+            if (item == scoreReport)
+            {
+                canCheckInventory = true;
+                validScore = true;
+                return;
+            }
+        }
+        canCheckInventory = true;
+        return;
     }
 }

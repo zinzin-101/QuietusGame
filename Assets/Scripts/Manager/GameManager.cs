@@ -237,6 +237,19 @@ public class GameManager : MonoBehaviour
         //pallorScript.PlayHeadExplodeAnimation();
     }
 
+    public void NextRoomButtonAnimation()
+    {
+        if (!canSkipRoom) return;
+        canSkipRoom = false;
+        if (playerInteractScript.IsSitting)
+        {
+            playerInteractScript.SetSit(false);
+        }
+        StartCoroutine(ChangeRoom(2f));
+        //timer.ResetTimer();
+        pallorScript.PlayHeadExplodeAnimation();
+    }
+
     public async void NextRoomButton(bool waitForDialogue)
     {
         if (!canSkipRoom) return;

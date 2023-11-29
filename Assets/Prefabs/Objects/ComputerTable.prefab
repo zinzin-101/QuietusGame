@@ -975,10 +975,10 @@ MonoBehaviour:
   - {fileID: 3439346632033587915}
   - {fileID: 271405452826494149}
   drawerItems:
-  - {fileID: 8517432820042733847}
-  - {fileID: 0}
   - {fileID: 3717951012534910287}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8517432820042733847}
   bigDrawerSprite: {fileID: 21300000, guid: 6c291ac97777d8b48b48e19054122a79, type: 3}
   highlightBigdrawerSprite: {fileID: 21300000, guid: 1ff6139cf04a1c7429b726afa4d50e39, type: 3}
   drawerSprite: {fileID: 21300000, guid: faff0c5af727d324fadd85d39d8566d4, type: 3}
@@ -987,6 +987,7 @@ MonoBehaviour:
   highlightTableSprite: {fileID: 21300000, guid: 81264c4afbc39d44caf4a6829806486a, type: 3}
   item: {fileID: 0}
   unlockedText: {fileID: 5964933798585781107}
+  unlockItem: {fileID: 11400000, guid: fa7746e39fb50b848a67ddb91faafb22, type: 2}
 --- !u!114 &-2630533796077940486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,7 +1348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5092800059388240677, guid: f093f86cbe300dc4e8e7a3691c4ee87e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.588
+      value: -0.043
       objectReference: {fileID: 0}
     - target: {fileID: 5092800059388240677, guid: f093f86cbe300dc4e8e7a3691c4ee87e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1391,7 +1392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7373342547820703621, guid: f093f86cbe300dc4e8e7a3691c4ee87e, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1430,7 +1431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676811613674741527, guid: 4885c64f62ce7ab4085141415438d95d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.024
+      value: -0.773
       objectReference: {fileID: 0}
     - target: {fileID: 1676811613674741527, guid: 4885c64f62ce7ab4085141415438d95d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1466,7 +1467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289259040991963270, guid: 4885c64f62ce7ab4085141415438d95d, type: 3}
       propertyPath: m_SortingOrder
-      value: 8
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357315325741676580, guid: 4885c64f62ce7ab4085141415438d95d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

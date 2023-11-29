@@ -83,6 +83,10 @@ public class PlayerInteractScript : MonoBehaviour
             {
                 pallorScript1.TriggerFirstDialogue();
             }
+            else if (isSitting && pallorScript1.CanCheckInventory)
+            {
+                pallorScript1.CheckForScore();
+            }
         }
 
         if (collision.TryGetComponent(out KeyMasterDetect keymasterScript))

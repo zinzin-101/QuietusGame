@@ -19,6 +19,7 @@ public class ComputerTableScript : MonoBehaviour
 
     private bool isBigDrawerLocked;
     [SerializeField] GameObject unlockedText;
+    [SerializeField] Item unlockItem;
 
     private ActionProgress actionProgress;
 
@@ -104,12 +105,10 @@ public class ComputerTableScript : MonoBehaviour
                 if (i == 0)
                 {
                     drawer.sprite = bigDrawerSprite;
-                    SoundManager.PlaySound(SoundManager.Sound.OpenDrawer);
                 }
                 else
                 {
                     drawer.sprite = drawerSprite;
-                    SoundManager.PlaySound(SoundManager.Sound.OpenDrawer);
                 }
                 
             }
@@ -138,7 +137,15 @@ public class ComputerTableScript : MonoBehaviour
 
         if (isBigDrawerLocked)
         {
-            UnlockBigDrawer();
+            foreach (Item item in InventoryManager.Instance.Items)
+            {
+                if (item == unlockItem)
+                {
+                    UnlockBigDrawer();
+                    numOfOpenedDrawer = 0;
+                    return;
+                }
+            }
         }
 
         for (int i = 0; i < numOfDrawer; i++)
@@ -162,6 +169,7 @@ public class ComputerTableScript : MonoBehaviour
                 if (drawerItems[i] != null) drawerItems[i].SetActive(false);
             }
         }
+        SoundManager.PlaySound(SoundManager.Sound.OpenDrawer);
     }
 
     async void UnlockBigDrawer()
@@ -173,7 +181,7 @@ public class ComputerTableScript : MonoBehaviour
 
         foreach (var item in InventoryManager.Instance.Items)
         {
-            if (item.itemName == "Lockpick")
+            if (item.itemName == unlockItem.itemName)
             {
                 hasLockpick = true;
                 //InventoryManager.Instance.Remove(item);

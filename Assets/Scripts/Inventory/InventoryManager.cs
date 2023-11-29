@@ -15,6 +15,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject inventoryPanel;
     [SerializeField] TMP_Text descriptionText;
 
+    [SerializeField] Item gameCartride, scoreReport;
+
     private void Awake()
     {
         Instance = this;
@@ -96,6 +98,25 @@ public class InventoryManager : MonoBehaviour
             // Set the text and icon using data from the item.
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
+        }
+    }
+
+    public void CheckKeyItem()
+    {
+        foreach (Item item in Items)
+        {
+            if (item == gameCartride)
+            {
+                GameManager.Instance.PallorScript.NextAll();
+                GameManager.Instance.PallorScript.TriggerAllDialogue();
+                return;
+            }
+
+            if (item == scoreReport)
+            {
+                GameManager.Instance.PallorScript.ScoreAcquired();
+                return;
+            }
         }
     }
 }
