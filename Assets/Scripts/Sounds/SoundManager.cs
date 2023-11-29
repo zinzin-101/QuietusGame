@@ -20,7 +20,9 @@ public static class SoundManager{
         UseKey,
         WardropeOpen,
         PickupItem,
-        Dialog
+        Dialog,
+        Start,
+        BGM
 
     }
 
@@ -38,7 +40,7 @@ public static class SoundManager{
             GameObject soundGameObject = new GameObject("Sound");
             AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
             DestroySound destroySound = soundGameObject.AddComponent<DestroySound>();
-            destroySound.delay = 3f;
+            destroySound.delay = 20f;
             audioSource.PlayOneShot(GetAudioClip(sound));
         }
         
