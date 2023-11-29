@@ -19,7 +19,8 @@ public static class SoundManager{
         StandOnChair,
         UseKey,
         WardropeOpen,
-        PickupItem
+        PickupItem,
+        Dialog
 
     }
 

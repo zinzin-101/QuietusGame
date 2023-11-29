@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: "A \u201CHappy-looking\u201D Picture"
   icon: {fileID: 21300000, guid: aacb21d93705d914a8251b2100d16883, type: 3}
   itemType: 0
-  itemDescription: A weathered picture subtly conveys the profound friendship of
-    these people, hinting at a connection that may hold the key to unlocking the
-    secret of this place.
+  itemDescription: The picture is the most well-kept in this room. It's cleanness
+    is unmatched even compared to an exquisite painting. The people in the picture
+    looks extremely happy.

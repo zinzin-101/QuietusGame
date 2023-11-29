@@ -15,5 +15,4 @@ MonoBehaviour:
   itemName: A Lockpick
   icon: {fileID: 21300000, guid: 4be9a83419a7faf4ba473cd34a7e24f2, type: 3}
   itemType: 0
-  itemDescription: A hidden lockpick whispers of mysteries, a silent invitation to
-    unveil secrets within.
+  itemDescription: The lockpick is rusty, but it should suffice for a lighter work.
