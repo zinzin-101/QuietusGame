@@ -2340,6 +2340,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
+      propertyPath: answers.Array.data[1]
+      value: Bedroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 443603421395779935, guid: 79940018ca8093340b7f74e79f4bba37, type: 3}
       propertyPath: answers.Array.data[2]
       value: /
       objectReference: {fileID: 0}

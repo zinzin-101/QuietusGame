@@ -43,7 +43,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventory()
     {
-        if (GameManager.Instance.HangManActive) return;
+        //if (GameManager.Instance.HangManActive) return;
 
         foreach (Transform child in selectedItemContent)
         {

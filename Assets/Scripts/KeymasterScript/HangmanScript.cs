@@ -131,6 +131,11 @@ public class HangmanScript : MonoBehaviour
         playerAnswer = "";
         hangmanText.text = "";
 
+        if (answerIndex == 1)
+        {
+            hangmanText.text = "Uriel’s ";
+        }
+
         for (int i = 0; i < currentMaxAnswerLength; i++)
         {
             hangmanText.text += "_ ";
