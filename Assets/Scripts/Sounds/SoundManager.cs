@@ -20,7 +20,9 @@ public static class SoundManager{
         UseKey,
         WardropeOpen,
         PickupItem,
-        Dialog
+        Dialog,
+        Start,
+        BGM
 
     }
 
