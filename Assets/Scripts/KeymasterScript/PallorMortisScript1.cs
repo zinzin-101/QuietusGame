@@ -207,7 +207,9 @@ public class PallorMortisScript1 : MonoBehaviour
 
     public void ScoreAcquired()
     {
+        GameManager.Instance.ResetTimer();
         GameManager.Instance.TimerActive(false);
+        GameManager.Instance.TimerForcedStop(true);
         GameManager.Instance.EnableSkip(false);
         DialogueManager.Instance.StartDialogue(score, true);
         canCheckInventory = true;
@@ -221,12 +223,10 @@ public class PallorMortisScript1 : MonoBehaviour
         DialogueManager.Instance.StartDialogue(finalBoom, true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButtonAnimation();
-        GameManager.Instance.TimerActive(false);
         yield return new WaitUntil(() => GameManager.Instance.CanStartDialogue);
         DialogueManager.Instance.StartDialogue(v1, true);
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButton();
-        GameManager.Instance.TimerActive(false);
         yield return new WaitUntil(() => GameManager.Instance.CanStartDialogue);
         DialogueManager.Instance.StartDialogue(v2, true);
 
@@ -237,7 +237,6 @@ public class PallorMortisScript1 : MonoBehaviour
 
         yield return new WaitUntil(() => !DialogueManager.Instance.IsRunning);
         GameManager.Instance.NextRoomButton();
-        GameManager.Instance.TimerActive(false);
     }
 
     public void CheckForScore()

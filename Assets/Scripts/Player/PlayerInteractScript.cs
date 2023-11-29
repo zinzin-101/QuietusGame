@@ -239,12 +239,18 @@ public class PlayerInteractScript : MonoBehaviour
 
     public void SetActiveInteractPrompt(bool value)
     {
-        interactPrompt.SetActive(value);
+        if (interactPrompt != null)
+        {
+            interactPrompt.SetActive(value);
+        }
     }
 
     public void SetActivePickupPrompt(bool value)
     {
-        pickupPrompt.SetActive(value);
+        if (pickupPrompt != null)
+        {
+            pickupPrompt.SetActive(value);
+        }
     }
 
     public void SetSit(bool value)

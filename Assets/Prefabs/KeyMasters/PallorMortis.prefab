@@ -220,7 +220,7 @@ MonoBehaviour:
     - . . .
     - "Wait\u2026.Did you hear that? Little friend."
     - "\u201CThey\u201D are coming. AGAIN!"
-    - "FLIP THE HOURG\u2014"
+    - FLIP THE HOURG--
   box:
   - name: Pallor
     sentences:
@@ -235,12 +235,13 @@ MonoBehaviour:
     - "I think you\u2019re going in the right way! Keep going!"
   - name: Pallor
     sentences:
-    - "You\u2026.found all computer parts? Time to reveal the secret of that thing!"
-    - "I think you\u2019re going in the right way! Keep going!"
+    - "You\u2026.found all the computer parts? Time to reveal the secret of that
+      thing!"
+    - "I think you\u2019re going in the right direction! Keep going!"
   - name: Pallor
     sentences:
     - "That thing\u2026..so nostalgic."
-    - "Keep finding. There\u2019ll be some more important things there."
+    - "Keep going. There\u2019ll be some more important things there."
   score:
     name: Pallor
     sentences:
@@ -249,7 +250,7 @@ MonoBehaviour:
     name: Pallor
     sentences:
     - "This is\u2026.."
-    - "It can\u2019t be\u2014"
+    - "It can\u2019t be--"
   v1:
     name: ???
     sentences:
@@ -262,6 +263,7 @@ MonoBehaviour:
   spriteObject: {fileID: 2670068971815969064}
   bear: {fileID: 0}
   rope: {fileID: 0}
+  FinalActivated: 0
   pallorAnim: {fileID: 1663081731866853840}
 --- !u!61 &3414710800155370722
 BoxCollider2D:
